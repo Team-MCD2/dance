@@ -1,5 +1,6 @@
 {
   "name": "next-app",
+  "description": "Temps Dance Next.js Application",
   "version": "0.1.0",
   "private": true,
   "scripts": {
