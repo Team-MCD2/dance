@@ -1,0 +1,115 @@
+/* === Custom Albums page fix - inspiré de navbar/album === */
+
+/* Disable broken masonry absolute positioning, use simple grid flow */
+.tm-masnory-gallery,
+.tm-box-masnory {
+    position: static !important;
+    height: auto !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+}
+.tm-masnory-gallery > .grid-sizer { display: none !important; }
+
+.tm-masnory-gallery .tm-box-col-wrapper {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    box-sizing: border-box;
+}
+
+/* Default 3-column layout: large (8/12) + two small (4/12 each) */
+.tm-masnory-gallery .col-lg-8 { width: 50% !important; flex: 0 0 50%; }
+.tm-masnory-gallery .col-lg-4 { width: 25% !important; flex: 0 0 25%; }
+
+/* Each gallery box fills its cell; image is full-bleed */
+.tm-masnory-gallery .tm-gallerybox,
+.tm-masnory-gallery .tm-box-image,
+.tm-masnory-gallery .tm-gallery-image,
+.tm-masnory-gallery .tm-gallery-image > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+.tm-masnory-gallery .tm-gallery-image img {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 4 / 3;
+    transition: transform .4s ease;
+}
+.tm-masnory-gallery .col-lg-8 .tm-gallery-image img {
+    aspect-ratio: 8 / 6;
+}
+.tm-masnory-gallery .tm-gallery-image > a:hover img {
+    transform: scale(1.04);
+}
+
+/* Search icon overlay on hover */
+.tm-masnory-gallery .tm-gallery-image > a > i.tm-jassio-icon-search {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    color: #fff;
+    background: #ff2a70;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    opacity: 0;
+    transition: all .3s ease;
+    z-index: 2;
+}
+.tm-masnory-gallery .tm-gallery-image > a:hover > i.tm-jassio-icon-search {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+.tm-masnory-gallery .tm-gallery-image > a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background .3s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+.tm-masnory-gallery .tm-gallery-image > a:hover::before {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* Wider container for galleries */
+.elementor-widget-tm_masonrygallery_element,
+.elementor-widget-tm_masonrygallery_element .elementor-widget-container,
+.elementor-widget-tm_masonrygallery_element .themetechmount-boxes,
+.elementor-widget-tm_masonrygallery_element .themetechmount-boxes-row-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .tm-masnory-gallery .col-lg-8 { width: 100% !important; flex: 0 0 100%; }
+    .tm-masnory-gallery .col-lg-4 { width: 50% !important; flex: 0 0 50%; }
+}
+@media (max-width: 600px) {
+    .tm-masnory-gallery .col-lg-8,
+    .tm-masnory-gallery .col-lg-4 { width: 100% !important; flex: 0 0 100%; }
+}

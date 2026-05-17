@@ -1,0 +1,86 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("./flaticon.ttf?13307640add8c4366d625c18b09b680e") format("truetype"),
+url("./flaticon.woff?13307640add8c4366d625c18b09b680e") format("woff"),
+url("./flaticon.woff2?13307640add8c4366d625c18b09b680e") format("woff2"),
+url("./flaticon.eot?13307640add8c4366d625c18b09b680e#iefix") format("embedded-opentype"),
+url("./flaticon.svg?13307640add8c4366d625c18b09b680e#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-dancing:before {
+    content: "\f101";
+}
+.flaticon-dancing-1:before {
+    content: "\f102";
+}
+.flaticon-dancing-2:before {
+    content: "\f103";
+}
+.flaticon-tejano-dance:before {
+    content: "\f104";
+}
+.flaticon-dancing-3:before {
+    content: "\f105";
+}
+.flaticon-ballet-posture:before {
+    content: "\f106";
+}
+.flaticon-tap-dance:before {
+    content: "\f107";
+}
+.flaticon-tap-dance-1:before {
+    content: "\f108";
+}
+.flaticon-dancing-4:before {
+    content: "\f109";
+}
+.flaticon-pole-dance:before {
+    content: "\f10a";
+}
+.flaticon-mp3-player:before {
+    content: "\f10b";
+}
+.flaticon-music-notes:before {
+    content: "\f10c";
+}
+.flaticon-instrument:before {
+    content: "\f10d";
+}
+.flaticon-musical-notes:before {
+    content: "\f10e";
+}
+.flaticon-music-notes-1:before {
+    content: "\f10f";
+}
+.flaticon-song:before {
+    content: "\f110";
+}
+.flaticon-music:before {
+    content: "\f111";
+}
+.flaticon-live-music:before {
+    content: "\f112";
+}
+.flaticon-music-player:before {
+    content: "\f113";
+}
+.flaticon-music-1:before {
+    content: "\f114";
+}
+.flaticon-karaoke:before {
+    content: "\f115";
+}
+.flaticon-musical-note:before {
+    content: "\f116";
+}

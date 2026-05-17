@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html, body, #mapDiv {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mapDiv"></div>
+      
+    <script nonce="3Eu_XSq5eqbUqlm-FMNs7A">
+      function onEmbedLoad() {
+        initEmbed([null,null,null,null,null,[[[2,"spotlit",null,null,null,null,null,[null,null,null,null,null,null,null,null,null,null,11,null,[null,null,null,null,null,null,null,null,null,null,null,null,null,1]]]],null,null,[[null,null,null,null,null,null,null,null,null,null,null,null,null,[[["1346208433657268173","3243265619155228352"],"/g/11c4jdt51c",null,[435827061,12997503],null,null,null,1,null,null,null,null,null,null,"gcid:building"],0,0,null,null,0,null,0]]]],null,["fr","fr"],[null,null,null,"/maps/api/js/ApplicationService.GetEntityDetails","/maps/embed/upgrade204",null,"/maps/embed/record204"],null,null,null,null,null,null,null,null,"L5sJav2ZJpbHkdUPvea0-Ag",null,null,null,[[[2890.143729197191,1.2997503,43.5827061],[0,0,0],null,13.10000038146973],null,0,[["0x12aeb17019c6c7cd:0x2d0264e5a5fc16c0","94 Chem. de la Peyrette, 31170 Tournefeuille",[43.5827061,1.2997503]],"94 Chem. de la Peyrette",["31170 Tournefeuille"],null,null,null,null,null,null,null,null,null,"Bâtiment","94 Chem. de la Peyrette, 31170 Tournefeuille",null,null,null,null,null,null,null,null,null,null,1,null,null,"ChIJzcfGGXCxrhIRwBb8peVkAi0",null,null,"0ahUKEwi97c2hkcCUAxWWY6QEHT0zDY8Q8BcIAigA"]],null,null,null,0,null,null,null,null,null,null,[1]]);
+      }
+      function onApiLoad() {
+        var embed = document.createElement('script');
+        embed.src = "https://maps.gstatic.com/maps-api-v3/embed/js/64/14a/intl/fr_ALL/init_embed.js";
+        document.body.appendChild(embed);
+      }
+    </script>
+    <link rel="preload" href="https://maps.gstatic.com/maps-api-v3/embed/js/64/14a/intl/fr_ALL/init_embed.js" nonce="3Eu_XSq5eqbUqlm-FMNs7A" as="script" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&amp;paint_origin=&amp;libraries=geometry,search&amp;v=weekly&amp;loading=async&amp;language=fr&amp;region=fr&amp;callback=onApiLoad" nonce="3Eu_XSq5eqbUqlm-FMNs7A" async defer></script>
+  </body>
+</html>
