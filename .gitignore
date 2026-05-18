@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# python (development/scraping scripts, not part of the deployable app)
+*.py
+__pycache__/
+.pytest_cache/
+*.pyc
+requirements.txt
+
