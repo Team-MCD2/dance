@@ -47,3 +47,8 @@ __pycache__/
 *.pyc
 requirements.txt
 
+# local test artifacts (screenshots, logs) - root only
+/*.png
+/*.txt
+!/README*.txt
+
