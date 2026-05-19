@@ -111,6 +111,81 @@ export default function RootLayout({ children }) {
               display: none !important;
             }
           }
+
+          /* =====================================================
+             SKINCOLOR ICON BOX STYLES (remplace le CSS WordPress)
+             Skincolor = #ff2a70 (rose)
+          ===================================================== */
+
+          /* Cercle fond rose */
+          .themetechmount-icon-bgcolor-skincolor .themetechmount-iconbox-icon,
+          .themetechmount-icon-bgcolor-skincolor .themetechmount-iconbox-icon .tm-box-icon,
+          .themetechmount-icon-bgcolor-skincolor .tm-box-icon {
+            background-color: #ff2a70 !important;
+            border-color: #ff2a70 !important;
+          }
+
+          /* Icônes blanches */
+          .themetechmount-iconcolor-white .themetechmount-iconbox-icon i,
+          .themetechmount-iconcolor-white .tm-box-icon i,
+          .themetechmount-iconcolor-white i {
+            color: #ffffff !important;
+          }
+
+          /* Forme ronde */
+          .tm-iconstyle-rounded .themetechmount-iconbox-icon,
+          .tm-iconstyle-rounded .tm-box-icon {
+            border-radius: 50% !important;
+          }
+
+          /* Dimensions du cercle */
+          .themetechmount-iconbox-styleone .tm-box-icon {
+            width: 70px !important;
+            height: 70px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            margin: 0 auto 16px !important;
+          }
+
+          .themetechmount-iconbox-styleone .tm-box-icon i {
+            font-size: 28px !important;
+            line-height: 1 !important;
+          }
+
+          /* Centrage */
+          .tm-textalign-center .themetechmount-iconbox-inner {
+            text-align: center !important;
+          }
+
+          .tm-textalign-center .themetechmount-iconbox-icon {
+            display: flex !important;
+            justify-content: center !important;
+          }
+
+          /* Hover */
+          .themetechmount-iconbox:hover .tm-box-icon {
+            transform: scale(1.08);
+            transition: transform 0.25s ease;
+          }
+
+          /* Sous-titres rose */
+          .tm-element-subhead {
+            color: #ff2a70 !important;
+          }
+
+          /* Boutons skincolor */
+          .tm-btn-color-skincolor .elementor-button,
+          .tm-btn-color .elementor-button {
+            background-color: #ff2a70 !important;
+            border-color: #ff2a70 !important;
+            color: #ffffff !important;
+          }
+
+          .tm-btn-color-skincolor .elementor-button:hover,
+          .tm-btn-color .elementor-button:hover {
+            background-color: #e01b5d !important;
+          }
         ` }} />
       </head>
       <body className="home page-template-default page page-id-249 wp-custom-logo jassio-jassio elementor-default elementor-kit-8 elementor-page elementor-page-249">

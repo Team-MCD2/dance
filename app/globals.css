@@ -1,1 +1,79 @@
 /* Global CSS for Next.js App */
+
+/* ==========================================================================
+   THEME SKINCOLOR OVERRIDES
+   WordPress générait ces règles en PHP/inline — on les recrée ici.
+   Skincolor = #ff2a70 (rose)
+   ========================================================================== */
+
+/* ---- ICON BOX : Cercle fond rose ---- */
+.themetechmount-icon-bgcolor-skincolor .themetechmount-iconbox-icon,
+.themetechmount-icon-bgcolor-skincolor .themetechmount-iconbox-icon .tm-box-icon,
+.themetechmount-icon-bgcolor-skincolor .tm-box-icon {
+  background-color: #ff2a70 !important;
+  border-color: #ff2a70 !important;
+}
+
+/* ---- ICON BOX : Icône blanche ---- */
+.themetechmount-iconcolor-white .themetechmount-iconbox-icon i,
+.themetechmount-iconcolor-white .tm-box-icon i,
+.themetechmount-iconcolor-white i {
+  color: #ffffff !important;
+}
+
+/* ---- ICON BOX : Forme ronde ---- */
+.tm-iconstyle-rounded .themetechmount-iconbox-icon,
+.tm-iconstyle-rounded .tm-box-icon {
+  border-radius: 50% !important;
+}
+
+/* ---- ICON BOX : Dimensions du cercle ---- */
+.themetechmount-iconbox-styleone .themetechmount-iconbox-icon,
+.themetechmount-iconbox-styleone .tm-box-icon {
+  width: 70px !important;
+  height: 70px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 16px !important;
+}
+
+.themetechmount-iconbox-styleone .tm-box-icon i,
+.themetechmount-iconbox-styleone .themetechmount-iconbox-icon i {
+  font-size: 28px !important;
+  line-height: 1 !important;
+}
+
+/* ---- ICON BOX : Centrage ---- */
+.tm-textalign-center .themetechmount-iconbox-inner {
+  text-align: center !important;
+}
+.tm-textalign-center .themetechmount-iconbox-icon {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* ---- BOUTONS : Couleur skin ---- */
+.tm-btn-color-skincolor .elementor-button,
+.tm-btn-color .elementor-button {
+  background-color: #ff2a70 !important;
+  border-color: #ff2a70 !important;
+  color: #ffffff !important;
+}
+.tm-btn-color-skincolor .elementor-button:hover,
+.tm-btn-color .elementor-button:hover {
+  background-color: #e01b5d !important;
+  border-color: #e01b5d !important;
+}
+
+/* ---- HEADINGS : Couleur skin sur sous-titre ---- */
+.tm-element-subhead {
+  color: #ff2a70 !important;
+}
+
+/* ---- ICON BOX : Hover animation ---- */
+.themetechmount-iconbox:hover .tm-box-icon,
+.themetechmount-iconbox:hover .themetechmount-iconbox-icon {
+  transform: scale(1.08);
+  transition: transform 0.25s ease;
+}

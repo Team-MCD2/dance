@@ -503,3 +503,57 @@ body {
     height: 60px;
   }
 }
+
+/* ==========================================================================
+   ICON BOX SKINCOLOR RESTORATION
+   (Fixes pink icon circles on homepage course cards)
+   ========================================================================== */
+
+/* Pink circular background on icon boxes */
+.themetechmount-icon-bgcolor-skincolor .themetechmount-iconbox-icon,
+.themetechmount-icon-bgcolor-skincolor .tm-box-icon {
+  background-color: #ff2a70 !important;
+}
+
+/* White icon color inside skincolor boxes */
+.themetechmount-iconcolor-white .themetechmount-iconbox-icon i,
+.themetechmount-iconcolor-white .tm-box-icon i {
+  color: #ffffff !important;
+}
+
+/* Rounded icon shape */
+.tm-iconstyle-rounded .themetechmount-iconbox-icon,
+.tm-iconstyle-rounded .tm-box-icon {
+  border-radius: 50% !important;
+}
+
+/* Make sure the icon wrapper is a proper circle */
+.themetechmount-iconbox-styleone .tm-box-icon {
+  width: 70px;
+  height: 70px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.themetechmount-iconbox-styleone .tm-box-icon i {
+  font-size: 28px;
+  line-height: 1;
+}
+
+/* Center-align the icon box content */
+.tm-textalign-center .themetechmount-iconbox-inner {
+  text-align: center;
+}
+
+.tm-textalign-center .themetechmount-iconbox-icon {
+  display: flex;
+  justify-content: center;
+}
+
+/* Hover effect: slightly grow the icon circle */
+.themetechmount-iconbox:hover .tm-box-icon {
+  transform: scale(1.08);
+  transition: transform 0.25s ease;
+}
