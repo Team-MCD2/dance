@@ -79,55 +79,224 @@
 }
 
 /* ==========================================================================
-   ELEMENTOR RESPONSIVE FALLBACKS
-   Garantit que les colonnes Elementor se comportent correctement sur mobile.
+   FULL RESPONSIVE SYSTEM
+   Covers: Elementor columns, Bootstrap grid, iframes, forms, footer, etc.
    ========================================================================== */
 
+/* ---- GLOBAL : Prevent horizontal overflow ---- */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---- IFRAMES : Make all iframes responsive ---- */
+.elementor-wrapper iframe,
+.elementor-video,
+iframe.elementor-video {
+  max-width: 100% !important;
+}
+
+.elementor-wrapper.elementor-open-inline {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.elementor-wrapper.elementor-open-inline iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ==========================================================================
+   TABLET — max-width: 1024px
+   ========================================================================== */
 @media (max-width: 1024px) {
+  /* Elementor columns wrap */
   .elementor-container {
     flex-wrap: wrap;
   }
-  
+
   .elementor-column {
     width: 100% !important;
   }
 
-  /* Sur tablette, les colonnes 25% et 33% peuvent devenir 50% */
+  /* Tablet: 25% and 33% columns become 50% */
   .elementor-col-25,
   .elementor-col-33 {
     width: 50% !important;
   }
+
+  /* Bootstrap grid: force 2-col on tablet for col-md-3 */
+  .col-md-3 {
+    width: 50% !important;
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+
+  /* Course detail sections: remove excess padding */
+  .col-md-6 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
 }
 
+/* ==========================================================================
+   MOBILE — max-width: 767px
+   ========================================================================== */
 @media (max-width: 767px) {
-  /* Sur mobile, toutes les colonnes passent à 100% */
+  /* All elementor columns full width */
   .elementor-column {
     width: 100% !important;
     margin-bottom: 20px;
   }
 
-  /* Ajustements divers pour mobile */
+  /* Sections get comfortable padding */
   .elementor-section {
     padding-left: 15px !important;
     padding-right: 15px !important;
   }
 
-  /* Les gros titres doivent être réduits sur mobile */
+  /* Headings scale down */
   .tm-element-content-heading {
-    font-size: 28px !important;
+    font-size: 24px !important;
     line-height: 1.2 !important;
+    word-wrap: break-word;
   }
-}
 
-/* Fix for footer widgets on mobile */
-@media (max-width: 767px) {
+  .tm-element-overlay-subhead {
+    font-size: 30px !important;
+  }
+
+  /* Bootstrap grid: all cols go 100% on mobile */
+  .col-md-3,
+  .col-md-4,
+  .col-md-6,
+  .col-md-9,
+  .col-sm-4,
+  .col-sm-6,
+  .col-lg-4 {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Row flex direction */
+  .row {
+    flex-direction: column;
+  }
+
+  /* Course detail sections: stack properly */
+  .row[style*="row-reverse"] {
+    flex-direction: column !important;
+  }
+
+  /* Container padding */
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  /* Contact form padding on mobile */
+  .elementor-widget-wrap[style*="padding: 40px"] {
+    padding: 20px !important;
+  }
+
+  /* Map iframe min-height on mobile */
+  .tm-rounded-map iframe {
+    min-height: 350px !important;
+  }
+
+  /* Hero slider adjustments */
+  #rev_slider_3_1_wrapper {
+    min-height: 300px !important;
+  }
+
+  /* Slider button text smaller on mobile */
+  .tm-slider-button {
+    font-size: 12px !important;
+    padding: 10px 20px !important;
+  }
+
+  /* Footer widget stacking */
   .first-widget-area {
     margin-bottom: 30px;
     text-align: center;
   }
-  .themetechmount-contact-address, 
-  .themetechmount-contact-phonenumber, 
+
+  .dance_contact_widget_wrapper {
+    text-align: center;
+  }
+
+  .dance_contact_widget_wrapper li {
+    justify-content: center;
+  }
+
+  .themetechmount-contact-address,
+  .themetechmount-contact-phonenumber,
   .themetechmount-contact-email {
     justify-content: center;
+  }
+
+  /* Footer social icons center */
+  .social-icons {
+    justify-content: center !important;
+  }
+
+  /* Bottom footer text */
+  .tm-footer2-left {
+    text-align: center !important;
+  }
+
+  /* Testimonial slider: reduce padding on mobile */
+  .wpmtst-testimonial-inner {
+    padding: 25px 20px !important;
+  }
+
+  .wpmtst-testimonial-heading {
+    font-size: 20px !important;
+  }
+
+  /* FAQ accordion: reduce font size */
+  .elementor-accordion-title {
+    font-size: 16px !important;
+  }
+
+  /* Planning cards: full width on mobile */
+  .elementor-col-33 {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    min-width: unset !important;
+  }
+}
+
+/* ==========================================================================
+   SMALL MOBILE — max-width: 480px
+   ========================================================================== */
+@media (max-width: 480px) {
+  .tm-element-content-heading {
+    font-size: 20px !important;
+  }
+
+  .tm-element-overlay-subhead {
+    font-size: 24px !important;
+  }
+
+  /* Hero: smaller text */
+  #rev_slider_3_1_wrapper {
+    min-height: 250px !important;
+  }
+
+  /* Topbar hidden (already handled by navbar CSS) */
+  .themetechmount-topbar-wrapper {
+    display: none !important;
   }
 }
