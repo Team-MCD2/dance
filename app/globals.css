@@ -101,19 +101,9 @@ iframe.elementor-video {
   max-width: 100% !important;
 }
 
-.elementor-wrapper.elementor-open-inline {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-
 .elementor-wrapper.elementor-open-inline iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100% !important;
-  height: 100% !important;
+  max-height: 100% !important;
 }
 
 /* ==========================================================================
@@ -125,13 +115,15 @@ iframe.elementor-video {
     flex-wrap: wrap;
   }
 
-  .elementor-column {
-    width: 100% !important;
-  }
+  /* Don't force all columns to 100% on tablet */
 
   /* Tablet: 25% and 33% columns become 50% */
   .elementor-col-25,
   .elementor-col-33 {
+    width: 50% !important;
+  }
+  
+  .elementor-col-50 {
     width: 50% !important;
   }
 
