@@ -77,3 +77,57 @@
   transform: scale(1.08);
   transition: transform 0.25s ease;
 }
+
+/* ==========================================================================
+   ELEMENTOR RESPONSIVE FALLBACKS
+   Garantit que les colonnes Elementor se comportent correctement sur mobile.
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .elementor-container {
+    flex-wrap: wrap;
+  }
+  
+  .elementor-column {
+    width: 100% !important;
+  }
+
+  /* Sur tablette, les colonnes 25% et 33% peuvent devenir 50% */
+  .elementor-col-25,
+  .elementor-col-33 {
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Sur mobile, toutes les colonnes passent à 100% */
+  .elementor-column {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+
+  /* Ajustements divers pour mobile */
+  .elementor-section {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  /* Les gros titres doivent être réduits sur mobile */
+  .tm-element-content-heading {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* Fix for footer widgets on mobile */
+@media (max-width: 767px) {
+  .first-widget-area {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .themetechmount-contact-address, 
+  .themetechmount-contact-phonenumber, 
+  .themetechmount-contact-email {
+    justify-content: center;
+  }
+}

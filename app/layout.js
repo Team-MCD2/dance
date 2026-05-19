@@ -77,40 +77,6 @@ export default function RootLayout({ children }) {
               min-height: 350px;
             }
           }
-          @media (max-width: 1024px) {
-            .site-header-menu .nav-menu {
-              display: none;
-              width: 100%;
-              background: #fff;
-              position: absolute;
-              top: 100%;
-              left: 0;
-              box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-              z-index: 9999;
-            }
-            .site-header-menu .nav-menu.show {
-              display: block;
-            }
-            .site-header-menu .nav-menu ul li a {
-              padding: 12px 20px;
-              display: block;
-              border-bottom: 1px solid #eee;
-              color: #333;
-            }
-            .menu-toggle {
-              display: block !important;
-              background: transparent;
-              border: none;
-              font-size: 24px;
-              cursor: pointer;
-              padding: 10px;
-            }
-          }
-          @media (min-width: 1025px) {
-            .menu-toggle {
-              display: none !important;
-            }
-          }
 
           /* =====================================================
              SKINCOLOR ICON BOX STYLES (remplace le CSS WordPress)
