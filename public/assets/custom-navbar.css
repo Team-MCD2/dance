@@ -557,3 +557,163 @@ body {
   transform: scale(1.08);
   transition: transform 0.25s ease;
 }
+
+/* ==========================================================================
+   MOBILE FIXES (max-width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* 1. Hide top info bar on mobile (phone, email, address) */
+    .themetechmount-topbar-wrapper {
+        display: none !important;
+    }
+
+    /* 2. Hide the phone/CTA block inside the header nav on mobile.
+          Only keep logo + hamburger visible. */
+    .tm-header-text-area {
+        display: none !important;
+    }
+
+    /* 3. Header height auto on mobile */
+    .tm-stickable-header-w,
+    .site-header {
+        height: auto !important;
+        min-height: 60px;
+    }
+
+    /* 4. Reduce huge section padding that creates blank spaces on inner pages */
+    .elementor-section {
+        padding-top: 25px !important;
+        padding-bottom: 25px !important;
+    }
+
+    /* 5. Divider-only sections: hide on mobile (purely decorative, wastes space) */
+    .elementor-section:has(.elementor-widget-divider) {
+        display: none !important;
+    }
+
+    /* 5b. Limit map iframe height on mobile */
+    iframe[src*="google.com/maps"],
+    iframe[src*="maps.google"] {
+        min-height: 280px !important;
+        max-height: 320px !important;
+        height: 300px !important;
+    }
+
+    /* 6. Fix team card layout: theme uses display:table with vertical writing-mode.
+          Convert to vertical block stack on mobile. */
+    .themetechmount-box-team .themetechmount-content-inner.tm-wrap {
+        display: block !important;
+    }
+    .themetechmount-box-team .tm-wrap-cell,
+    .themetechmount-box-team .themetechmount-team-image-box,
+    .themetechmount-box-team .themetechmount-box-content {
+        display: block !important;
+        width: 100% !important;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        transform: none !important;
+    }
+    .themetechmount-team-position,
+    .themetechmount-team-position * {
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        transform: none !important;
+    }
+
+    /* 7. Team member cards full width on mobile */
+    .tm-box-col-wrapper {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 7b. Team member image full width */
+    .themetechmount-box-team .themetechmount-team-image-box img {
+        width: 100% !important;
+        height: 280px !important;
+        object-fit: cover !important;
+    }
+
+    /* 8. Contact page: stack form + map columns vertically */
+    .elementor-col-50 {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 9. Nos cours page: ensure video/text columns stack */
+    .elementor-section .row > .col-xs-12.col-md-6 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    /* Reset reverse direction for mobile (always top-to-bottom) */
+    .elementor-section .row[style*="row-reverse"] {
+        flex-direction: column !important;
+    }
+
+    /* 10. Container padding on mobile */
+    .elementor-container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* 11. Section headings readable size on mobile */
+    .tm-element-content-heading {
+        font-size: 26px !important;
+    }
+
+    /* 12. Hide the large decorative background heading on mobile (it overlaps real titles) */
+    .tm-element-overlay-subhead {
+        display: none !important;
+    }
+
+    /* 12b. Reduce site-content-wrapper top padding on mobile */
+    .site-content-wrapper,
+    #content-wrapper {
+        padding-top: 0 !important;
+    }
+    .entry-content,
+    .elementor {
+        padding-top: 0 !important;
+    }
+
+    /* 12c. Team cards: hide duplicate name in bottom box */
+    .themetechmount-box-team .tm-bottom-box {
+        display: none !important;
+    }
+
+    /* 12d. Keep share social icon properly positioned inside the image area */
+    .themetechmount-box-team .themetechmount-team-image-box {
+        position: relative !important;
+    }
+    .themetechmount-box-team .tm-member-social {
+        position: absolute !important;
+        top: 12px !important;
+        right: 12px !important;
+        z-index: 3 !important;
+    }
+    /* Hide any stray icon character text that may appear */
+    .themetechmount-box-team .tm-member-social .themetechmount-team-icon i {
+        font-size: 16px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* 13. Header CTA button on mobile: show only the circle icon, hide text */
+    .header-cta-wrapper .cta-text-group {
+        display: none !important;
+    }
+    .header-cta-wrapper .cta-icon-circle {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+    }
+    .header-cta-wrapper .header-cta-button {
+        padding: 0 !important;
+        min-width: unset !important;
+    }
+}

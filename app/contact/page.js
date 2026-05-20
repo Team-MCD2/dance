@@ -213,8 +213,8 @@ export default function ContactPage() {
                                         allowFullScreen="" 
                                         height="643" 
                                         loading="lazy" 
-                                        src="/assets/maps/embed__pb_1m18_1m12_1m3_1d2890_143729197191_2d1_297562215495466_3d4" 
-                                        style={{ border: 0, width: "100%", minHeight: "500px" }}
+                                        src="https://www.google.com/maps?q=94+Chemin+de+la+Peyrette,+31170+Tournefeuille,+France&output=embed" 
+                                        style={{ border: 0, width: "100%", minHeight: "400px" }}
                                       ></iframe>
                                     </div>
                                   </div>
