@@ -202,10 +202,10 @@ export default function NosCoursPage() {
                               <div className="elementor-container elementor-column-gap-default">
                                 <div className="elementor-column elementor-col-100 elementor-top-column elementor-element">
                                   <div className="elementor-widget-wrap elementor-element-populated">
-                                    <div className="row" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", flexDirection: detail.reverse ? "row-reverse" : "row" }}>
+                                    <div className="row course-detail-row" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", flexDirection: detail.reverse ? "row-reverse" : "row" }}>
                                       
                                       {/* Video Column */}
-                                      <div className="col-xs-12 col-md-6" style={{ marginBottom: "30px" }}>
+                                      <div className="col-xs-12 col-md-6 course-video-col" style={{ marginBottom: "30px" }}>
                                         {detail.video ? (
                                           <div className="elementor-widget-container" style={{ borderRadius: "10px", overflow: "hidden", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }}>
                                             <div className="elementor-wrapper elementor-open-inline" style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
@@ -227,7 +227,7 @@ export default function NosCoursPage() {
                                       </div>
 
                                       {/* Text Column */}
-                                      <div className="col-xs-12 col-md-6" style={{ paddingLeft: detail.reverse ? "15px" : "40px", paddingRight: detail.reverse ? "40px" : "15px", marginBottom: "30px" }}>
+                                      <div className="col-xs-12 col-md-6 course-text-col" style={{ paddingLeft: detail.reverse ? "15px" : "40px", paddingRight: detail.reverse ? "40px" : "15px", marginBottom: "30px" }}>
                                         <div className="elementor-element tm-align-left elementor-widget elementor-widget-tm_heading">
                                           <div className="elementor-widget-container">
                                             <div className="tm-element-heading-content-wrapper left-align tm-reverse-heading-yes tm-seperator-none tm-heading-style-vertical">

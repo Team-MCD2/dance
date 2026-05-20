@@ -568,17 +568,119 @@ body {
         display: none !important;
     }
 
-    /* 2. Hide the phone/CTA block inside the header nav on mobile.
-          Only keep logo + hamburger visible. */
+    /* 2. Hide legacy phone block (only in clone static pages) */
     .tm-header-text-area {
         display: none !important;
     }
 
-    /* 3. Header height auto on mobile */
+    /* 3. Modern mobile header layout */
     .tm-stickable-header-w,
     .site-header {
         height: auto !important;
-        min-height: 60px;
+        min-height: 64px;
+    }
+
+    /* Header container: logo left, actions right */
+    .site-header-main.container,
+    .site-header-main {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 0 14px !important;
+        min-height: 64px;
+        max-width: 100% !important;
+        width: 100% !important;
+        background: #fff;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.08) !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Logo: slightly larger, clean */
+    .site-branding {
+        flex: 0 0 auto !important;
+    }
+    .site-branding .standardlogo {
+        height: 46px !important;
+        width: auto !important;
+        display: block;
+    }
+
+    /* Right group (nav): phone circle + hamburger aligned right */
+    #site-header-menu {
+        flex: 0 0 auto !important;
+        margin-left: auto !important;
+    }
+    #site-navigation {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+
+    /* Hide desktop nav links on mobile */
+    .nav-menu-wrapper {
+        display: none !important;
+    }
+    #site-navigation.toggled-on .nav-menu-wrapper,
+    #site-navigation.toggled .nav-menu-wrapper {
+        display: block !important;
+    }
+
+    /* CTA phone button: clean 44px pink circle */
+    .header-cta-wrapper {
+        display: flex !important;
+        align-items: center !important;
+        flex: 0 0 auto !important;
+    }
+    .header-cta-button {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 44px !important;
+        height: 44px !important;
+        border-radius: 50% !important;
+        background-color: #ff2a70 !important;
+        box-shadow: 0 4px 14px rgba(255,42,112,0.40) !important;
+        padding: 0 !important;
+        text-decoration: none !important;
+        transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    }
+    .header-cta-button:active {
+        transform: scale(0.93) !important;
+        box-shadow: 0 2px 8px rgba(255,42,112,0.35) !important;
+    }
+    .header-cta-wrapper .cta-text-group {
+        display: none !important;
+    }
+    .header-cta-wrapper .cta-icon-circle {
+        background: transparent !important;
+        box-shadow: none !important;
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 50% !important;
+    }
+    .header-cta-wrapper .cta-icon-circle i {
+        color: #fff !important;
+        font-size: 18px !important;
+    }
+
+    /* Hamburger button: modern style */
+    #menu-toggle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 44px !important;
+        height: 44px !important;
+        border-radius: 10px !important;
+        border: 1.5px solid #e8e8e8 !important;
+        background: #fff !important;
+        padding: 0 !important;
+        flex: 0 0 auto !important;
+        cursor: pointer !important;
     }
 
     /* 4. Reduce huge section padding that creates blank spaces on inner pages */
@@ -703,17 +805,32 @@ body {
         justify-content: center !important;
     }
 
-    /* 13. Header CTA button on mobile: show only the circle icon, hide text */
-    .header-cta-wrapper .cta-text-group {
-        display: none !important;
+    /* 14. Nos-cours: detail sections — column layout + no overflow padding */
+    .course-detail-row {
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
     }
-    .header-cta-wrapper .cta-icon-circle {
-        width: 40px !important;
-        height: 40px !important;
-        min-width: 40px !important;
+    .course-video-col,
+    .course-text-col {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        box-sizing: border-box !important;
     }
-    .header-cta-wrapper .header-cta-button {
-        padding: 0 !important;
-        min-width: unset !important;
+    /* Reduce detail section padding on mobile */
+    .elementor-section[id] {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+    /* Ensure text wraps and doesn't overflow */
+    .course-text-col p,
+    .course-text-col h2,
+    .course-text-col h4 {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        max-width: 100% !important;
     }
 }
