@@ -239,37 +239,19 @@ export default function HomePage() {
                       </section>
 
                       {/* News Section 1 */}
-                      <section className="elementor-section elementor-top-section elementor-element elementor-element-1091b71 tm-column-break-ipad-yes elementor-section-stretched tm-col-stretched-none elementor-section-boxed elementor-section-height-default tm-bgimage-no tm-bgcolor-yes" data-id="1091b71" data-element_type="section" style={{ backgroundColor: "#1e293b", padding: "65px 0 60px" }}>
-                        <div className="elementor-container elementor-column-gap-no">
-                          <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7a664f8" data-id="7a664f8" data-element_type="column">
-                            <div className="elementor-widget-wrap elementor-element-populated" style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-                              
-                              {/* Heading */}
-                              <div style={{ marginBottom: "35px" }}>
-                                <h4 className="tm-element-subhead" style={{ color: "#ff2a70", fontWeight: "600", fontSize: "14px", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "10px" }}>Actualité</h4>
-                                <h2 style={{ color: "#ffffff", fontFamily: "Oswald, Arial, sans-serif", fontSize: "38px", fontWeight: "700", margin: 0 }}>Informations fin d&apos;année</h2>
-                              </div>
-
-                              {/* Highlight info box */}
-                              <div style={{ maxWidth: "580px", width: "100%", backgroundColor: "rgba(255,42,112,0.08)", border: "1px solid rgba(255,42,112,0.25)", borderLeft: "4px solid #ff2a70", borderRadius: "8px", padding: "28px 36px", marginBottom: "30px", textAlign: "left" }}>
-                                <p style={{ color: "#ffffff", fontSize: "17px", fontWeight: "700", lineHeight: "1.7", margin: "0 0 14px 0" }}>
-                                  Inscriptions saison 2026-2027<br />
-                                  Samedi 27 et dimanche 28 juin à l&apos;école de danse<br />
-                                  <span style={{ color: "#ff2a70" }}>10h–13h et 14h–18h</span>
-                                </p>
-                                <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "15px", lineHeight: "1.6", margin: 0 }}>
-                                  Le planning arrive bientôt ainsi que les fiches pour la nouvelle saison.
-                                </p>
-                              </div>
-
-                              {/* Button */}
-                              <Link href="/planning-tarifs" style={{ display: "inline-flex", alignItems: "center", gap: "10px", padding: "14px 36px", backgroundColor: "#ff2a70", color: "#fff", borderRadius: "6px", fontWeight: "700", fontSize: "13px", letterSpacing: "1.5px", textTransform: "uppercase", textDecoration: "none", transition: "background-color 0.2s" }}>
-                                FICHE INSCRIPTION <i aria-hidden="true" className="fas fa-long-arrow-alt-right"></i>
-                              </Link>
-
-                            </div>
-                          </div>
-                        </div>
+                      <section style={{ padding: "70px 20px", textAlign: "center", backgroundColor: "#fff" }}>
+                        <p style={{ color: "#ff2a70", fontSize: "13px", fontWeight: "600", letterSpacing: "2px", textTransform: "uppercase", margin: "0 0 10px" }}>Actualité</p>
+                        <h2 style={{ fontFamily: "Oswald, Arial, sans-serif", fontSize: "36px", fontWeight: "700", color: "#1a1a1a", margin: "0 0 30px" }}>Informations fin d&apos;année</h2>
+                        <p style={{ fontSize: "16px", color: "#444", lineHeight: "1.8", margin: "0 auto 8px", maxWidth: "520px" }}>
+                          Inscriptions saison 2026-2027<br />
+                          Samedi 27 et dimanche 28 juin — <strong>10h–13h et 14h–18h</strong>
+                        </p>
+                        <p style={{ fontSize: "15px", color: "#888", margin: "0 auto 36px", maxWidth: "460px" }}>
+                          Le planning arrive bientôt ainsi que les fiches pour la nouvelle saison.
+                        </p>
+                        <Link href="/planning-tarifs" style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "13px 32px", backgroundColor: "#ff2a70", color: "#fff", borderRadius: "4px", fontWeight: "600", fontSize: "13px", letterSpacing: "1px", textTransform: "uppercase", textDecoration: "none" }}>
+                          Fiche inscription <i className="fas fa-long-arrow-alt-right"></i>
+                        </Link>
                       </section>
 
                       {/* News Section 2 (Hidden/Archive) */}
