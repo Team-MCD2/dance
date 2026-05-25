@@ -72,18 +72,37 @@ export default function LesProfesseursPage() {
                       
                       <div className="entry-content">
                         <div className="elementor elementor-1297">
-                          
-                          {/* Divider Section */}
-                          <section className="elementor-section elementor-top-section elementor-element elementor-section-full_width elementor-section-stretched tm-column-break-ipad-no tm-col-stretched-none elementor-section-height-default">
-                            <div className="elementor-container elementor-column-gap-default">
-                              <div className="elementor-column elementor-col-100 elementor-top-column elementor-element">
-                                <div className="elementor-widget-wrap elementor-element-populated">
-                                  <div className="elementor-element elementor-widget-divider--view-line elementor-widget elementor-widget-divider">
-                                    <div className="elementor-widget-container">
-                                      <div className="elementor-divider">
-                                        <span className="elementor-divider-separator"></span>
-                                      </div>
+
+                          {/* Hero Banner */}
+                          <section className="inner-page-hero" style={{ textAlign: "center", padding: "55px 20px 45px" }}>
+                            <p className="tm-element-subhead" style={{ color: "#ff2a70", fontSize: "13px", fontWeight: "600", letterSpacing: "2px", textTransform: "uppercase", margin: "0 0 10px" }}>Présentation</p>
+                            <h1 style={{ color: "#ffffff", fontFamily: "Oswald, Arial, sans-serif", fontSize: "38px", fontWeight: "700", margin: 0 }}>Les Professeurs</h1>
+                          </section>
+
+                          {/* Teachers Grid */}
+                          <section style={{ padding: "65px 20px 70px", backgroundColor: "#fff" }}>
+                            <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "30px", justifyContent: "center" }}>
+                              {teachers.map((teacher, idx) => (
+                                <Link key={idx} href={teacher.link} style={{ textDecoration: "none", width: "calc(33.33% - 20px)", minWidth: "240px", maxWidth: "320px", flex: "1 1 240px" }}>
+                                  <div style={{ borderRadius: "12px", overflow: "hidden", backgroundColor: "#fff", boxShadow: "0 4px 20px rgba(0,0,0,0.08)", transition: "transform 0.25s, box-shadow 0.25s", borderBottom: "3px solid transparent" }}
+                                    onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(255,42,112,0.15)"; e.currentTarget.style.borderBottom = "3px solid #ff2a70"; }}
+                                    onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.08)"; e.currentTarget.style.borderBottom = "3px solid transparent"; }}
+                                  >
+                                    <div style={{ width: "100%", aspectRatio: "4/5", overflow: "hidden", backgroundColor: "#f0f0f0" }}>
+                                      <img src={teacher.image} alt={teacher.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
                                     </div>
+                                    <div style={{ padding: "18px 20px 20px" }}>
+                                      <h3 style={{ fontFamily: "Oswald, Arial, sans-serif", fontSize: "18px", fontWeight: "700", color: "#1e293b", margin: "0 0 6px", writingMode: "horizontal-tb" }}>{teacher.name}</h3>
+                                      <p style={{ fontSize: "13px", color: "#888", margin: 0, lineHeight: "1.5", textTransform: "uppercase", letterSpacing: "0.5px", writingMode: "horizontal-tb" }}>{teacher.position}</p>
+                                    </div>
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
+                          </section>
+
+                        </div>
+                      </div>
                                   </div>
                                 </div>
                               </div>
