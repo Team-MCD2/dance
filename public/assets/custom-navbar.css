@@ -882,3 +882,89 @@ body {
         max-width: 100% !important;
     }
 }
+
+/* ==========================================================================
+   FOOTER — restore dark background (theme bg layers are JS-dependent)
+   ========================================================================== */
+.site-footer {
+    background-color: #0f172a !important;
+    color: #ffffff;
+}
+.site-footer #first-footer,
+.site-footer .first-footer {
+    background-color: #0f172a !important;
+    padding: 60px 0 30px !important;
+}
+.site-footer #bottom-footer-text,
+.site-footer .bottom-footer-text {
+    background-color: #0a0f1c !important;
+    padding: 20px 0 !important;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+/* Hide unused absolute bg layers (they're empty/transparent placeholders) */
+.site-footer .tm-bg-layer {
+    display: none !important;
+}
+/* Footer typography */
+.site-footer .widget-title {
+    color: #ffffff !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin-bottom: 22px !important;
+    position: relative;
+    padding-bottom: 12px;
+}
+.site-footer .widget-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 36px;
+    height: 2px;
+    background-color: var(--nav-pink, #ff2a70);
+}
+.site-footer p,
+.site-footer li,
+.site-footer .textwidget {
+    color: rgba(255,255,255,0.78) !important;
+    line-height: 1.7;
+}
+.site-footer a {
+    color: rgba(255,255,255,0.85) !important;
+    transition: color 0.2s ease;
+}
+.site-footer a:hover {
+    color: var(--nav-pink, #ff2a70) !important;
+}
+.site-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.site-footer .themetechmount-contact-address,
+.site-footer .themetechmount-contact-phonenumber,
+.site-footer .themetechmount-contact-email {
+    padding: 8px 0 8px 28px;
+    position: relative;
+}
+.site-footer .themetechmount-contact-address::before,
+.site-footer .themetechmount-contact-phonenumber::before,
+.site-footer .themetechmount-contact-email::before {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: var(--nav-pink, #ff2a70);
+    font-family: 'FontAwesome', sans-serif;
+    font-size: 14px;
+}
+.site-footer #bottom-footer-text,
+.site-footer #bottom-footer-text * {
+    color: rgba(255,255,255,0.7) !important;
+}
+.site-footer #bottom-footer-text a {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+.site-footer #bottom-footer-text a:hover {
+    color: var(--nav-pink, #ff2a70) !important;
+}
