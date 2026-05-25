@@ -239,50 +239,34 @@ export default function HomePage() {
                       </section>
 
                       {/* News Section 1 */}
-                      <section className="elementor-section elementor-top-section elementor-element elementor-element-1091b71 tm-column-break-ipad-yes elementor-section-stretched tm-col-stretched-none elementor-section-boxed elementor-section-height-default elementor-section-height-default tm-bgimage-no tm-bgcolor-yes" data-id="1091b71" data-element_type="section">
+                      <section className="elementor-section elementor-top-section elementor-element elementor-element-1091b71 tm-column-break-ipad-yes elementor-section-stretched tm-col-stretched-none elementor-section-boxed elementor-section-height-default tm-bgimage-no tm-bgcolor-yes" data-id="1091b71" data-element_type="section" style={{ backgroundColor: "#1e293b", padding: "65px 0 60px" }}>
                         <div className="elementor-container elementor-column-gap-no">
-                          <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7a664f8 tm-bgimage-no tm-bgcolor-yes" data-id="7a664f8" data-element_type="column">
-                            <div className="elementor-widget-wrap elementor-element-populated">
-                              <div className="elementor-element elementor-element-9104b07 tm-align-center elementor-widget elementor-widget-tm_heading" data-id="9104b07" data-element_type="widget" data-widget_type="tm_heading.default">
-                                <div className="elementor-widget-container">
-                                  <div className="tm-element-heading-content-wrapper center-align tm-reverse-heading-yes tm-seperator-solid tm-heading-style-vertical">
-                                    <div className="tm-content-header">
-                                      <h4 className="tm-element-subhead">Actualité</h4>
-                                      <h5 className="tm-element-overlay-subhead">Actualité</h5>
-                                      <h2 className="tm-element-content-heading">Informations fin d'année</h2>
-                                    </div>
-                                  </div>
-                                </div>
+                          <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7a664f8" data-id="7a664f8" data-element_type="column">
+                            <div className="elementor-widget-wrap elementor-element-populated" style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+                              
+                              {/* Heading */}
+                              <div style={{ marginBottom: "35px" }}>
+                                <h4 className="tm-element-subhead" style={{ color: "#ff2a70", fontWeight: "600", fontSize: "14px", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "10px" }}>Actualité</h4>
+                                <h2 style={{ color: "#ffffff", fontFamily: "Oswald, Arial, sans-serif", fontSize: "38px", fontWeight: "700", margin: 0 }}>Informations fin d&apos;année</h2>
                               </div>
-                              <div className="elementor-element elementor-element-bc322da elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-text-editor" data-id="bc322da" data-element_type="widget" data-widget_type="text-editor.default">
-                                <div className="elementor-widget-container">
-                                  <p><strong>Les inscriptions auront lieu à l’école de danse le week-end du 21-22 juin de 10h à 13h et 14h à 18h, ainsi que le mercredi 10 septembre de 14h à 18h.</strong></p>
-                                  <p><strong>La rentrée et les cours d’essais s’effectueront la semaine du 15-20 Septembre 2025 sur inscription.</strong></p>
-                                </div>
+
+                              {/* Highlight info box */}
+                              <div style={{ maxWidth: "580px", width: "100%", backgroundColor: "rgba(255,42,112,0.08)", border: "1px solid rgba(255,42,112,0.25)", borderLeft: "4px solid #ff2a70", borderRadius: "8px", padding: "28px 36px", marginBottom: "30px", textAlign: "left" }}>
+                                <p style={{ color: "#ffffff", fontSize: "17px", fontWeight: "700", lineHeight: "1.7", margin: "0 0 14px 0" }}>
+                                  Inscriptions saison 2026-2027<br />
+                                  Samedi 27 et dimanche 28 juin à l&apos;école de danse<br />
+                                  <span style={{ color: "#ff2a70" }}>10h–13h et 14h–18h</span>
+                                </p>
+                                <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "15px", lineHeight: "1.6", margin: 0 }}>
+                                  Le planning arrive bientôt ainsi que les fiches pour la nouvelle saison.
+                                </p>
                               </div>
-                              <div className="elementor-element elementor-element-d7f1a35 elementor-widget elementor-widget-text-editor" data-id="d7f1a35" data-element_type="widget" data-widget_type="text-editor.default">
-                                <div className="elementor-widget-container">
-                                  <p><strong>Inscriptions saison 2026-2027</strong><br /><strong>Samedi 27 et dimanche 28 juin à l’école de danse </strong><br /><strong>10h-13h et 14h-18h</strong></p>
-                                  <p><strong>Le planning arrive bientôt ainsi que les fiches pour la nouvelle saison.</strong></p>
-                                </div>
-                              </div>
-                              <div className="elementor-element elementor-element-9b5ac0f tm-btn-shape-rounded elementor-align-center tm-btn-color-skincolor tm-btn-style-flat elementor-widget elementor-widget-button" data-id="9b5ac0f" data-element_type="widget" data-widget_type="button.default">
-                                <div className="elementor-widget-container">
-                                  <div className="elementor-button-wrapper">
-                                    <Link className="elementor-button elementor-button-link elementor-size-md" href="/planning-tarifs">
-                                      <span className="elementor-button-content-wrapper">
-                                        <span className="elementor-button-icon"><i aria-hidden="true" className="fas fa-long-arrow-alt-right"></i></span>
-                                        <span className="elementor-button-text">FICHE INSCRIPTION</span>
-                                      </span>
-                                    </Link>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="elementor-element elementor-element-a5a2605 elementor-widget elementor-widget-spacer" data-id="a5a2605" data-element_type="widget" data-widget_type="spacer.default">
-                                <div className="elementor-widget-container">
-                                  <div className="elementor-spacer"><div className="elementor-spacer-inner"></div></div>
-                                </div>
-                              </div>
+
+                              {/* Button */}
+                              <Link href="/planning-tarifs" style={{ display: "inline-flex", alignItems: "center", gap: "10px", padding: "14px 36px", backgroundColor: "#ff2a70", color: "#fff", borderRadius: "6px", fontWeight: "700", fontSize: "13px", letterSpacing: "1.5px", textTransform: "uppercase", textDecoration: "none", transition: "background-color 0.2s" }}>
+                                FICHE INSCRIPTION <i aria-hidden="true" className="fas fa-long-arrow-alt-right"></i>
+                              </Link>
+
                             </div>
                           </div>
                         </div>
