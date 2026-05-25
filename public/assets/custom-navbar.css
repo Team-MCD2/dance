@@ -968,3 +968,27 @@ body {
 .site-footer #bottom-footer-text a:hover {
     color: var(--nav-pink, #ff2a70) !important;
 }
+
+/* ==========================================================================
+   FUNCTIONAL FIXES — spacing and professor card text rotation
+   ========================================================================== */
+
+/* 1. Remove excessive blank space at top of inner pages */
+.site-main {
+    padding-top: 0 !important;
+}
+
+/* 2. Professor cards: fix vertical writing-mode on all screen sizes */
+.themetechmount-box-team .themetechmount-content-inner,
+.themetechmount-box-team .tm-wrap-cell,
+.themetechmount-box-team .themetechmount-box-content,
+.themetechmount-team-position,
+.themetechmount-team-position * {
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    transform: none !important;
+}
+/* Hide the internal duplicate name (overlay inside the card) */
+.themetechmount-box-team .themetechmount-box-content {
+    display: none !important;
+}
