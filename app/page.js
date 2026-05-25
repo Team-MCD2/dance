@@ -183,7 +183,7 @@ export default function HomePage() {
                       </section>
 
                       {/* About Section */}
-                      <section className="elementor-section elementor-top-section elementor-element elementor-element-c19e8d7 tm-column-break-ipad-yes elementor-section-stretched tm-col-stretched-none elementor-section-boxed elementor-section-height-default elementor-section-height-default tm-bgimage-no tm-bgcolor-yes" data-id="c19e8d7" data-element_type="section">
+                      <section className="elementor-section elementor-top-section elementor-element elementor-element-c19e8d7 tm-column-break-ipad-yes elementor-section-stretched tm-col-stretched-none elementor-section-boxed elementor-section-height-default elementor-section-height-default tm-bgimage-no tm-bgcolor-yes" data-id="c19e8d7" data-element_type="section" style={{ paddingTop: "70px", paddingBottom: "70px" }}>
                         <div className="elementor-container elementor-column-gap-no">
                           <div className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4eea6a3 tm-bgimage-no tm-bgcolor-yes" data-id="4eea6a3" data-element_type="column">
                             <div className="elementor-widget-wrap elementor-element-populated">

@@ -1001,8 +1001,19 @@ body {
     background-color: #1e293b !important;
     padding: 55px 0 45px !important;
 }
+/* Hide overlay subhead globally (decorative watermark, renders as plain text in React) */
+.tm-element-overlay-subhead {
+    display: none !important;
+}
+/* Re-show it inside hero banners as very faint text */
 .inner-page-hero .tm-element-overlay-subhead {
-    color: rgba(255,255,255,0.35) !important;
+    display: block !important;
+    color: rgba(255,255,255,0.12) !important;
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    margin-bottom: 6px !important;
 }
 .inner-page-hero .tm-element-content-heading {
     color: #ffffff !important;
