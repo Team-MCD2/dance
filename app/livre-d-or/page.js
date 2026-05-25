@@ -75,13 +75,6 @@ export default function LivreDOrPage() {
     return () => clearInterval(interval);
   }, [testimonials.length]);
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-  };
 
   return (
     <>
@@ -201,65 +194,6 @@ export default function LivreDOrPage() {
 
                                           </div>
 
-                                          {/* Slider Controls (Prev/Next) */}
-                                          <div className="slider-controls" style={{ display: "flex", justifyContent: "center", gap: "20px", marginTop: "30px" }}>
-                                            <button 
-                                              onClick={handlePrev} 
-                                              style={{ 
-                                                width: "45px", 
-                                                height: "45px", 
-                                                borderRadius: "50%", 
-                                                border: "2px solid #ff2a70", 
-                                                backgroundColor: "transparent", 
-                                                color: "#ff2a70", 
-                                                cursor: "pointer", 
-                                                display: "flex", 
-                                                alignItems: "center", 
-                                                justifyContent: "center",
-                                                transition: "all 0.3s"
-                                              }}
-                                              onMouseEnter={(e) => { 
-                                                e.currentTarget.style.backgroundColor = '#ff2a70'; 
-                                                e.currentTarget.querySelector('svg').style.fill = '#fff';
-                                              }}
-                                              onMouseLeave={(e) => { 
-                                                e.currentTarget.style.backgroundColor = 'transparent'; 
-                                                e.currentTarget.querySelector('svg').style.fill = '#ff2a70';
-                                              }}
-                                            >
-                                              <svg viewBox="0 0 320 512" style={{ width: "12px", height: "18px", fill: "#ff2a70", transition: "fill 0.3s" }}>
-                                                <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
-                                              </svg>
-                                            </button>
-                                            <button 
-                                              onClick={handleNext} 
-                                              style={{ 
-                                                width: "45px", 
-                                                height: "45px", 
-                                                borderRadius: "50%", 
-                                                border: "2px solid #ff2a70", 
-                                                backgroundColor: "transparent", 
-                                                color: "#ff2a70", 
-                                                cursor: "pointer", 
-                                                display: "flex", 
-                                                alignItems: "center", 
-                                                justifyContent: "center",
-                                                transition: "all 0.3s"
-                                              }}
-                                              onMouseEnter={(e) => { 
-                                                e.currentTarget.style.backgroundColor = '#ff2a70'; 
-                                                e.currentTarget.querySelector('svg').style.fill = '#fff';
-                                              }}
-                                              onMouseLeave={(e) => { 
-                                                e.currentTarget.style.backgroundColor = 'transparent'; 
-                                                e.currentTarget.querySelector('svg').style.fill = '#ff2a70';
-                                              }}
-                                            >
-                                              <svg viewBox="0 0 320 512" style={{ width: "12px", height: "18px", fill: "#ff2a70", transition: "fill 0.3s" }}>
-                                                <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/>
-                                              </svg>
-                                            </button>
-                                          </div>
 
                                         </div>
 
