@@ -76,7 +76,7 @@ export default function ContactPage() {
                           </section>
 
                           {/* Heading Section */}
-                          <section className="elementor-section elementor-top-section elementor-element tm-column-break-ipad-no tm-col-stretched-none elementor-section-boxed elementor-section-height-default">
+                          <section className="elementor-section elementor-top-section elementor-element tm-column-break-ipad-no tm-col-stretched-none elementor-section-boxed elementor-section-height-default inner-page-hero">
                             <div className="elementor-container elementor-column-gap-default">
                               <div className="elementor-column elementor-col-100 elementor-top-column elementor-element">
                                 <div className="elementor-widget-wrap elementor-element-populated">

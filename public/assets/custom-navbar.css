@@ -994,6 +994,28 @@ body {
 }
 
 /* ==========================================================================
+   INNER PAGE HERO BANNER
+   ========================================================================== */
+
+.inner-page-hero {
+    background-color: #1e293b !important;
+    padding: 55px 0 45px !important;
+}
+.inner-page-hero .tm-element-overlay-subhead {
+    color: rgba(255,255,255,0.35) !important;
+}
+.inner-page-hero .tm-element-content-heading {
+    color: #ffffff !important;
+}
+.inner-page-hero .tm-element-subhead {
+    color: #ff2a70 !important;
+}
+.inner-page-hero .tm-element-content-desctxt,
+.inner-page-hero .tm-element-content-desctxt p {
+    color: rgba(255,255,255,0.72) !important;
+}
+
+/* ==========================================================================
    GLOBAL VISUAL FIXES
    ========================================================================== */
 

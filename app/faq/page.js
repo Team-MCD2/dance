@@ -104,7 +104,7 @@ export default function FAQPage() {
                           </section>
 
                           {/* Section: Qui Sommes Nous / A propos de nous */}
-                          <section className="elementor-section elementor-top-section elementor-element tm-column-break-ipad-no tm-col-stretched-none elementor-section-boxed elementor-section-height-default" style={{ padding: "40px 0" }}>
+                          <section className="elementor-section elementor-top-section elementor-element tm-column-break-ipad-no tm-col-stretched-none elementor-section-boxed elementor-section-height-default inner-page-hero" style={{ padding: "40px 0" }}>
                             <div className="elementor-container elementor-column-gap-default">
                               <div className="elementor-column elementor-col-100 elementor-top-column elementor-element">
                                 <div className="elementor-widget-wrap elementor-element-populated">
