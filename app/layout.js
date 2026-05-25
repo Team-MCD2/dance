@@ -4,6 +4,10 @@ import "./globals.css";
 export const metadata = {
   title: 'Temps Dance - École de Danse à Tournefeuille',
   description: 'École de danse Temps Dance à Tournefeuille. Cours de Modern Jazz, Hip-Hop, Classique, Contemporain, Eveil et initiation pour enfants, ados et adultes.',
+  icons: {
+    icon: '/assets/logo4.png',
+    apple: '/assets/logo4.png',
+  },
 };
 
 export default function RootLayout({ children }) {
