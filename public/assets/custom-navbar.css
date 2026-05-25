@@ -992,3 +992,18 @@ body {
 .themetechmount-box-team .themetechmount-box-content {
     display: none !important;
 }
+
+/* ==========================================================================
+   GLOBAL VISUAL FIXES
+   ========================================================================== */
+
+/* 3. Hide decorative divider spacer sections (inner pages blank space fix) */
+.elementor-section:has(.elementor-widget-divider) {
+    display: none !important;
+}
+
+/* 4. Dark background for video iframe containers (shows nicely when video doesn't load) */
+.elementor-wrapper.elementor-open-inline,
+div:has(> iframe[src*="youtube.com/embed"]) {
+    background-color: #1e293b !important;
+}

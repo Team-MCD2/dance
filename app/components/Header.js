@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -76,10 +77,13 @@ export default function Header() {
               {/* Branding (Logo) */}
               <div className="site-branding">
                 <Link className="home-link" href="/" title="TEMPS DANCE" rel="home">
-                  <img 
+                  <Image 
                     className="standardlogo" 
                     alt="TEMPS DANCE" 
                     src="/assets/logo4.png" 
+                    width={150}
+                    height={50}
+                    priority
                   />
                 </Link>
               </div>

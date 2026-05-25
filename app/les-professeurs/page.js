@@ -1,5 +1,7 @@
 "use client";
 
+
+import Link from 'next/link';
 import React from 'react';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -145,7 +147,7 @@ export default function LesProfesseursPage() {
           <Footer />
         </div>
       </div>
-      <a id="totop" href="#top" style={{ display: "none" }}><i className="tm-jassio-icon-angle-up"></i></a>
+      <Link id="totop" href="#top" style={{ display: "none" }}><i className="tm-jassio-icon-angle-up"></i></Link>
     </>
   );
 }

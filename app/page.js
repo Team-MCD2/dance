@@ -1,5 +1,8 @@
 "use client";
 
+
+import Link from 'next/link';
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -92,10 +95,12 @@ export default function HomePage() {
                       >
                         {/* Background Image */}
                         <div style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0 }}>
-                          <img 
+                          <Image 
                             src={slide.bg} 
                             alt={slide.title || slide.subtitle1} 
-                            style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", top: 0, left: 0 }} 
+                            fill
+                            style={{ objectFit: "cover" }}
+                            priority={index === 0} 
                           />
                           <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.4)" }}></div>
                         </div>
@@ -184,7 +189,7 @@ export default function HomePage() {
                             <div className="elementor-widget-wrap elementor-element-populated">
                               <div className="elementor-element elementor-element-4ee5ccd tm-border-img1 elementor-widget elementor-widget-image" data-id="4ee5ccd" data-element_type="widget" data-widget_type="image.default">
                                 <div className="elementor-widget-container">
-                                  <img decoding="async" width="429" height="522" src="/assets/left-img-01.png" className="attachment-full size-full wp-image-1160" alt="À Propos de nous" data-id="1160" />
+                                  <Image width={429} height={522} src="/assets/left-img-01.png" className="attachment-full size-full wp-image-1160" alt="À Propos de nous" data-id="1160" />
                                 </div>
                               </div>
                             </div>
@@ -212,12 +217,12 @@ export default function HomePage() {
                                       <div className="elementor-element elementor-element-6b697f8 tm-btn-shape-rounded elementor-align-left tm-btn-color-skincolor tm-btn-style-flat elementor-widget elementor-widget-button" data-id="6b697f8" data-element_type="widget" data-widget_type="button.default">
                                         <div className="elementor-widget-container">
                                           <div className="elementor-button-wrapper">
-                                            <a className="elementor-button elementor-button-link elementor-size-md" href="/faq">
+                                            <Link className="elementor-button elementor-button-link elementor-size-md" href="/faq">
                                               <span className="elementor-button-content-wrapper">
                                                 <span className="elementor-button-icon"><i aria-hidden="true" className="fas fa-long-arrow-alt-right"></i></span>
                                                 <span className="elementor-button-text">En savoir plus</span>
                                               </span>
-                                            </a>
+                                            </Link>
                                           </div>
                                         </div>
                                       </div>
@@ -264,12 +269,12 @@ export default function HomePage() {
                               <div className="elementor-element elementor-element-9b5ac0f tm-btn-shape-rounded elementor-align-center tm-btn-color-skincolor tm-btn-style-flat elementor-widget elementor-widget-button" data-id="9b5ac0f" data-element_type="widget" data-widget_type="button.default">
                                 <div className="elementor-widget-container">
                                   <div className="elementor-button-wrapper">
-                                    <a className="elementor-button elementor-button-link elementor-size-md" href="/planning-tarifs">
+                                    <Link className="elementor-button elementor-button-link elementor-size-md" href="/planning-tarifs">
                                       <span className="elementor-button-content-wrapper">
                                         <span className="elementor-button-icon"><i aria-hidden="true" className="fas fa-long-arrow-alt-right"></i></span>
                                         <span className="elementor-button-text">FICHE INSCRIPTION</span>
                                       </span>
-                                    </a>
+                                    </Link>
                                   </div>
                                 </div>
                               </div>
@@ -308,12 +313,12 @@ export default function HomePage() {
                               <div className="elementor-element elementor-element-9c7f7a6 tm-btn-shape-rounded elementor-align-center tm-btn-color-skincolor tm-btn-style-flat elementor-widget elementor-widget-button" data-id="9c7f7a6" data-element_type="widget" data-widget_type="button.default">
                                 <div className="elementor-widget-container">
                                   <div className="elementor-button-wrapper">
-                                    <a className="elementor-button elementor-button-link elementor-size-md" href="/planning-tarifs">
+                                    <Link className="elementor-button elementor-button-link elementor-size-md" href="/planning-tarifs">
                                       <span className="elementor-button-content-wrapper">
                                         <span className="elementor-button-icon"><i aria-hidden="true" className="fas fa-long-arrow-alt-right"></i></span>
                                         <span className="elementor-button-text">FICHE INSCRIPTION</span>
                                       </span>
-                                    </a>
+                                    </Link>
                                   </div>
                                 </div>
                               </div>
@@ -424,7 +429,7 @@ export default function HomePage() {
                                                 <div className="themetechmount-iconbox-heading">
                                                   <h2 className="tm-custom-heading">Jazz Cabaret</h2>
                                                   <div className="tm-cta3-content-wrapper">À partir de 16 ans</div>
-                                                  <div className="tm-iocnbox-btn"><a href="/nos-cours-2#Jazz"><span>En savoir plus</span></a></div>
+                                                  <div className="tm-iocnbox-btn"><Link href="/nos-cours-2#Jazz"><span>En savoir plus</span></Link></div>
                                                 </div>	
                                               </div>
                                             </div>	
@@ -446,7 +451,7 @@ export default function HomePage() {
                                                 <div className="themetechmount-iconbox-heading">
                                                   <h2 className="tm-custom-heading">Contemporain</h2>
                                                   <div className="tm-cta3-content-wrapper">À partir de 12 ans</div>
-                                                  <div className="tm-iocnbox-btn"><a href="/nos-cours-2#CONTEMPORAIN2"><span>En savoir plus</span></a></div>
+                                                  <div className="tm-iocnbox-btn"><Link href="/nos-cours-2#CONTEMPORAIN2"><span>En savoir plus</span></Link></div>
                                                 </div>	
                                               </div>
                                             </div>	
@@ -468,7 +473,7 @@ export default function HomePage() {
                                                 <div className="themetechmount-iconbox-heading">
                                                   <h2 className="tm-custom-heading">Break Dance</h2>
                                                   <div className="tm-cta3-content-wrapper">À partir de 6 ans</div>
-                                                  <div className="tm-iocnbox-btn"><a href="/nos-cours-2#BREAK"><span>En savoir plus</span></a></div>
+                                                  <div className="tm-iocnbox-btn"><Link href="/nos-cours-2#BREAK"><span>En savoir plus</span></Link></div>
                                                 </div>	
                                               </div>
                                             </div>	
@@ -490,7 +495,7 @@ export default function HomePage() {
                                                 <div className="themetechmount-iconbox-heading">
                                                   <h2 className="tm-custom-heading">Afro Kid's</h2>
                                                   <div className="tm-cta3-content-wrapper">À partir de 4 ans</div>
-                                                  <div className="tm-iocnbox-btn"><a href="/nos-cours-2#Zumba"><span>En savoir plus</span></a></div>
+                                                  <div className="tm-iocnbox-btn"><Link href="/nos-cours-2#Zumba"><span>En savoir plus</span></Link></div>
                                                 </div>	
                                               </div>
                                             </div>	
@@ -518,7 +523,7 @@ export default function HomePage() {
                                                 <div className="themetechmount-iconbox-heading">
                                                   <h2 className="tm-custom-heading">Hip-Hop (Commercial)</h2>
                                                   <div className="tm-cta3-content-wrapper">À partir de 8 ans</div>
-                                                  <div className="tm-iocnbox-btn"><a href="/nos-cours-2#HIPHOP"><span>En savoir plus</span></a></div>
+                                                  <div className="tm-iocnbox-btn"><Link href="/nos-cours-2#HIPHOP"><span>En savoir plus</span></Link></div>
                                                 </div>	
                                               </div>
                                             </div>	
@@ -540,7 +545,7 @@ export default function HomePage() {
                                                 <div className="themetechmount-iconbox-heading">
                                                   <h2 className="tm-custom-heading">Éveil à la Danse</h2>
                                                   <div className="tm-cta3-content-wrapper">À partir de 3 ans</div>
-                                                  <div className="tm-iocnbox-btn"><a href="/nos-cours-2#EVEIL"><span>En savoir plus</span></a></div>
+                                                  <div className="tm-iocnbox-btn"><Link href="/nos-cours-2#EVEIL"><span>En savoir plus</span></Link></div>
                                                 </div>	
                                               </div>
                                             </div>	
@@ -562,7 +567,7 @@ export default function HomePage() {
                                                 <div className="themetechmount-iconbox-heading">
                                                   <h2 className="tm-custom-heading">Cabaret (Talons)</h2>
                                                   <div className="tm-cta3-content-wrapper">À partir de 16 ans</div>
-                                                  <div className="tm-iocnbox-btn"><a href="/nos-cours-2#CABARET"><span>En savoir plus</span></a></div>
+                                                  <div className="tm-iocnbox-btn"><Link href="/nos-cours-2#CABARET"><span>En savoir plus</span></Link></div>
                                                 </div>	
                                               </div>
                                             </div>	
@@ -584,7 +589,7 @@ export default function HomePage() {
                                                 <div className="themetechmount-iconbox-heading">
                                                   <h2 className="tm-custom-heading">Street Jazz</h2>
                                                   <div className="tm-cta3-content-wrapper">À partir de 6 ans</div>
-                                                  <div className="tm-iocnbox-btn"><a href="/nos-cours-2#STREET"><span>En savoir plus</span></a></div>
+                                                  <div className="tm-iocnbox-btn"><Link href="/nos-cours-2#STREET"><span>En savoir plus</span></Link></div>
                                                 </div>	
                                               </div>
                                             </div>	
@@ -612,7 +617,7 @@ export default function HomePage() {
                                                 <div className="themetechmount-iconbox-heading">
                                                   <h2 className="tm-custom-heading">Dance Hall</h2>
                                                   <div className="tm-cta3-content-wrapper">À partir de 8 ans</div>
-                                                  <div className="tm-iocnbox-btn"><a href="/nos-cours-2#DANCEHALL"><span>En savoir plus</span></a></div>
+                                                  <div className="tm-iocnbox-btn"><Link href="/nos-cours-2#DANCEHALL"><span>En savoir plus</span></Link></div>
                                                 </div>	
                                               </div>
                                             </div>	
@@ -634,7 +639,7 @@ export default function HomePage() {
                                                 <div className="themetechmount-iconbox-heading">
                                                   <h2 className="tm-custom-heading">Pilates</h2>
                                                   <div className="tm-cta3-content-wrapper">À partir de 16 ans</div>
-                                                  <div className="tm-iocnbox-btn"><a href="/nos-cours-2#PILATES"><span>En savoir plus</span></a></div>
+                                                  <div className="tm-iocnbox-btn"><Link href="/nos-cours-2#PILATES"><span>En savoir plus</span></Link></div>
                                                 </div>	
                                               </div>
                                             </div>	
@@ -656,7 +661,7 @@ export default function HomePage() {
                                                 <div className="themetechmount-iconbox-heading">
                                                   <h2 className="tm-custom-heading">Circuit Training</h2>
                                                   <div className="tm-cta3-content-wrapper">À partir de 16 ans</div>
-                                                  <div className="tm-iocnbox-btn"><a href="/nos-cours-2#CUISSES"><span>En savoir plus</span></a></div>
+                                                  <div className="tm-iocnbox-btn"><Link href="/nos-cours-2#CUISSES"><span>En savoir plus</span></Link></div>
                                                 </div>	
                                               </div>
                                             </div>	
@@ -678,7 +683,7 @@ export default function HomePage() {
                                                 <div className="themetechmount-iconbox-heading">
                                                   <h2 className="tm-custom-heading">Tissu Aérien</h2>
                                                   <div className="tm-cta3-content-wrapper">À parir de 6 ans</div>
-                                                  <div className="tm-iocnbox-btn"><a href="/nos-cours-2#TISSU"><span>En savoir plus</span></a></div>
+                                                  <div className="tm-iocnbox-btn"><Link href="/nos-cours-2#TISSU"><span>En savoir plus</span></Link></div>
                                                 </div>	
                                               </div>
                                             </div>	
@@ -706,7 +711,7 @@ export default function HomePage() {
                                                 <div className="themetechmount-iconbox-heading">
                                                   <h2 className="tm-custom-heading">Classique initiation et élémentaire</h2>
                                                   <div className="tm-cta3-content-wrapper">À partir de 6 ans</div>
-                                                  <div className="tm-iocnbox-btn"><a href="/nos-cours-2#INITIATION"><span>En savoir plus</span></a></div>
+                                                  <div className="tm-iocnbox-btn"><Link href="/nos-cours-2#INITIATION"><span>En savoir plus</span></Link></div>
                                                 </div>	
                                               </div>
                                             </div>	
@@ -728,7 +733,7 @@ export default function HomePage() {
                                                 <div className="themetechmount-iconbox-heading">
                                                   <h2 className="tm-custom-heading">Yoga</h2>
                                                   <div className="tm-cta3-content-wrapper">À partir de 16 ans</div>
-                                                  <div className="tm-iocnbox-btn"><a href="/nos-cours-2#CUISSES"><span>En savoir plus</span></a></div>
+                                                  <div className="tm-iocnbox-btn"><Link href="/nos-cours-2#CUISSES"><span>En savoir plus</span></Link></div>
                                                 </div>	
                                               </div>
                                             </div>	
@@ -806,7 +811,7 @@ export default function HomePage() {
       <Footer />
     </div>
   </div>
-  <a id="totop" href="#top" style={{ display: "none" }}><i className="tm-jassio-icon-angle-up"></i></a>
+  <Link id="totop" href="#top" style={{ display: "none" }}><i className="tm-jassio-icon-angle-up"></i></Link>
 </>
   );
 }

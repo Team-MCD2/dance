@@ -8,6 +8,14 @@ const nextConfig = {
   turbopack: {
     root: __dirname,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'tempsdance.fr',
+      },
+    ],
+  },
   async rewrites() {
     return [
       { source: '/albums', destination: '/pages/albums.html' },

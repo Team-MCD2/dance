@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function IconBox({
   type = 'icon', // 'icon' | 'team'
@@ -20,10 +21,12 @@ export default function IconBox({
             <div className="themetechmount-team-image-box tm-wrap-cell" style={{ position: "relative", overflow: "hidden" }}>
               <span className="themetechmount-item-thumbnail" style={{ display: "block" }}>
                 <span className="themetechmount-item-thumbnail-inner" style={{ display: "block" }}>
-                  <img 
-                    alt={title} 
+                  <Image 
+                    alt={title || "Icon"} 
                     className="attachment-themetechmount-img-team-member size-themetechmount-img-team-member wp-post-image" 
                     src={image || '/assets/wp-content/uploads/2022/03/logo4.png'} 
+                    width={400}
+                    height={420}
                     style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center top", display: "block", transition: "transform 0.5s ease" }} 
                   />
                 </span>

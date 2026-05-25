@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -45,7 +46,7 @@ export default function Footer() {
                         <aside className="tm-dancefooter-logo widget widget_text enhanced-text-widget">
                           <div className="textwidget widget-text">
                             <div style={{ textAlign: 'center' }}>
-                              <img src="/assets/logo4.png" alt="TEMPS DANCE" style={{ maxWidth: '180px', marginBottom: '20px' }} />
+                              <Image src="/assets/logo4.png" alt="TEMPS DANCE" width={180} height={60} style={{ maxWidth: '180px', marginBottom: '20px', height: 'auto' }} />
                               <div className="themetechmount-social-links-wrapper">
                                 <ul className="social-icons" style={{ justifyContent: 'center', display: 'flex', gap: '15px' }}>
                                   <li className="tm-social-facebook"><a className="tooltip-top" target="_blank" href="https://www.facebook.com/E%CC%81cole-de-danse-Temps-Dance-104674314739110/" title="Facebook"><i className="tm-jassio-icon-facebook"></i></a></li>

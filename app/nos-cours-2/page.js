@@ -198,7 +198,7 @@ export default function NosCoursPage() {
 
                           {/* Course Detailed Sections */}
                           {courseDetails.map((detail, idx) => (
-                            <section key={detail.id} id={detail.id} className="elementor-section elementor-top-section elementor-element tm-column-break-ipad-no tm-col-stretched-none elementor-section-boxed elementor-section-height-default" style={{ paddingTop: "60px", paddingBottom: "60px", borderBottom: "1px solid #eee" }}>
+                            <section key={detail.id} id={detail.id} className="elementor-section elementor-top-section elementor-element tm-column-break-ipad-no tm-col-stretched-none elementor-section-boxed elementor-section-height-default" style={{ paddingTop: "60px", paddingBottom: "60px", borderBottom: "1px solid #eee", backgroundColor: idx % 2 === 1 ? '#f8f9fa' : '#ffffff' }}>
                               <div className="elementor-container elementor-column-gap-default">
                                 <div className="elementor-column elementor-col-100 elementor-top-column elementor-element">
                                   <div className="elementor-widget-wrap elementor-element-populated">
@@ -276,7 +276,7 @@ export default function NosCoursPage() {
           <Footer />
         </div>
       </div>
-      <a id="totop" href="#top" style={{ display: "none" }}><i className="tm-jassio-icon-angle-up"></i></a>
+      <Link id="totop" href="#top" style={{ display: "none" }}><i className="tm-jassio-icon-angle-up"></i></Link>
     </>
   );
 }

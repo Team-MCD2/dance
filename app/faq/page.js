@@ -1,5 +1,8 @@
 "use client";
 
+
+import Link from 'next/link';
+import Image from 'next/image';
 import React, { useState } from 'react';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -13,7 +16,7 @@ export default function FAQPage() {
       content: (
         <p className="font_8">
           Si vous souhaitez suivre un cours pour la première fois vous n’avez pas besoin de réserver ni de vous inscrire, vous devez simplement régler le prix du cours à l’unité à l’accueil du studio de danse en espèces&nbsp;<br/><br/>
-          Si vous voulez vraiment vous inscrire, allez sur la rubrique <a href="/planning-tarifs">Planning &amp; Tarifs</a>
+          Si vous voulez vraiment vous inscrire, allez sur la rubrique <Link href="/planning-tarifs">Planning &amp; Tarifs</Link>
         </p>
       )
     },
@@ -40,9 +43,9 @@ export default function FAQPage() {
       title: "03. Que trouve-t-on sur le site ?",
       content: (
         <ul>
-          <li><strong>Programme de la saison dans notre rubrique <a href="/planning-tarifs">Planning et Tarifs</a><br/></strong></li>
-          <li><strong>La <a href="/planning-tarifs">grille horaire</a> des cours de la saison en cours</strong></li>
-          <li><strong><a href="/albums">Album</a> : Contient les photos du spectacle</strong></li>
+          <li><strong>Programme de la saison dans notre rubrique <Link href="/planning-tarifs">Planning et Tarifs</Link><br/></strong></li>
+          <li><strong>La <Link href="/planning-tarifs">grille horaire</Link> des cours de la saison en cours</strong></li>
+          <li><strong><Link href="/albums">Album</Link> : Contient les photos du spectacle</strong></li>
         </ul>
       )
     },
@@ -133,10 +136,12 @@ export default function FAQPage() {
                                 <div className="elementor-widget-wrap elementor-element-populated">
                                   <div className="elementor-element elementor-widget elementor-widget-image" style={{ textAlign: "center" }}>
                                     <div className="elementor-widget-container">
-                                      <img 
+                                      <Image 
                                         alt="FAQ Image" 
                                         className="attachment-large size-large wp-image-8285" 
                                         src="/assets/wp-content/uploads/2022/03/FAQ-2.png" 
+                                        width={500}
+                                        height={500}
                                         style={{ maxWidth: "100%", height: "auto", borderRadius: "10px" }}
                                       />
                                     </div>
@@ -270,7 +275,7 @@ export default function FAQPage() {
           <Footer />
         </div>
       </div>
-      <a id="totop" href="#top" style={{ display: "none" }}><i className="tm-jassio-icon-angle-up"></i></a>
+      <Link id="totop" href="#top" style={{ display: "none" }}><i className="tm-jassio-icon-angle-up"></i></Link>
     </>
   );
 }

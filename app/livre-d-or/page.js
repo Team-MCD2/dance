@@ -1,5 +1,7 @@
 "use client";
 
+
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -168,12 +170,12 @@ export default function LivreDOrPage() {
                                                     zIndex: isActive ? 1 : 0
                                                   }}
                                                 >
-                                                  <div className="wpmtst-testimonial-inner testimonial-inner" style={{ padding: "40px 30px", borderRadius: "10px", backgroundColor: "#ff2a70", boxShadow: "0 15px 35px rgba(255,42,112,0.15)" }}>
+                                                  <div className="wpmtst-testimonial-inner testimonial-inner" style={{ padding: "40px 35px", borderRadius: "12px", backgroundColor: "#1e293b", boxShadow: "0 15px 40px rgba(0,0,0,0.18)", borderLeft: "5px solid #ff2a70" }}>
                                                     <div className="wpmtst-testimonial-content testimonial-content">
-                                                      <h3 className="wpmtst-testimonial-heading testimonial-heading" style={{ fontSize: "24px", color: "#fff", fontWeight: "600", fontFamily: "Oswald, Arial, sans-serif", margin: "0 0 15px 0" }}>
+                                                      <h3 className="wpmtst-testimonial-heading testimonial-heading" style={{ fontSize: "22px", color: "#ffffff", fontWeight: "700", fontFamily: "Oswald, Arial, sans-serif", margin: "0 0 16px 0" }}>
                                                         {item.title}
                                                       </h3>
-                                                      <p style={{ color: "#fff", fontSize: "16px", lineHeight: "26px", margin: "0 0 20px 0" }}>
+                                                      <p style={{ color: "rgba(255,255,255,0.82)", fontSize: "16px", lineHeight: "28px", margin: "0 0 24px 0" }}>
                                                         {item.text}
                                                       </p>
                                                     </div>
@@ -181,10 +183,10 @@ export default function LivreDOrPage() {
                                                     {/* Star Ratings */}
                                                     <div className="wpmtst-testimonial-field testimonial-field" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                                                       <span className="strong-rating-wrapper in-view">
-                                                        <span className="strong-rating" style={{ display: "flex", gap: "3px" }}>
+                                                        <span className="strong-rating" style={{ display: "flex", gap: "4px" }}>
                                                           {[...Array(5)].map((_, i) => (
                                                             <span key={i} className="star" style={{ display: "inline-block" }}>
-                                                              <svg aria-hidden="true" className="star_solid" role="img" viewBox="-8 -8 584 520" xmlns="http://www.w3.org/2000/svg" style={{ width: "16px", height: "16px", fill: "#fff" }}>
+                                                              <svg aria-hidden="true" className="star_solid" role="img" viewBox="-8 -8 584 520" xmlns="http://www.w3.org/2000/svg" style={{ width: "18px", height: "18px", fill: "#ff2a70" }}>
                                                                 <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
                                                               </svg>
                                                             </span>
@@ -277,7 +279,7 @@ export default function LivreDOrPage() {
                                   <div className="elementor-element elementor-align-center tm-btn-color-skincolor tm-btn-style-flat tm-btn-shape-square elementor-widget elementor-widget-button" style={{ textAlign: "center" }}>
                                     <div className="elementor-widget-container">
                                       <div className="elementor-button-wrapper">
-                                        <a 
+                                        <Link 
                                           className="elementor-button elementor-button-link elementor-size-sm" 
                                           href="/depot-dun-temoignage"
                                           style={{ display: "inline-block", padding: "15px 35px", backgroundColor: "#ff2a70", color: "#fff", borderRadius: "6px", fontWeight: "600", textDecoration: "none", fontSize: "14px", textTransform: "uppercase", transition: "background-color 0.2s ease" }}
@@ -285,7 +287,7 @@ export default function LivreDOrPage() {
                                           <span className="elementor-button-content-wrapper">
                                             <span className="elementor-button-text">Je dépose un témoignage</span>
                                           </span>
-                                        </a>
+                                        </Link>
                                       </div>
                                     </div>
                                   </div>
@@ -306,7 +308,7 @@ export default function LivreDOrPage() {
           <Footer />
         </div>
       </div>
-      <a id="totop" href="#top" style={{ display: "none" }}><i className="tm-jassio-icon-angle-up"></i></a>
+      <Link id="totop" href="#top" style={{ display: "none" }}><i className="tm-jassio-icon-angle-up"></i></Link>
     </>
   );
 }

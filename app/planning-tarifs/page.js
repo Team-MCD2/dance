@@ -1,5 +1,8 @@
 "use client";
 
+
+import Link from 'next/link';
+import Image from 'next/image';
 import React from 'react';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -95,9 +98,11 @@ export default function PlanningTarifsPage() {
                                     {/* Image */}
                                     <div className="elementor-element elementor-widget elementor-widget-image" style={{ textAlign: "center", marginBottom: "20px" }}>
                                       <div className="elementor-widget-container">
-                                        <img 
+                                        <Image 
                                           alt={card.title} 
                                           src={card.image} 
+                                          width={723}
+                                          height={1024}
                                           style={{ maxWidth: "100%", height: "auto", borderRadius: "6px", border: "1px solid #eee", boxShadow: "0 5px 15px rgba(0,0,0,0.05)" }}
                                         />
                                       </div>
@@ -183,7 +188,7 @@ export default function PlanningTarifsPage() {
                                   <div className="elementor-element elementor-align-center tm-btn-color-skincolor tm-btn-style-flat tm-btn-shape-square elementor-widget elementor-widget-button">
                                     <div className="elementor-widget-container">
                                       <div className="elementor-button-wrapper">
-                                        <a 
+                                        <Link 
                                           className="elementor-button elementor-button-link elementor-size-sm" 
                                           href="/contact"
                                           style={{ display: "inline-block", padding: "12px 35px", backgroundColor: "#ff2a70", color: "#fff", borderRadius: "6px", fontWeight: "600", textDecoration: "none", fontSize: "14px", textTransform: "uppercase", transition: "background-color 0.2s ease" }}
@@ -191,7 +196,7 @@ export default function PlanningTarifsPage() {
                                           <span className="elementor-button-content-wrapper">
                                             <span className="elementor-button-text">CONTACTEZ-NOUS</span>
                                           </span>
-                                        </a>
+                                        </Link>
                                       </div>
                                     </div>
                                   </div>
@@ -214,7 +219,7 @@ export default function PlanningTarifsPage() {
           <Footer />
         </div>
       </div>
-      <a id="totop" href="#top" style={{ display: "none" }}><i className="tm-jassio-icon-angle-up"></i></a>
+      <Link id="totop" href="#top" style={{ display: "none" }}><i className="tm-jassio-icon-angle-up"></i></Link>
     </>
   );
 }
