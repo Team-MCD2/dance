@@ -13,7 +13,7 @@ export default function HomePage() {
   const slides = [
     {
       id: 'rs-5',
-      bg: 'https://tempsdance.fr/wp-content/uploads/2022/03/young-sportive-man-daancing-breakdance-isolared-over-black-backgrounf-in-neon-with-mixed-lights-aggrandi-scaled.jpg',
+      video: 'mM7cQCMT-1E',
       subtitle1: 'Venez Découvrir Notre',
       subtitle2: 'Studio De Danse',
       title: 'Temps Dance',
@@ -93,16 +93,31 @@ export default function HomePage() {
                           left: 0
                         }}
                       >
-                        {/* Background Image */}
-                        <div style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0 }}>
-                          <Image 
-                            src={slide.bg} 
-                            alt={slide.title || slide.subtitle1} 
-                            fill
-                            style={{ objectFit: "cover" }}
-                            priority={index === 0} 
-                          />
-                          <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.4)" }}></div>
+                        {/* Background: video or image */}
+                        <div style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0, overflow: "hidden" }}>
+                          {slide.video ? (
+                            <>
+                              <iframe
+                                src={`https://www.youtube-nocookie.com/embed/${slide.video}?autoplay=1&mute=1&loop=1&playlist=${slide.video}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&wmode=opaque`}
+                                allow="autoplay; encrypted-media"
+                                allowFullScreen
+                                style={{ position: "absolute", top: "50%", left: "50%", width: "100%", height: "56.25vw", minHeight: "100%", minWidth: "177.78vh", transform: "translate(-50%, -50%)", border: "none", pointerEvents: "none" }}
+                                title="video-bg"
+                              />
+                              <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.45)" }}></div>
+                            </>
+                          ) : (
+                            <>
+                              <Image
+                                src={slide.bg}
+                                alt={slide.title || slide.subtitle1}
+                                fill
+                                style={{ objectFit: "cover" }}
+                                priority={index === 0}
+                              />
+                              <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.4)" }}></div>
+                            </>
+                          )}
                         </div>
 
                         {/* Slide Content Container */}
@@ -240,9 +255,14 @@ export default function HomePage() {
 
                       {/* News Section 1 */}
                       <section style={{ padding: "70px 20px", textAlign: "center", backgroundColor: "#fff" }}>
-                        <p style={{ color: "#ff2a70", fontSize: "13px", fontWeight: "600", letterSpacing: "2px", textTransform: "uppercase", margin: "0 0 10px" }}>Actualité</p>
-                        <h2 style={{ fontFamily: "Oswald, Arial, sans-serif", fontSize: "36px", fontWeight: "700", color: "#1a1a1a", margin: "0 0 30px" }}>Informations fin d&apos;année</h2>
-                        <p style={{ fontSize: "16px", color: "#444", lineHeight: "1.8", margin: "0 auto 8px", maxWidth: "520px" }}>
+                        <div className="tm-element-heading-content-wrapper center-align tm-reverse-heading-yes tm-seperator-solid tm-heading-style-vertical">
+                          <div className="tm-content-header">
+                            <h4 className="tm-element-subhead">Actualité</h4>
+                            <h5 className="tm-element-overlay-subhead">Actualité</h5>
+                            <h2 className="tm-element-content-heading">Informations fin d&apos;année</h2>
+                          </div>
+                        </div>
+                        <p style={{ fontSize: "16px", color: "#444", lineHeight: "1.8", margin: "20px auto 8px", maxWidth: "520px" }}>
                           Inscriptions saison 2026-2027<br />
                           Samedi 27 et dimanche 28 juin — <strong>10h–13h et 14h–18h</strong>
                         </p>
@@ -724,7 +744,7 @@ export default function HomePage() {
                               <div className="elementor-element elementor-element-abc54e7 elementor-widget elementor-widget-video" data-id="abc54e7" data-element_type="widget" data-widget_type="video.default">
                                 <div className="elementor-widget-container">
                                   <div className="elementor-wrapper elementor-open-inline">
-                                    <iframe className="elementor-video" frameBorder="0" allowFullScreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" title="YouTube video player" width="640" height="360" src="https://www.youtube.com/embed/npbsAZgqDTM?controls=1&amp;rel=0&amp;playsinline=0&amp;cc_load_policy=0&amp;autoplay=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Ftempsdance.fr&amp;widgetid=1&amp;forigin=https%3A%2F%2Ftempsdance.fr%2F%23top&amp;aoriginsup=1&amp;vf=1" id="widget2"></iframe>
+                                    <iframe className="elementor-video" frameBorder="0" allowFullScreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="YouTube video player" width="640" height="360" src="https://www.youtube.com/embed/npbsAZgqDTM?controls=1&amp;rel=0&amp;modestbranding=1" id="widget2"></iframe>
                                   </div>
                                 </div>
                               </div>

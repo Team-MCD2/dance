@@ -117,9 +117,11 @@ export default function Header() {
                         <i className="tm-jassio-icon-phone"></i>
                       </span>
                       <div className="cta-text-group">
-                        <span className="cta-label">Appelez-nous</span>
                         <span className="cta-value">06 24 37 18 11</span>
                       </div>
+                    </a>
+                    <a href="tel:+33624371811" className="header-cta-link">
+                      <i className="tm-jassio-icon-right-thin"></i> APPELEZ-NOUS
                     </a>
                   </div>
 

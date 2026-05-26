@@ -64,7 +64,7 @@ export default function PlanningTarifsPage() {
                           </section>
 
                           {/* Page Title Header */}
-                          <section className="elementor-section elementor-top-section elementor-element elementor-section-stretched tm-column-break-ipad-no tm-col-stretched-none elementor-section-boxed elementor-section-height-default inner-page-hero-pink">
+                          <section className="elementor-section elementor-top-section elementor-element elementor-section-stretched tm-column-break-ipad-no tm-col-stretched-none elementor-section-boxed elementor-section-height-default inner-page-hero">
                             <div className="elementor-background-overlay"></div>
                             <div className="elementor-container elementor-column-gap-no">
                               <div className="elementor-column elementor-col-100 elementor-top-column elementor-element">

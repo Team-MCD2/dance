@@ -74,8 +74,13 @@ export default function LesProfesseursPage() {
 
                           {/* Hero Banner */}
                           <section className="inner-page-hero" style={{ textAlign: "center", padding: "55px 20px 45px" }}>
-                            <p className="tm-element-subhead" style={{ color: "#ff2a70", fontSize: "13px", fontWeight: "600", letterSpacing: "2px", textTransform: "uppercase", margin: "0 0 10px" }}>Présentation</p>
-                            <h1 style={{ color: "#1d1d1f", fontFamily: "Oswald, Arial, sans-serif", fontSize: "38px", fontWeight: "700", margin: 0 }}>Les Professeurs</h1>
+                            <div className="tm-element-heading-content-wrapper center-align tm-reverse-heading-yes tm-seperator-none tm-heading-style-vertical">
+                              <div className="tm-content-header">
+                                <h4 className="tm-element-subhead">Présentation</h4>
+                                <h5 className="tm-element-overlay-subhead">Temps Dance</h5>
+                                <h2 className="tm-element-content-heading">Les Professeurs</h2>
+                              </div>
+                            </div>
                           </section>
 
                           {/* Teachers Grid */}

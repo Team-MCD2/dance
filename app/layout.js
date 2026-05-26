@@ -16,16 +16,13 @@ export default function RootLayout({ children }) {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&family=Roboto:wght@400;500&display=swap" media="all" />
-        <link rel="stylesheet" href="/assets/roboto.css" />
-        <link rel="stylesheet" href="/assets/robotoslab.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&family=Roboto:wght@400;500&display=swap" />
+        <link rel="stylesheet" href="/assets/wp-content/themes/jassio/fonts/Abuget.css" />
         <link rel="stylesheet" href="/assets/bootstrap.min.css" />
         <link rel="stylesheet" href="/assets/bootstrap-theme.min.css" />
-        <link rel="stylesheet" href="/assets/font-awesome.min.css" />
-        <link rel="stylesheet" href="/assets/fontawesome.min.css" />
         <link rel="stylesheet" href="/assets/all.min.css" />
-        <link rel="stylesheet" href="/assets/regular.min.css" />
-        <link rel="stylesheet" href="/assets/solid.min.css" />
         <link rel="stylesheet" href="/assets/v4-shims.min.css" />
         <link rel="stylesheet" href="/assets/flaticon.css" />
         <link rel="stylesheet" href="/assets/flexslider.css" />
