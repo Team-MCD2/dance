@@ -4,92 +4,84 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer id="colophon" className="site-footer">			
-      <div className="footer_inner_wrapper footer tm-bg tm-bgcolor-transparent tm-bgimage-no tm-footer-cta-style1">
-        <div className="site-footer-bg-layer tm-bg-layer"></div>
-        <div className="site-footer-w">					
-          <div className="footer-rows">
-            <div className="footer-rows-inner">
-              
-              <div id="first-footer" className="sidebar-container first-footer tm-bg tm-bgcolor-darkgrey tm-textcolor-white tm-bgimage-yes tm-footerrow-sepnone tm-widgetsep-no" role="complementary">
-                <div className="first-footer-bg-layer tm-bg-layer"></div>
-                <div className="container tm-container-for-footer">
-                  <div className="first-footer-inner">
-                    <div className="row multi-columns-row">
+    <footer style={{ backgroundColor: '#f5f5f7', borderTop: '1px solid #e8e8ed', fontFamily: 'Inter, Arial, sans-serif' }}>
 
-                      <div className="widget-area col-xs-12 col-sm-4 col-md-4 col-lg-4 first-widget-area">
-                        <aside className="tm-dancecontact widget widget_text enhanced-text-widget">
-                          <h3 className="widget-title">Contactez-nous</h3>
-                          <div className="textwidget widget-text">
-                            <ul className="dance_contact_widget_wrapper">
-                              <li className="themetechmount-contact-address"> 
-                                <i className="tm-jassio-icon-location-pin tm-skincolor"></i>94 Chemin de la Peyrette, 31170 Tournefeuille
-                              </li>
+      {/* Main footer columns */}
+      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '60px 24px 50px', display: 'flex', flexWrap: 'wrap', gap: '40px', justifyContent: 'space-between' }}>
 
-                              <li className="themetechmount-contact-phonenumber"> 
-                                <i className="tm-jassio-icon-phone tm-skincolor"></i><a href="tel:+33624371811">06 24 37 18 11</a>
-                              </li>
-
-                              <li className="themetechmount-contact-email">
-                                <i className="tm-jassio-icon-mail tm-skincolor"></i> <a href="mailto:engy31@hotmail.fr">engy31@hotmail.fr</a>
-                              </li>
-
-                              <li className="themetechmount-contact-email">
-                                <i className="tm-jassio-icon-mail tm-skincolor"></i> <Link href="/mentions-legales">Mentions Légales</Link>
-                              </li>
-                            </ul>
-                          </div>
-                        </aside>							
-                      </div>
-                      
-                      <div className="widget-area col-xs-12 col-sm-4 col-md-4 col-lg-4 first-widget-area">
-                        <aside className="tm-dancefooter-logo widget widget_text enhanced-text-widget">
-                          <div className="textwidget widget-text">
-                            <div style={{ textAlign: 'center' }}>
-                              <Image src="/assets/logo4.png" alt="TEMPS DANCE" width={180} height={60} style={{ maxWidth: '180px', marginBottom: '20px', height: 'auto' }} />
-                              <div className="themetechmount-social-links-wrapper">
-                                <ul className="social-icons" style={{ justifyContent: 'center', display: 'flex', gap: '15px' }}>
-                                  <li className="tm-social-facebook"><a className="tooltip-top" target="_blank" href="https://www.facebook.com/E%CC%81cole-de-danse-Temps-Dance-104674314739110/" title="Facebook"><i className="tm-jassio-icon-facebook"></i></a></li>
-                                  <li className="tm-social-instagram"><a className="tooltip-top" target="_blank" href="https://www.instagram.com/temps_dance/" title="Instagram"><i className="tm-jassio-icon-instagram"></i></a></li>
-                                  <li className="tm-social-youtube"><a className="tooltip-top" target="_blank" href="https://www.youtube.com/channel/UCh42PNfDf0abcZDzb0wzJeQ" title="YouTube"><i className="tm-jassio-icon-youtube"></i></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </aside>							
-                      </div>
-                      
-                      <div className="widget-area col-xs-12 col-sm-4 col-md-4 col-lg-4 first-widget-area">
-                        <aside className="widget widget_text enhanced-text-widget">
-                          <h3 className="widget-title">Horaires</h3>
-                          <div className="textwidget widget-text">
-                            <p>Lundi au Vendredi : 17h00 - 21h30<br />Samedi : 10h00 - 13h00 / 14h00 - 18h00<br />Dimanche : Fermé</p>
-                          </div>
-                        </aside>
-                      </div>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+        {/* Col 1 — Logo + Social */}
+        <div style={{ flex: '1 1 200px', minWidth: '180px', textAlign: 'center' }}>
+          <Image src="/assets/logo4.png" alt="TEMPS DANCE" width={120} height={120} style={{ width: '120px', height: 'auto', marginBottom: '16px' }} />
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginTop: '8px' }}>
+            <a href="https://www.facebook.com/E%CC%81cole-de-danse-Temps-Dance-104674314739110/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '36px', height: '36px', borderRadius: '50%', border: '1px solid #e8e8ed', color: '#6e6e73', textDecoration: 'none', fontSize: '14px', transition: 'border-color 0.2s, color 0.2s' }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = '#ff2a70'; e.currentTarget.style.color = '#ff2a70'; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = '#e8e8ed'; e.currentTarget.style.color = '#6e6e73'; }}>
+              <i className="tm-jassio-icon-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/temps_dance/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '36px', height: '36px', borderRadius: '50%', border: '1px solid #e8e8ed', color: '#6e6e73', textDecoration: 'none', fontSize: '14px', transition: 'border-color 0.2s, color 0.2s' }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = '#ff2a70'; e.currentTarget.style.color = '#ff2a70'; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = '#e8e8ed'; e.currentTarget.style.color = '#6e6e73'; }}>
+              <i className="tm-jassio-icon-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCh42PNfDf0abcZDzb0wzJeQ" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '36px', height: '36px', borderRadius: '50%', border: '1px solid #e8e8ed', color: '#6e6e73', textDecoration: 'none', fontSize: '14px', transition: 'border-color 0.2s, color 0.2s' }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = '#ff2a70'; e.currentTarget.style.color = '#ff2a70'; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = '#e8e8ed'; e.currentTarget.style.color = '#6e6e73'; }}>
+              <i className="tm-jassio-icon-youtube"></i>
+            </a>
           </div>
-          
-          <div id="bottom-footer-text" className="bottom-footer-text tm-bottom-footer-text site-info tm-bg tm-bgcolor-custom tm-textcolor-white tm-bgimage-no tm-bordercolor-none">
-            <div className="bottom-footer-bg-layer tm-bg-layer"></div>
-            <div className="container tm-container-for-footer">
-              <div className="bottom-footer-inner">
-                <div className="row multi-columns-row">
-                  <div className="col-xs-12 col-sm-12 tm-footer2-left" style={{ textAlign: 'center' }}>
-                    2026 <Link href="/">TEMPS DANCE</Link> | Propulsé par <a href="http://mwcrea-agency.com" target="_blank" rel="noopener noreferrer">MWCREA AGENCY©</a>
-                  </div>
-                </div> 
-              </div> 
-            </div> 
-          </div>				
         </div>
+
+        {/* Col 2 — Contact */}
+        <div style={{ flex: '1 1 200px', minWidth: '180px' }}>
+          <h4 style={{ fontSize: '11px', fontWeight: '600', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#ff2a70', margin: '0 0 18px' }}>Contactez-nous</h4>
+          <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <li style={{ fontSize: '14px', color: '#1d1d1f', display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+              <i className="tm-jassio-icon-location-pin" style={{ color: '#ff2a70', marginTop: '2px', flexShrink: 0 }}></i>
+              94 Chemin de la Peyrette,<br />31170 Tournefeuille
+            </li>
+            <li style={{ fontSize: '14px', color: '#1d1d1f', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <i className="tm-jassio-icon-phone" style={{ color: '#ff2a70', flexShrink: 0 }}></i>
+              <a href="tel:+33624371811" style={{ color: '#1d1d1f', textDecoration: 'none' }}>06 24 37 18 11</a>
+            </li>
+            <li style={{ fontSize: '14px', color: '#1d1d1f', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <i className="tm-jassio-icon-mail" style={{ color: '#ff2a70', flexShrink: 0 }}></i>
+              <a href="mailto:engy31@hotmail.fr" style={{ color: '#1d1d1f', textDecoration: 'none' }}>engy31@hotmail.fr</a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Col 3 — Horaires */}
+        <div style={{ flex: '1 1 200px', minWidth: '180px' }}>
+          <h4 style={{ fontSize: '11px', fontWeight: '600', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#ff2a70', margin: '0 0 18px' }}>Horaires</h4>
+          <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '14px', color: '#1d1d1f' }}>
+            <li>Lundi – Vendredi : <strong>17h – 21h30</strong></li>
+            <li>Samedi : <strong>10h–13h / 14h–18h</strong></li>
+            <li style={{ color: '#6e6e73' }}>Dimanche : Fermé</li>
+          </ul>
+        </div>
+
+        {/* Col 4 — Liens */}
+        <div style={{ flex: '1 1 160px', minWidth: '140px' }}>
+          <h4 style={{ fontSize: '11px', fontWeight: '600', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#ff2a70', margin: '0 0 18px' }}>Liens</h4>
+          <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            {[['Nos Cours', '/nos-cours-2'], ['Les Professeurs', '/les-professeurs'], ['Planning & Tarifs', '/planning-tarifs'], ['Livre D\'Or', '/livre-d-or'], ['Contact', '/contact'], ['Mentions Légales', '/mentions-legales']].map(([label, href]) => (
+              <li key={href}><Link href={href} style={{ fontSize: '14px', color: '#1d1d1f', textDecoration: 'none' }}
+                onMouseEnter={e => { e.currentTarget.style.color = '#ff2a70'; }}
+                onMouseLeave={e => { e.currentTarget.style.color = '#1d1d1f'; }}
+              >{label}</Link></li>
+            ))}
+          </ul>
+        </div>
+
       </div>
+
+      {/* Bottom bar */}
+      <div style={{ borderTop: '1px solid #e8e8ed', backgroundColor: '#fff', padding: '16px 24px', textAlign: 'center', fontSize: '13px', color: '#6e6e73' }}>
+        2026 <Link href="/" style={{ color: '#1d1d1f', fontWeight: '600', textDecoration: 'none' }}>TEMPS DANCE</Link>
+        {' '}·{' '}
+        <a href="http://mwcrea-agency.com" target="_blank" rel="noopener noreferrer" style={{ color: '#6e6e73', textDecoration: 'none' }}>MWCREA AGENCY©</a>
+      </div>
+
     </footer>
   );
 }
