@@ -27,12 +27,13 @@
 
 /* ---------- 1. TOP BAR ---------- */
 .themetechmount-topbar-wrapper {
-  background-color: var(--nav-light) !important;
+  background-color: #ffffff !important;
   border-bottom: 1px solid var(--nav-border);
-  padding: 6px 0 !important;
+  padding: 0 !important;
   font-size: 13px;
   color: var(--nav-gray);
   transition: var(--transition-smooth);
+  overflow: hidden;
 }
 
 .is-header-scrolled .themetechmount-topbar-wrapper {
@@ -53,8 +54,28 @@
 .themetechmount-topbar-wrapper .tm-topbar-content {
   display: flex !important;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: nowrap;
+}
+
+/* Pink badge on the left — matching original */
+.themetechmount-topbar-wrapper .topbar-left {
+  background-color: var(--nav-pink);
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+}
+.themetechmount-topbar-wrapper .topbar-left .top-contact li,
+.themetechmount-topbar-wrapper .topbar-left .top-contact li i,
+.themetechmount-topbar-wrapper .topbar-left .top-contact li span {
+  color: #ffffff !important;
+}
+
+/* Right side normal padding */
+.themetechmount-topbar-wrapper .topbar-right {
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
 }
 
 .themetechmount-topbar-wrapper .top-contact {
@@ -63,7 +84,7 @@
   padding: 0;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
 }
 
 .themetechmount-topbar-wrapper .top-contact li {
@@ -1033,6 +1054,14 @@ body {
 .inner-page-hero .tm-element-content-desctxt,
 .inner-page-hero .tm-element-content-desctxt p {
     color: #6e6e73 !important;
+}
+
+/* ==========================================================================
+   SLIDER ARROWS — visible on hover only
+   ========================================================================== */
+
+#rev_slider_3_1_wrapper:hover .slider-arrow {
+    opacity: 1 !important;
 }
 
 /* ==========================================================================

@@ -55,19 +55,19 @@ export default function HomePage() {
                 {/* Left Arrow */}
                 <div 
                   onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
-                  style={{ opacity: 0.8, top: "50%", left: "20px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", width: "40px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "rgba(0,0,0,0.5)", borderRadius: "50%", color: "#fff" }} 
-                  className="tp-leftarrow tparrows uranus"
+                  style={{ opacity: 0, top: "50%", left: "20px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", width: "44px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,42,112,0.85)", borderRadius: "50%", color: "#fff", transition: "opacity 0.3s" }} 
+                  className="tp-leftarrow tparrows uranus slider-arrow"
                 >
-                  <i className="tm-jassio-icon-left-open-big" style={{ fontSize: "20px" }}></i>
+                  <i className="tm-jassio-icon-left-open-big" style={{ fontSize: "18px" }}></i>
                 </div>
 
                 {/* Right Arrow */}
                 <div 
                   onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-                  style={{ opacity: 0.8, top: "50%", right: "20px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", width: "40px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "rgba(0,0,0,0.5)", borderRadius: "50%", color: "#fff" }} 
-                  className="tp-rightarrow tparrows uranus"
+                  style={{ opacity: 0, top: "50%", right: "20px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", width: "44px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,42,112,0.85)", borderRadius: "50%", color: "#fff", transition: "opacity 0.3s" }} 
+                  className="tp-rightarrow tparrows uranus slider-arrow"
                 >
-                  <i className="tm-jassio-icon-right-open-big" style={{ fontSize: "20px" }}></i>
+                  <i className="tm-jassio-icon-right-open-big" style={{ fontSize: "18px" }}></i>
                 </div>
 
                 <div style={{ visibility: "hidden" }}>
