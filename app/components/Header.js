@@ -3,10 +3,23 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+
+  const navLinks = [
+    { href: '/',                 label: 'Accueil' },
+    { href: '/nos-cours-2',      label: 'Nos Cours' },
+    { href: '/les-professeurs',  label: 'Les Professeurs' },
+    { href: '/planning-tarifs',  label: 'Planning et Tarifs' },
+    { href: '/livre-d-or',       label: "Livre D'Or" },
+    { href: '/faq',              label: 'F.A.Q' },
+    { href: '/albums',           label: 'Albums' },
+    { href: '/contact',          label: 'Contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -99,14 +112,20 @@ export default function Header() {
                   {/* Desktop Links / Mobile Dropdown Container */}
                   <div className={`nav-menu-wrapper ${mobileMenuOpen ? 'show' : ''}`}>
                     <ul id="menu-menu" className="nav-menu">
-                      <li className="menu-item"><Link href="/" onClick={() => setMobileMenuOpen(false)}>Accueil</Link></li>
-                      <li className="menu-item"><Link href="/nos-cours-2" onClick={() => setMobileMenuOpen(false)}>Nos Cours</Link></li>
-                      <li className="menu-item"><Link href="/les-professeurs" onClick={() => setMobileMenuOpen(false)}>Les Professeurs</Link></li>
-                      <li className="menu-item"><Link href="/planning-tarifs" onClick={() => setMobileMenuOpen(false)}>Planning et Tarifs</Link></li>
-                      <li className="menu-item"><Link href="/livre-d-or" onClick={() => setMobileMenuOpen(false)}>Livre D’Or</Link></li>
-                      <li className="menu-item"><Link href="/faq" onClick={() => setMobileMenuOpen(false)}>F.A.Q</Link></li>
-                      <li className="menu-item"><Link href="/albums" onClick={() => setMobileMenuOpen(false)}>Albums</Link></li>
-                      <li className="menu-item"><Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
+                      {navLinks.map(({ href, label }) => {
+                        const isActive = href === '/' ? pathname === '/' : pathname.startsWith(href);
+                        return (
+                          <li key={href} className="menu-item">
+                            <Link
+                              href={href}
+                              className={isActive ? 'nav-active' : ''}
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {label}
+                            </Link>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
 
