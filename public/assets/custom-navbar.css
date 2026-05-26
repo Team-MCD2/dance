@@ -1002,6 +1002,24 @@ body {
     padding: 55px 0 45px !important;
     border-bottom: 1px solid #e8e8ed !important;
 }
+/* Pink variant — like original Planning Et Tarifs banner */
+.inner-page-hero-pink {
+    background-color: #ff2a70 !important;
+    padding: 30px 20px !important;
+    text-align: center !important;
+}
+.inner-page-hero-pink .tm-element-content-heading,
+.inner-page-hero-pink h1, .inner-page-hero-pink h2 {
+    color: #ffffff !important;
+    font-family: Oswald, Arial, sans-serif !important;
+    font-size: 36px !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    letter-spacing: 0.5px !important;
+}
+.inner-page-hero-pink .tm-element-subhead {
+    display: none !important;
+}
 /* Hide overlay subhead globally */
 .tm-element-overlay-subhead {
     display: none !important;
