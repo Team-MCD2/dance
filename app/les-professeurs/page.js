@@ -5,7 +5,6 @@ import Link from 'next/link';
 import React from 'react';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import IconBox from "../components/IconBox";
 
 export default function LesProfesseursPage() {
   const teachers = [
@@ -76,7 +75,7 @@ export default function LesProfesseursPage() {
                           {/* Hero Banner */}
                           <section className="inner-page-hero" style={{ textAlign: "center", padding: "55px 20px 45px" }}>
                             <p className="tm-element-subhead" style={{ color: "#ff2a70", fontSize: "13px", fontWeight: "600", letterSpacing: "2px", textTransform: "uppercase", margin: "0 0 10px" }}>Présentation</p>
-                            <h1 style={{ color: "#ffffff", fontFamily: "Oswald, Arial, sans-serif", fontSize: "38px", fontWeight: "700", margin: 0 }}>Les Professeurs</h1>
+                            <h1 style={{ color: "#1d1d1f", fontFamily: "Oswald, Arial, sans-serif", fontSize: "38px", fontWeight: "700", margin: 0 }}>Les Professeurs</h1>
                           </section>
 
                           {/* Teachers Grid */}
@@ -92,65 +91,12 @@ export default function LesProfesseursPage() {
                                       <img src={teacher.image} alt={teacher.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
                                     </div>
                                     <div style={{ padding: "18px 20px 20px" }}>
-                                      <h3 style={{ fontFamily: "Oswald, Arial, sans-serif", fontSize: "18px", fontWeight: "700", color: "#1e293b", margin: "0 0 6px", writingMode: "horizontal-tb" }}>{teacher.name}</h3>
-                                      <p style={{ fontSize: "13px", color: "#888", margin: 0, lineHeight: "1.5", textTransform: "uppercase", letterSpacing: "0.5px", writingMode: "horizontal-tb" }}>{teacher.position}</p>
+                                      <h3 style={{ fontFamily: "Oswald, Arial, sans-serif", fontSize: "18px", fontWeight: "700", color: "#1d1d1f", margin: "0 0 6px" }}>{teacher.name}</h3>
+                                      <p style={{ fontSize: "13px", color: "#6e6e73", margin: 0, lineHeight: "1.5", textTransform: "uppercase", letterSpacing: "0.5px" }}>{teacher.position}</p>
                                     </div>
                                   </div>
                                 </Link>
                               ))}
-                            </div>
-                          </section>
-
-                        </div>
-                      </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-
-                          {/* Presentation Title & Grid */}
-                          <section className="elementor-section elementor-top-section elementor-element elementor-section-stretched tm-column-break-ipad-yes tm-col-stretched-none elementor-section-boxed elementor-section-height-default">
-                            <div className="elementor-container elementor-column-gap-no">
-                              <div className="elementor-column elementor-col-100 elementor-top-column elementor-element">
-                                <div className="elementor-widget-wrap elementor-element-populated">
-                                  <div className="elementor-element tm-align-center elementor-widget elementor-widget-tm_team_element">
-                                    <div className="elementor-widget-container">
-                                      <div className="themetechmount-boxes themetechmount-boxes-team themetechmount-element-teambox-style1 themetechmount-boxes-view-default themetechmount-boxes-col-three themetechmount-boxes-gap-30px">
-                                        <div className="themetechmount-boxes-inner">
-                                          
-                                          <div className="themetechmount-box-heading-wrapper">
-                                            <div className="tm-element-heading-content-wrapper center-align tm-reverse-heading-yes tm-seperator-none tm-heading-style-vertical">
-                                              <div className="tm-content-header">
-                                                <h4 className="tm-element-subhead">Présentation</h4>
-                                                <h4 className="tm-element-overlay-subhead">Temps Dance</h4>
-                                                <h2 className="tm-element-content-heading">Les professeurs</h2>
-                                              </div>
-                                            </div> 
-                                          </div>
-
-                                          <div className="themetechmount-boxes-row-wrapper row multi-columns-row" style={{ marginTop: "50px", marginBottom: "60px", display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-                                            {teachers.map((teacher, idx) => (
-                                              <div key={idx} className="tm-box-col-wrapper col-lg-4 col-sm-6 col-md-4 col-xs-12" style={{ marginBottom: "40px", display: "flex" }}>
-                                                <div style={{ width: "100%", height: "100%" }}>
-                                                  <IconBox 
-                                                    type="team"
-                                                    title={teacher.name}
-                                                    subtitle={teacher.position}
-                                                    image={teacher.image}
-                                                    link={teacher.link}
-                                                  />
-                                                </div>
-                                              </div>
-                                            ))}
-                                          </div>
-
-                                        </div>
-                                      </div> 
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
                             </div>
                           </section>
 

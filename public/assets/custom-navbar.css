@@ -998,32 +998,23 @@ body {
    ========================================================================== */
 
 .inner-page-hero {
-    background-color: #1e293b !important;
+    background-color: #f5f5f7 !important;
     padding: 55px 0 45px !important;
+    border-bottom: 1px solid #e8e8ed !important;
 }
-/* Hide overlay subhead globally (decorative watermark, renders as plain text in React) */
+/* Hide overlay subhead globally */
 .tm-element-overlay-subhead {
     display: none !important;
 }
-/* Re-show it inside hero banners as very faint text */
-.inner-page-hero .tm-element-overlay-subhead {
-    display: block !important;
-    color: rgba(255,255,255,0.12) !important;
-    font-size: 11px !important;
-    font-weight: 400 !important;
-    letter-spacing: 0.05em !important;
-    text-transform: uppercase !important;
-    margin-bottom: 6px !important;
-}
 .inner-page-hero .tm-element-content-heading {
-    color: #ffffff !important;
+    color: #1d1d1f !important;
 }
 .inner-page-hero .tm-element-subhead {
     color: #ff2a70 !important;
 }
 .inner-page-hero .tm-element-content-desctxt,
 .inner-page-hero .tm-element-content-desctxt p {
-    color: rgba(255,255,255,0.72) !important;
+    color: #6e6e73 !important;
 }
 
 /* ==========================================================================
@@ -1035,8 +1026,8 @@ body {
     display: none !important;
 }
 
-/* 4. Dark background for video iframe containers (shows nicely when video doesn't load) */
+/* 4. Light background for video iframe containers */
 .elementor-wrapper.elementor-open-inline,
 div:has(> iframe[src*="youtube.com/embed"]) {
-    background-color: #1e293b !important;
+    background-color: #f5f5f7 !important;
 }

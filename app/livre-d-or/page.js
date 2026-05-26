@@ -163,12 +163,12 @@ export default function LivreDOrPage() {
                                                     zIndex: isActive ? 1 : 0
                                                   }}
                                                 >
-                                                  <div className="wpmtst-testimonial-inner testimonial-inner" style={{ padding: "40px 35px", borderRadius: "12px", backgroundColor: "#1e293b", boxShadow: "0 15px 40px rgba(0,0,0,0.18)", borderLeft: "5px solid #ff2a70" }}>
+                                                  <div className="wpmtst-testimonial-inner testimonial-inner" style={{ padding: "40px 35px", borderRadius: "12px", backgroundColor: "#ffffff", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", borderTop: "3px solid #ff2a70" }}>
                                                     <div className="wpmtst-testimonial-content testimonial-content">
-                                                      <h3 className="wpmtst-testimonial-heading testimonial-heading" style={{ fontSize: "22px", color: "#ffffff", fontWeight: "700", fontFamily: "Oswald, Arial, sans-serif", margin: "0 0 16px 0" }}>
+                                                      <h3 className="wpmtst-testimonial-heading testimonial-heading" style={{ fontSize: "20px", color: "#1d1d1f", fontWeight: "700", fontFamily: "Oswald, Arial, sans-serif", margin: "0 0 16px 0" }}>
                                                         {item.title}
                                                       </h3>
-                                                      <p style={{ color: "rgba(255,255,255,0.82)", fontSize: "16px", lineHeight: "28px", margin: "0 0 24px 0" }}>
+                                                      <p style={{ color: "#6e6e73", fontSize: "16px", lineHeight: "28px", margin: "0 0 24px 0" }}>
                                                         {item.text}
                                                       </p>
                                                     </div>
