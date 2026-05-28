@@ -31,6 +31,7 @@ export default function AlbumsPage() {
 
           <div className="site-content-wrapper" id="content-wrapper">
             <div className="site-content" id="content">
+
               <div className="site-content-inner" id="content-inner">
                 <div className="content-area" id="primary" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 24px' }}>
                   <main className="site-main" id="main">
@@ -43,7 +44,14 @@ export default function AlbumsPage() {
                         <div className="elementor elementor-1309">
 
                           {/* Page Title */}
-                          <section style={{ padding: '80px 0 60px', textAlign: 'center', backgroundColor: '#ededed', backgroundImage: 'url("/assets/wp-content/themes/jassio/images/volum-bg.png")', backgroundRepeat: 'repeat', backgroundPosition: 'center center' }}>
+                          <section className="full-width-bg" style={{ 
+                            padding: '80px 0 60px', 
+                            textAlign: 'center', 
+                            backgroundColor: '#ededed', 
+                            backgroundImage: 'url("/assets/wp-content/themes/jassio/images/volum-bg.png")', 
+                            backgroundRepeat: 'repeat', 
+                            backgroundPosition: 'center center' 
+                          }}>
                             <div className="tm-element-heading-content-wrapper center-align tm-reverse-heading-yes tm-seperator-none tm-content-with-desc tm-heading-style-vertical">
                               <div className="tm-content-header">
                                 <h4 className="tm-element-subhead" style={{ color: '#ff2a70', fontWeight: '600' }}>
@@ -63,7 +71,7 @@ export default function AlbumsPage() {
                           </section>
 
                           {/* Masonry CSS Grid Gallery */}
-                          <section style={{ padding: '0 0 10px' }}>
+                          <section style={{ padding: '40px 0 10px' }}>
                             <div className="album-grid">
                               {images.map((img, idx) => (
                                 <div

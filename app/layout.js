@@ -154,6 +154,21 @@ export default function RootLayout({ children }) {
           .tm-btn-color .elementor-button:hover {
             background-color: #e01b5d !important;
           }
+          /* Full Width Background Hack (For Albums Page Title) */
+          .full-width-bg {
+            position: relative;
+            z-index: 1;
+          }
+          .full-width-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -50vw;
+            width: 200vw;
+            background: inherit;
+            z-index: -1;
+          }
         ` }} />
       </head>
       <body className="home page-template-default page page-id-249 wp-custom-logo jassio-jassio elementor-default elementor-kit-8 elementor-page elementor-page-249">
