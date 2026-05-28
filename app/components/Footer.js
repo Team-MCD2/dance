@@ -62,8 +62,8 @@ export default function Footer() {
       {/* Bottom bar — pink like original */}
       <div style={{ backgroundColor: '#ff2a70', padding: '14px 24px', textAlign: 'center', fontSize: '13px', color: '#ffffff' }}>
         2026 <Link href="/" style={{ color: '#ffffff', fontWeight: '700', textDecoration: 'none' }}>TEMPS DANCE</Link>
-        {' | '}Propulsé par{' '}
-        <Link href="/" style={{ color: '#ffffff', textDecoration: 'none', fontWeight: '600' }}>MWCREA AGENCY©</Link>
+        {' | '}Développé par{' '}
+        <a href="https://microdidact.com" target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', textDecoration: 'none', fontWeight: '600' }}>Microdidact</a>
       </div>
 
     </footer>
