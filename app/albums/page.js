@@ -45,7 +45,7 @@ export default function AlbumsPage() {
 
                           {/* Page Title */}
                           <section className="full-width-bg" style={{ 
-                            padding: '80px 0 60px', 
+                            padding: '80px 0 100px', 
                             textAlign: 'center', 
                             backgroundColor: '#ededed', 
                             backgroundImage: 'url("/assets/wp-content/themes/jassio/images/volum-bg.png")', 
@@ -71,7 +71,7 @@ export default function AlbumsPage() {
                           </section>
 
                           {/* Masonry CSS Grid Gallery */}
-                          <section style={{ padding: '40px 0 10px' }}>
+                          <section style={{ padding: '0 0 10px' }}>
                             <div className="album-grid">
                               {images.map((img, idx) => (
                                 <div
