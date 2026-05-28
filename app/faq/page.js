@@ -116,7 +116,7 @@ export default function FAQPage() {
                                           <h5 className="tm-element-overlay-subhead" style={{ top: "-15px" }}>Temps Dance</h5>
                                           <h2 className="tm-element-content-heading">À propos de nous !</h2>
                                         </div>
-                                        <div className="tm-element-content-desctxt">
+                                        <div className="tm-element-content-desctxt" style={{ maxWidth: '800px', margin: '0 auto', fontSize: '22px', fontWeight: '500', lineHeight: '1.6', color: '#555' }}>
                                           Quand des danseurs passionnés décident de réaliser leur rêve pour proposer un nouveau pôle culturel pour toutes les générations et pour toute la famille : L'école de danse Temps Dance
                                         </div>
                                       </div>
