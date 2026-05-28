@@ -49,24 +49,24 @@ export default function Header() {
               <div className="tm-wrap tm-topbar-content">
                 <div className="tm-wrap-cell topbar-left">
                   <ul className="top-contact">
-                    <li>
-                      <i className="tm-jassio-icon-clock"></i>
+                    <li style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                      <i className="tm-jassio-icon-clock" style={{ lineHeight: 1 }}></i>
                       <span>Lundi au Samedi</span>
                     </li>
                   </ul>
                 </div>
                 <div className="tm-wrap-cell topbar-right">
                   <ul className="top-contact">
-                    <li>
-                      <i className="tm-jassio-icon-phone"></i>
+                    <li style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                      <i className="tm-jassio-icon-phone" style={{ lineHeight: 1 }}></i>
                       <a href="tel:+33624371811">06 24 37 18 11</a>
                     </li>
-                    <li>
-                      <i className="tm-jassio-icon-mail"></i>
+                    <li style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                      <i className="tm-jassio-icon-mail" style={{ lineHeight: 1 }}></i>
                       <a href="mailto:engy31@hotmail.fr">engy31@hotmail.fr</a>
                     </li>
-                    <li>
-                      <i className="tm-jassio-icon-location-1"></i>
+                    <li style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                      <i className="tm-jassio-icon-location-1" style={{ lineHeight: 1 }}></i>
                       <span>94 Chemin de la Peyrette, 31170 Tournefeuille</span>
                     </li>
                   </ul>
