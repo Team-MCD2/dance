@@ -137,68 +137,94 @@ export default function LivreDOrPage() {
                           {/* Testimonials Slider Section */}
                           <section className="elementor-section elementor-top-section elementor-element tm-column-break-ipad-no tm-col-stretched-none elementor-section-boxed elementor-section-height-default" style={{ padding: "40px 0 20px 0" }}>
                             <div className="elementor-container elementor-column-gap-default" style={{ display: "flex", justifyContent: "center" }}>
-                              <div className="elementor-column elementor-col-100 elementor-top-column elementor-element" style={{ maxWidth: "800px", width: "100%" }}>
+                              <div className="elementor-column elementor-col-100 elementor-top-column elementor-element" style={{ width: "100%" }}>
                                 <div className="elementor-widget-wrap elementor-element-populated">
-                                  <div className="elementor-element elementor-widget elementor-widget-shortcode">
-                                    <div className="elementor-widget-container">
-                                      <div className="elementor-shortcode">
-                                        
-                                        <div className="strong-view strong-view-id-1 modern wpmtst-modern slider-container" style={{ position: "relative" }}>
-                                          
-                                          {/* Slider Content Wrapper */}
-                                          <div className="strong-content" style={{ minHeight: "260px", display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
-                                            
-                                            {testimonials.map((item, idx) => {
-                                              const isActive = currentIndex === idx;
-                                              return (
-                                                <div 
-                                                  key={idx} 
-                                                  className="wpmtst-testimonial testimonial" 
-                                                  style={{ 
-                                                    opacity: isActive ? 1 : 0,
-                                                    visibility: isActive ? "visible" : "hidden",
-                                                    position: isActive ? "relative" : "absolute",
-                                                    width: "100%",
-                                                    transition: "opacity 0.6s ease-in-out, visibility 0.6s ease-in-out",
-                                                    zIndex: isActive ? 1 : 0
-                                                  }}
-                                                >
-                                                  <div className="wpmtst-testimonial-inner testimonial-inner" style={{ padding: "40px 35px", borderRadius: "12px", backgroundColor: "#ffffff", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", borderTop: "3px solid #ff2a70" }}>
-                                                    <div className="wpmtst-testimonial-content testimonial-content">
-                                                      <h3 className="wpmtst-testimonial-heading testimonial-heading" style={{ fontSize: "20px", color: "#1d1d1f", fontWeight: "700", fontFamily: "Oswald, Arial, sans-serif", margin: "0 0 16px 0" }}>
-                                                        {item.title}
-                                                      </h3>
-                                                      <p style={{ color: "#6e6e73", fontSize: "16px", lineHeight: "28px", margin: "0 0 24px 0" }}>
-                                                        {item.text}
-                                                      </p>
-                                                    </div>
-                                                    
-                                                    {/* Star Ratings */}
-                                                    <div className="wpmtst-testimonial-field testimonial-field" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                                      <span className="strong-rating-wrapper in-view">
-                                                        <span className="strong-rating" style={{ display: "flex", gap: "4px" }}>
-                                                          {[...Array(5)].map((_, i) => (
-                                                            <span key={i} className="star" style={{ display: "inline-block" }}>
-                                                              <svg aria-hidden="true" className="star_solid" role="img" viewBox="-8 -8 584 520" xmlns="http://www.w3.org/2000/svg" style={{ width: "18px", height: "18px", fill: "#ff2a70" }}>
-                                                                <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
-                                                              </svg>
-                                                            </span>
-                                                          ))}
-                                                        </span>
-                                                      </span>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              );
-                                            })}
-
-                                          </div>
-
-
-                                        </div>
-
-                                      </div>
+                                  
+                                  <div style={{ backgroundColor: "#ff2a70", padding: "60px 40px", position: "relative", width: "100%", textAlign: "center", color: "#fff" }}>
+                                    
+                                    {/* Quotes */}
+                                    <div style={{ position: "absolute", left: "5%", top: "40%", transform: "translateY(-50%)", opacity: 0.5 }}>
+                                      <svg viewBox="0 0 512 512" style={{ width: "60px", height: "60px", fill: "#fff" }}>
+                                        <path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/>
+                                      </svg>
                                     </div>
+                                    <div style={{ position: "absolute", right: "5%", top: "60%", transform: "translateY(-50%)", opacity: 0.5 }}>
+                                      <svg viewBox="0 0 512 512" style={{ width: "60px", height: "60px", fill: "#fff" }}>
+                                        <path d="M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z"/>
+                                      </svg>
+                                    </div>
+
+                                    {/* Slider Navigation Arrows */}
+                                    <button 
+                                      onClick={() => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
+                                      style={{ position: "absolute", left: "10px", top: "50%", transform: "translateY(-50%)", background: "transparent", border: "none", color: "rgba(255,255,255,0.7)", fontSize: "30px", cursor: "pointer", zIndex: 10 }}
+                                    >
+                                      &#10094;
+                                    </button>
+                                    <button 
+                                      onClick={() => setCurrentIndex((prev) => (prev + 1) % testimonials.length)}
+                                      style={{ position: "absolute", right: "10px", top: "50%", transform: "translateY(-50%)", background: "transparent", border: "none", color: "rgba(255,255,255,0.7)", fontSize: "30px", cursor: "pointer", zIndex: 10 }}
+                                    >
+                                      &#10095;
+                                    </button>
+                                    
+                                    {/* Slider Content Wrapper */}
+                                    <div style={{ minHeight: "150px", position: "relative", overflow: "hidden", maxWidth: "800px", margin: "0 auto", display: "flex", alignItems: "center" }}>
+                                      {testimonials.map((item, idx) => {
+                                        const isActive = currentIndex === idx;
+                                        return (
+                                          <div 
+                                            key={idx} 
+                                            style={{ 
+                                              opacity: isActive ? 1 : 0,
+                                              visibility: isActive ? "visible" : "hidden",
+                                              position: isActive ? "relative" : "absolute",
+                                              width: "100%",
+                                              transition: "opacity 0.6s ease-in-out, visibility 0.6s ease-in-out",
+                                              zIndex: isActive ? 1 : 0,
+                                              top: 0,
+                                              left: 0
+                                            }}
+                                          >
+                                            <h3 style={{ fontSize: "30px", color: "#fff", fontWeight: "700", fontStyle: "italic", fontFamily: "Oswald, Arial, sans-serif", margin: "0 0 15px 0", letterSpacing: "1px" }}>
+                                              {item.title}
+                                            </h3>
+                                            <p style={{ color: "#fff", fontSize: "18px", lineHeight: "26px", margin: "0 0 20px 0" }}>
+                                              {item.text}
+                                            </p>
+                                            
+                                            {/* Star Ratings */}
+                                            <div style={{ display: "flex", justifyContent: "center", gap: "6px" }}>
+                                              {[...Array(5)].map((_, i) => (
+                                                <span key={i} style={{ display: "inline-block" }}>
+                                                  <svg aria-hidden="true" viewBox="-8 -8 584 520" xmlns="http://www.w3.org/2000/svg" style={{ width: "22px", height: "22px", fill: "#ffd700" }}>
+                                                    <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                                                  </svg>
+                                                </span>
+                                              ))}
+                                            </div>
+                                          </div>
+                                        );
+                                      })}
+                                    </div>
+
+                                    {/* Pagination Dots */}
+                                    <div style={{ display: "flex", justifyContent: "center", gap: "10px", marginTop: "40px", flexWrap: "wrap" }}>
+                                      {testimonials.map((_, idx) => (
+                                        <button 
+                                          key={idx} 
+                                          onClick={() => setCurrentIndex(idx)}
+                                          style={{ 
+                                            width: "12px", height: "12px", borderRadius: "50%", padding: 0, 
+                                            border: "2px solid rgba(255,255,255,0.4)", 
+                                            backgroundColor: currentIndex === idx ? "#fff" : "transparent",
+                                            cursor: "pointer", transition: "all 0.3s" 
+                                          }} 
+                                          aria-label={`Go to slide ${idx + 1}`}
+                                        />
+                                      ))}
+                                    </div>
+
                                   </div>
                                 </div>
                               </div>

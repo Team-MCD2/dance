@@ -77,8 +77,8 @@ export default function IconBox({
   // Default 'icon' type
   return (
     <div className={`themetechmount-iconbox themetechmount-iconbox-styleone themetechmount-iconcolor-white themetechmount-icon-bgcolor-skincolor tm-iconstyle-rounded tm-textalign-center ${className}`} style={{ height: "100%", padding: "35px 25px", borderRadius: "10px", boxShadow: "0 10px 30px rgba(0,0,0,0.05)", backgroundColor: "#fff", transition: "transform 0.3s ease, box-shadow 0.3s ease", ...style }}>
-      <div className="themetechmount-iconbox-inner">
-        <div className="tm-iconbox-wrapper">
+      <div className="themetechmount-iconbox-inner" style={{ height: "100%" }}>
+        <div className="tm-iconbox-wrapper" style={{ height: "100%", display: "flex", flexDirection: "column" }}>
           {icon && (
             <div className="themetechmount-iconbox-icon" style={{ marginBottom: "25px" }}>
               <div className="tm-box-icon" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "80px", height: "80px", borderRadius: "50%", backgroundColor: "#ff2a70", color: "#fff", fontSize: "36px", boxShadow: "0 10px 20px rgba(255,42,112,0.3)" }}>
@@ -86,7 +86,7 @@ export default function IconBox({
               </div>
             </div>
           )}
-          <div className="themetechmount-iconbox-heading">
+          <div className="themetechmount-iconbox-heading" style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
             <h2 className="tm-custom-heading" style={{ fontSize: "22px", fontWeight: "600", fontFamily: "Oswald, Arial, sans-serif", marginBottom: "12px", color: "#232323" }}>
               {title}
             </h2>
@@ -96,7 +96,7 @@ export default function IconBox({
               </div>
             )}
             {link && (
-              <div className="tm-iocnbox-btn" style={{ marginTop: "15px" }}>
+              <div className="tm-iocnbox-btn" style={{ marginTop: "auto", paddingTop: "15px" }}>
                 <Link href={link} style={{ display: "inline-block", padding: "10px 24px", borderRadius: "6px", border: "2px solid #ff2a70", color: "#ff2a70", fontWeight: "600", textTransform: "uppercase", fontSize: "14px", textDecoration: "none", transition: "all 0.3s ease" }}>
                   <span>{linkText}</span>
                 </Link>

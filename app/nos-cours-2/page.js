@@ -202,11 +202,43 @@ export default function NosCoursPage() {
                               <div className="elementor-container elementor-column-gap-default">
                                 <div className="elementor-column elementor-col-100 elementor-top-column elementor-element">
                                   <div className="elementor-widget-wrap elementor-element-populated">
-                                    <div className="row course-detail-row" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", flexDirection: detail.reverse ? "row-reverse" : "row" }}>
-                                      
-                                      {/* Video Column */}
-                                      <div className="col-xs-12 col-md-6 course-video-col" style={{ marginBottom: "30px" }}>
-                                        {detail.video ? (
+                                    {detail.video === null ? (
+                                      <div className="row course-detail-row" style={{ display: "flex", justifyContent: "center" }}>
+                                        <div className="col-xs-12 col-md-10" style={{ textAlign: "center" }}>
+                                          <div className="elementor-element tm-align-center elementor-widget elementor-widget-tm_heading">
+                                            <div className="elementor-widget-container">
+                                              <div className="tm-element-heading-content-wrapper center-align tm-reverse-heading-yes tm-seperator-none tm-heading-style-vertical">
+                                                <div className="tm-content-header">
+                                                  <h4 className="tm-element-subhead">NOS COURS</h4>
+                                                  <h5 className="tm-element-overlay-subhead">Temps Dance</h5>
+                                                  <h2 className="tm-element-content-heading">{detail.title}</h2>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div className="elementor-element elementor-widget elementor-widget-text-editor" style={{ marginTop: "20px", marginBottom: "30px", fontSize: "16px", lineHeight: "28px" }}>
+                                            <div className="elementor-widget-container">
+                                              <p>{detail.desc}</p>
+                                            </div>
+                                          </div>
+                                          <div className="elementor-element tm-btn-color-skincolor tm-btn-style-flat tm-btn-shape-square elementor-widget elementor-widget-button">
+                                            <div className="elementor-widget-container">
+                                              <div className="elementor-button-wrapper">
+                                                <Link href="/planning-tarifs" className="elementor-button elementor-button-link elementor-size-sm" style={{ padding: "12px 30px", borderRadius: "6px", backgroundColor: "#ff2a70", color: "#fff", fontWeight: "bold", display: "inline-block" }}>
+                                                  <span className="elementor-button-content-wrapper">
+                                                    <span className="elementor-button-text">Planning &amp; Tarifs</span>
+                                                  </span>
+                                                </Link>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    ) : (
+                                      <div className="row course-detail-row" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", flexDirection: detail.reverse ? "row-reverse" : "row" }}>
+                                        
+                                        {/* Video Column */}
+                                        <div className="col-xs-12 col-md-6 course-video-col" style={{ marginBottom: "30px" }}>
                                           <div className="elementor-widget-container" style={{ borderRadius: "10px", overflow: "hidden", boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }}>
                                             <div className="elementor-wrapper elementor-open-inline" style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
                                               <iframe 
@@ -218,46 +250,41 @@ export default function NosCoursPage() {
                                               ></iframe>
                                             </div>
                                           </div>
-                                        ) : (
-                                          <div style={{ background: "linear-gradient(135deg, #ff2a70 0%, #ff5e95 100%)", borderRadius: "10px", padding: "60px 30px", textAlign: "center", color: "#fff", boxShadow: "0 10px 30px rgba(255,42,112,0.3)" }}>
-                                            <i className="kw_jassio flaticon-dancing-4" style={{ fontSize: "60px" }}></i>
-                                            <h3 style={{ color: "#fff", marginTop: "20px" }}>{detail.title}</h3>
-                                          </div>
-                                        )}
-                                      </div>
+                                        </div>
 
-                                      {/* Text Column */}
-                                      <div className="col-xs-12 col-md-6 course-text-col" style={{ paddingLeft: detail.reverse ? "15px" : "40px", paddingRight: detail.reverse ? "40px" : "15px", marginBottom: "30px" }}>
-                                        <div className="elementor-element tm-align-left elementor-widget elementor-widget-tm_heading">
-                                          <div className="elementor-widget-container">
-                                            <div className="tm-element-heading-content-wrapper left-align tm-reverse-heading-yes tm-seperator-none tm-heading-style-vertical">
-                                              <div className="tm-content-header">
-                                                <h4 className="tm-element-subhead">NOS COURS</h4>
-                                                <h5 className="tm-element-overlay-subhead">Temps Dance</h5>
-                                                <h2 className="tm-element-content-heading">{detail.title}</h2>
+                                        {/* Text Column */}
+                                        <div className="col-xs-12 col-md-6 course-text-col" style={{ paddingLeft: detail.reverse ? "15px" : "40px", paddingRight: detail.reverse ? "40px" : "15px", marginBottom: "30px" }}>
+                                          <div className="elementor-element tm-align-left elementor-widget elementor-widget-tm_heading">
+                                            <div className="elementor-widget-container">
+                                              <div className="tm-element-heading-content-wrapper left-align tm-reverse-heading-yes tm-seperator-none tm-heading-style-vertical">
+                                                <div className="tm-content-header">
+                                                  <h4 className="tm-element-subhead">NOS COURS</h4>
+                                                  <h5 className="tm-element-overlay-subhead">Temps Dance</h5>
+                                                  <h2 className="tm-element-content-heading">{detail.title}</h2>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div className="elementor-element elementor-widget elementor-widget-text-editor" style={{ marginTop: "20px", marginBottom: "30px", fontSize: "16px", lineHeight: "28px" }}>
+                                            <div className="elementor-widget-container">
+                                              <p>{detail.desc}</p>
+                                            </div>
+                                          </div>
+                                          <div className="elementor-element tm-btn-color-skincolor tm-btn-style-flat tm-btn-shape-square elementor-widget elementor-widget-button">
+                                            <div className="elementor-widget-container">
+                                              <div className="elementor-button-wrapper">
+                                                <Link href="/planning-tarifs" className="elementor-button elementor-button-link elementor-size-sm" style={{ padding: "12px 30px", borderRadius: "6px", backgroundColor: "#ff2a70", color: "#fff", fontWeight: "bold", display: "inline-block" }}>
+                                                  <span className="elementor-button-content-wrapper">
+                                                    <span className="elementor-button-text">Planning &amp; Tarifs</span>
+                                                  </span>
+                                                </Link>
                                               </div>
                                             </div>
                                           </div>
                                         </div>
-                                        <div className="elementor-element elementor-widget elementor-widget-text-editor" style={{ marginTop: "20px", marginBottom: "30px", fontSize: "16px", lineHeight: "28px" }}>
-                                          <div className="elementor-widget-container">
-                                            <p>{detail.desc}</p>
-                                          </div>
-                                        </div>
-                                        <div className="elementor-element tm-btn-color-skincolor tm-btn-style-flat tm-btn-shape-square elementor-widget elementor-widget-button">
-                                          <div className="elementor-widget-container">
-                                            <div className="elementor-button-wrapper">
-                                              <Link href="/planning-tarifs" className="elementor-button elementor-button-link elementor-size-sm" style={{ padding: "12px 30px", borderRadius: "6px", backgroundColor: "#ff2a70", color: "#fff", fontWeight: "bold", display: "inline-block" }}>
-                                                <span className="elementor-button-content-wrapper">
-                                                  <span className="elementor-button-text">Planning &amp; Tarifs</span>
-                                                </span>
-                                              </Link>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
 
-                                    </div>
+                                      </div>
+                                    )}
                                   </div>
                                 </div>
                               </div>

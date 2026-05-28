@@ -159,18 +159,26 @@ export default function FAQPage() {
                                         {faqItems.map((item, idx) => {
                                           const isOpen = openIndex === idx;
                                           return (
-                                            <div key={idx} className="elementor-accordion-item" style={{ borderBottom: "1px solid #eee", paddingBottom: "15px", marginBottom: "15px" }}>
+                                            <div key={idx} className="elementor-accordion-item" style={{ marginBottom: "15px", borderRadius: "6px", boxShadow: "0 5px 20px rgba(0,0,0,0.03)", overflow: "hidden", border: "1px solid #f0f0f0" }}>
                                               <div 
                                                 className={`elementor-tab-title ${isOpen ? 'elementor-active' : ''}`}
                                                 role="tab" 
                                                 onClick={() => toggleItem(idx)}
-                                                style={{ display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer", padding: "15px 0", transition: "color 0.2s" }}
+                                                style={{ 
+                                                  display: "flex", 
+                                                  justifyContent: "space-between", 
+                                                  alignItems: "center", 
+                                                  cursor: "pointer", 
+                                                  padding: "20px 25px", 
+                                                  backgroundColor: isOpen ? "#ff2a70" : "#ffffff",
+                                                  transition: "all 0.3s ease" 
+                                                }}
                                               >
-                                                <a className="elementor-accordion-title" style={{ fontSize: "18px", fontWeight: "600", fontFamily: "Oswald, Arial, sans-serif", color: isOpen ? "#ff2a70" : "#232323" }}>
+                                                <a className="elementor-accordion-title" style={{ fontSize: "18px", fontWeight: "600", fontFamily: "Oswald, Arial, sans-serif", color: isOpen ? "#ffffff" : "#232323", margin: 0 }}>
                                                   {item.title}
                                                 </a>
-                                                <span className="elementor-accordion-icon elementor-accordion-icon-right" style={{ color: isOpen ? "#ff2a70" : "#616161" }}>
-                                                  <i className={`fas ${isOpen ? 'fa-long-arrow-alt-down' : 'fa-long-arrow-alt-right'}`}></i>
+                                                <span className="elementor-accordion-icon elementor-accordion-icon-right" style={{ color: isOpen ? "#ffffff" : "#616161", fontSize: "16px" }}>
+                                                  <i className={`fas ${isOpen ? 'fa-arrow-down' : 'fa-arrow-right'}`}></i>
                                                 </span>
                                               </div>
                                               
@@ -179,10 +187,11 @@ export default function FAQPage() {
                                                 className="elementor-tab-content elementor-clearfix" 
                                                 style={{ 
                                                   display: isOpen ? "block" : "none", 
-                                                  padding: "10px 0 20px 0", 
+                                                  padding: "25px", 
+                                                  backgroundColor: "#ffffff",
                                                   color: "#616161", 
-                                                  fontSize: "14px", 
-                                                  lineHeight: "24px" 
+                                                  fontSize: "15px", 
+                                                  lineHeight: "26px" 
                                                 }}
                                               >
                                                 {item.content}

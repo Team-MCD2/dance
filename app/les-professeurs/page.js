@@ -87,17 +87,31 @@ export default function LesProfesseursPage() {
                           <section style={{ padding: "65px 20px 70px", backgroundColor: "#fff" }}>
                             <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "30px", justifyContent: "center" }}>
                               {teachers.map((teacher, idx) => (
-                                <Link key={idx} href={teacher.link} style={{ textDecoration: "none", width: "calc(33.33% - 20px)", minWidth: "240px", maxWidth: "320px", flex: "1 1 240px" }}>
-                                  <div style={{ borderRadius: "12px", overflow: "hidden", backgroundColor: "#fff", boxShadow: "0 4px 20px rgba(0,0,0,0.08)", transition: "transform 0.25s, box-shadow 0.25s", borderBottom: "3px solid transparent" }}
-                                    onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(255,42,112,0.15)"; e.currentTarget.style.borderBottom = "3px solid #ff2a70"; }}
-                                    onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.08)"; e.currentTarget.style.borderBottom = "3px solid transparent"; }}
-                                  >
-                                    <div style={{ width: "100%", aspectRatio: "4/5", overflow: "hidden", backgroundColor: "#f0f0f0" }}>
-                                      <img src={teacher.image} alt={teacher.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
+                                <Link key={idx} href={teacher.link} style={{ display: "block", textDecoration: "none", width: "calc(33.33% - 40px)", minWidth: "280px", maxWidth: "340px", flex: "1 1 280px", marginBottom: "60px" }}>
+                                  <div>
+                                    {/* Image Container */}
+                                    <div style={{ borderRadius: "10px", overflow: "hidden", position: "relative", backgroundColor: "#f0f0f0", aspectRatio: "3/4", boxShadow: "0 10px 30px rgba(0,0,0,0.1)", transition: "transform 0.3s ease", marginBottom: "20px" }}
+                                      onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-5px)"; }}
+                                      onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; }}
+                                    >
+                                      <img src={teacher.image} alt={teacher.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block", transition: "transform 0.5s ease" }} 
+                                        onMouseEnter={e => { e.currentTarget.style.transform = "scale(1.05)"; }}
+                                        onMouseLeave={e => { e.currentTarget.style.transform = "scale(1)"; }}
+                                      />
+                                      {/* Share Icon */}
+                                      <div style={{ position: "absolute", bottom: "15px", left: "15px", width: "40px", height: "40px", backgroundColor: "#ff2a70", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", zIndex: 2 }}>
+                                        <i className="tm-jassio-icon-share-1" style={{ fontSize: "16px" }}></i>
+                                      </div>
                                     </div>
-                                    <div style={{ padding: "18px 20px 20px" }}>
-                                      <h3 style={{ fontFamily: "Oswald, Arial, sans-serif", fontSize: "18px", fontWeight: "700", color: "#1d1d1f", margin: "0 0 6px" }}>{teacher.name}</h3>
-                                      <p style={{ fontSize: "13px", color: "#6e6e73", margin: 0, lineHeight: "1.5", textTransform: "uppercase", letterSpacing: "0.5px" }}>{teacher.position}</p>
+                                    
+                                    {/* Text Content */}
+                                    <div style={{ textAlign: "center" }}>
+                                      <h4 style={{ fontFamily: "'Abuget', Arial, sans-serif", fontSize: "50px", color: "#ff2a70", fontWeight: "500", margin: "0 0 5px 0", lineHeight: "1" }}>
+                                        {teacher.name}
+                                      </h4>
+                                      <div style={{ color: "#616161", fontSize: "14px", fontWeight: "500", letterSpacing: "0.5px" }}>
+                                        {teacher.position || teacher.role}
+                                      </div>
                                     </div>
                                   </div>
                                 </Link>

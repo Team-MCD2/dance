@@ -61,9 +61,21 @@
 /* Pink badge on the left — matching original */
 .themetechmount-topbar-wrapper .topbar-left {
   background-color: var(--nav-pink);
-  padding: 8px 24px;
+  padding: 8px 24px 8px 15px;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.themetechmount-topbar-wrapper .topbar-left::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  width: 100vw;
+  background-color: var(--nav-pink);
+  z-index: -1;
 }
 .themetechmount-topbar-wrapper .topbar-left .top-contact li,
 .themetechmount-topbar-wrapper .topbar-left .top-contact li i,
@@ -162,12 +174,65 @@ body {
   justify-content: space-between !important;
   align-items: center !important;
   height: 100%;
+  position: relative;
+}
+
+/* Straight pink line under the header */
+.site-header-main::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -50vw;
+  width: 200vw;
+  height: 3px;
+  background-color: var(--nav-pink);
+  z-index: 20;
+}
+
+/* Hide the pink line on the home page */
+.site-header-main.is-home-page::after {
+  display: none !important;
 }
 
 .site-branding {
   display: flex;
   align-items: center;
   padding: 0 !important;
+  position: relative; /* important for the decorative line positioning */
+}
+
+/* ---------- 3.1 DECORATIVE PINK STEPPED LINE ---------- */
+.header-step-pink-line {
+  position: absolute;
+  bottom: -32px; /* Moves the step down from the logo */
+  right: -30px; /* Positions the vertical step 30px to the right of the logo */
+  width: 3px;
+  height: 20px; /* Height of the step */
+  background-color: var(--nav-pink);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Lower line (left part) */
+.header-step-pink-line::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 100%;
+  width: 100vw; /* Stretches to the left edge of the screen */
+  height: 3px;
+  background-color: var(--nav-pink);
+}
+
+/* Upper line (right part) */
+.header-step-pink-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100vw; /* Stretches to the right edge of the screen */
+  height: 3px;
+  background-color: var(--nav-pink);
 }
 
 .site-branding img.standardlogo {
@@ -281,38 +346,47 @@ body {
 .header-cta-wrapper {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+  padding: 12px 0;
+}
+
+/* The pink block that stretches infinitely to the right */
+.header-cta-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 28px; /* Center of the 56px circle */
+  width: 100vw;
+  background-color: var(--nav-pink);
+  z-index: -1;
 }
 
 /* Left part: pink circle + phone number */
 .header-cta-button {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   background: none;
-  color: #1e293b !important;
-  padding: 0;
-  border-radius: 0;
   text-decoration: none !important;
-  box-shadow: none;
-  transition: var(--transition-smooth);
-}
-
-.header-cta-button:hover .cta-value {
-  color: var(--nav-pink);
+  position: relative;
 }
 
 .cta-icon-circle {
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: var(--nav-pink);
+  border: 3px solid #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 20px;
   color: #ffffff;
   flex-shrink: 0;
+  z-index: 2; /* stay above the pink background */
 }
 
 .cta-text-group {
@@ -326,36 +400,49 @@ body {
 }
 
 .cta-value {
-  font-size: 14px;
+  font-family: Oswald, 'Inter', sans-serif;
+  font-size: 22px;
   font-weight: 700;
-  color: #1e293b;
-  letter-spacing: -0.2px;
+  color: #ffffff; /* White text on pink background */
+  letter-spacing: 0.5px;
   line-height: 1;
   transition: color 0.2s;
   white-space: nowrap;
 }
 
-/* Right part: → APPELEZ-NOUS dark button */
+.header-cta-button:hover .cta-value {
+  color: #f0f0f0;
+}
+
+/* Right part: → APPELEZ-NOUS white button */
 .header-cta-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: transparent;
-  color: #1e293b !important;
-  border: 1px solid #1e293b;
-  padding: 9px 18px;
-  font-size: 13px;
-  font-weight: 600;
+  gap: 8px;
+  background: #ffffff;
+  color: #1a1a1a !important;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 18px;
+  font-family: Oswald, 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   text-decoration: none !important;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, transform 0.2s;
   white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-left: 10px;
+}
+.header-cta-link i {
+  font-size: 14px;
 }
 .header-cta-link:hover {
-  background: #1e293b;
-  color: #ffffff !important;
+  background: #f8f9fa;
+  transform: translateY(-2px);
 }
+
 
 /* ---------- 6. MODERN MOBILE HAMBURGER TOGGLE ---------- */
 .menu-toggle {

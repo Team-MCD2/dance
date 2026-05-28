@@ -85,7 +85,7 @@ export default function Header() {
             id="site-header" 
             className="site-header tm-stickable-header"
           >
-            <div className="site-header-main container">
+            <div className={`site-header-main container ${pathname === '/' ? 'is-home-page' : ''}`}>
             
               {/* Branding (Logo) */}
               <div className="site-branding">

@@ -12,22 +12,18 @@ export default function Footer() {
         {/* Col 1 — Contact */}
         <div style={{ flex: '1 1 220px', minWidth: '200px' }}>
           <h3 style={{ fontSize: '16px', fontWeight: '700', color: '#ffffff', margin: '0 0 20px', fontFamily: 'Oswald, Arial, sans-serif', letterSpacing: '0.5px' }}>Contactez-nous</h3>
-          <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            <li style={{ fontSize: '14px', color: 'rgba(255,255,255,0.75)', display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-              <i className="tm-jassio-icon-location-pin" style={{ color: '#ff2a70', marginTop: '2px', flexShrink: 0 }}></i>
-              94 Chemin de la Peyrette,<br />31170 Tournefeuille
+          <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column' }}>
+            <li style={{ fontSize: '14px', color: 'rgba(255,255,255,0.75)', display: 'flex', alignItems: 'flex-start', gap: '15px', borderBottom: '1px solid #2a2a2a', paddingBottom: '15px', marginBottom: '15px' }}>
+              <i className="tm-jassio-icon-location-pin" style={{ color: '#ff2a70', marginTop: '2px', flexShrink: 0, fontSize: '16px' }}></i>
+              <div>94 Chemin de la Peyrette, 31170<br />Tournefeuille</div>
             </li>
-            <li style={{ fontSize: '14px', color: 'rgba(255,255,255,0.75)', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <i className="tm-jassio-icon-phone" style={{ color: '#ff2a70', flexShrink: 0 }}></i>
-              <a href="tel:+33624371811" style={{ color: 'rgba(255,255,255,0.75)', textDecoration: 'none' }}>06 24 37 18 11</a>
+            <li style={{ fontSize: '14px', color: 'rgba(255,255,255,0.75)', display: 'flex', alignItems: 'center', gap: '15px', borderBottom: '1px solid #2a2a2a', paddingBottom: '15px', marginBottom: '15px' }}>
+              <i className="tm-jassio-icon-phone" style={{ color: '#ff2a70', flexShrink: 0, fontSize: '16px' }}></i>
+              <a href="tel:+33624371811" style={{ color: 'rgba(255,255,255,0.75)', textDecoration: 'none', fontWeight: '600', color: '#fff' }}>06 24 37 18 11</a>
             </li>
-            <li style={{ fontSize: '14px', color: 'rgba(255,255,255,0.75)', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <i className="tm-jassio-icon-mail" style={{ color: '#ff2a70', flexShrink: 0 }}></i>
-              <a href="mailto:engy31@hotmail.fr" style={{ color: 'rgba(255,255,255,0.75)', textDecoration: 'none' }}>engy31@hotmail.fr</a>
-            </li>
-            <li style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <i className="tm-jassio-icon-mail" style={{ color: '#ff2a70', flexShrink: 0 }}></i>
-              <Link href="/mentions-legales" style={{ color: 'rgba(255,255,255,0.75)', textDecoration: 'none' }}>Mentions Légales</Link>
+            <li style={{ fontSize: '14px', color: 'rgba(255,255,255,0.75)', display: 'flex', alignItems: 'center', gap: '15px', borderBottom: '1px solid #2a2a2a', paddingBottom: '15px', marginBottom: '15px' }}>
+              <i className="tm-jassio-icon-mail" style={{ color: '#ff2a70', flexShrink: 0, fontSize: '16px' }}></i>
+              <a href="mailto:engy31@hotmail.fr" style={{ color: 'rgba(255,255,255,0.75)', textDecoration: 'none', fontWeight: '600', color: '#fff' }}>engy31@hotmail.fr</a>
             </li>
           </ul>
         </div>
@@ -67,7 +63,7 @@ export default function Footer() {
       <div style={{ backgroundColor: '#ff2a70', padding: '14px 24px', textAlign: 'center', fontSize: '13px', color: '#ffffff' }}>
         2026 <Link href="/" style={{ color: '#ffffff', fontWeight: '700', textDecoration: 'none' }}>TEMPS DANCE</Link>
         {' | '}Propulsé par{' '}
-        <a href="http://mwcrea-agency.com" target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', textDecoration: 'none', fontWeight: '600' }}>MWCREA AGENCY©</a>
+        <Link href="/" style={{ color: '#ffffff', textDecoration: 'none', fontWeight: '600' }}>MWCREA AGENCY©</Link>
       </div>
 
     </footer>

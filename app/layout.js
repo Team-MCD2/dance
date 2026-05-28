@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&family=Roboto:wght@400;500&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&family=Roboto:wght@400;500&display=swap" />
         <link rel="stylesheet" href="/assets/wp-content/themes/jassio/fonts/Abuget.css" />
         <link rel="stylesheet" href="/assets/bootstrap.min.css" />
         <link rel="stylesheet" href="/assets/bootstrap-theme.min.css" />

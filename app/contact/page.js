@@ -102,22 +102,19 @@ export default function ContactPage() {
                             <div className="elementor-container elementor-column-gap-no">
                               
                               {/* Left Column: Form */}
-                              <div className="elementor-column elementor-col-50 elementor-top-column elementor-element tm-bgcolor-yes tm-elementor-bg-color-white">
-                                <div className="elementor-widget-wrap elementor-element-populated" style={{ padding: "40px" }}>
+                              <div className="elementor-column elementor-col-50 elementor-top-column elementor-element">
+                                <div className="elementor-widget-wrap elementor-element-populated" style={{ padding: "50px", backgroundColor: "#ffffff", borderRadius: "8px", boxShadow: "0 15px 40px rgba(0,0,0,0.06)", margin: "20px" }}>
+                                  
                                   <div className="elementor-element tm-align-left elementor-widget elementor-widget-tm_heading">
                                     <div className="elementor-widget-container">
-                                      <div className="tm-element-heading-content-wrapper left-align tm-seperator-none tm-content-with-desc tm-heading-style-vertical">
-                                        <div className="tm-content-header">
-                                          <h2 className="tm-element-content-heading">Écrivez-nous</h2>
-                                        </div>
-                                        <div className="tm-element-content-desctxt">
-                                          Envoyez-nous un message et notre réception vous rappellera rapidement pour tout type de demande.
-                                        </div>
-                                      </div>
+                                      <h2 style={{ fontFamily: "Oswald, Arial, sans-serif", fontSize: "38px", fontWeight: "700", color: "#1a1a1a", marginBottom: "15px", marginTop: "0" }}>Écrivez-nous</h2>
+                                      <p style={{ fontFamily: "Inter, Arial, sans-serif", fontSize: "15px", color: "#666", lineHeight: "1.6", marginBottom: "35px" }}>
+                                        Envoyez-nous un message et notre réception vous rappellera rapidement pour tout type de demande.
+                                      </p>
                                     </div>
                                   </div>
                                   
-                                  <div className="elementor-element elementor-widget elementor-widget-shortcode" style={{ marginTop: "30px" }}>
+                                  <div className="elementor-element elementor-widget elementor-widget-shortcode">
                                     <div className="elementor-widget-container">
                                       <div className="elementor-shortcode">
                                         <div className="wpcf7 no-js" dir="ltr" lang="fr-FR">
@@ -129,71 +126,75 @@ export default function ContactPage() {
                                             <form onSubmit={handleSubmit} className="wpcf7-form init">
                                               <div className="tm-commonform contactform-1">
                                                 <div className="row">
-                                                  <div className="col-md-12" style={{ marginBottom: "20px" }}>
-                                                    <p style={{ position: "relative" }}>
-                                                      <i className="fa fa-user-o" style={{ position: "absolute", left: "15px", top: "15px", color: "#ff2a70" }}></i>
+                                                  <div className="col-md-12" style={{ marginBottom: "25px" }}>
+                                                    <p style={{ position: "relative", margin: 0 }}>
+                                                      <i className="fa fa-user-o" style={{ position: "absolute", left: "18px", top: "18px", color: "#666", fontSize: "16px" }}></i>
                                                       <span className="wpcf7-form-control-wrap" data-name="your-name">
                                                         <input 
                                                           required 
                                                           className="wpcf7-form-control wpcf7-text" 
-                                                          style={{ paddingLeft: "45px", width: "100%", height: "50px", borderRadius: "6px", border: "1px solid #ccc" }}
+                                                          style={{ paddingLeft: "50px", width: "100%", height: "55px", borderRadius: "6px", border: "1px solid #e8e8e8", backgroundColor: "#f9f9f9", fontSize: "15px", color: "#333", outline: "none", transition: "border-color 0.3s" }}
                                                           placeholder="Votre Nom*" 
                                                           type="text" 
                                                           value={formData.name} 
                                                           onChange={(e) => setFormData({...formData, name: e.target.value})}
+                                                          onFocus={(e) => e.target.style.borderColor = "#ff2a70"}
+                                                          onBlur={(e) => e.target.style.borderColor = "#e8e8e8"}
                                                         />
                                                       </span>
                                                     </p>
                                                   </div>
-                                                  <div className="col-md-12" style={{ marginBottom: "20px" }}>
-                                                    <p style={{ position: "relative" }}>
-                                                      <i className="fa fa-envelope-o" style={{ position: "absolute", left: "15px", top: "15px", color: "#ff2a70" }}></i>
+                                                  <div className="col-md-12" style={{ marginBottom: "25px" }}>
+                                                    <p style={{ position: "relative", margin: 0 }}>
+                                                      <i className="fa fa-envelope-o" style={{ position: "absolute", left: "18px", top: "18px", color: "#666", fontSize: "16px" }}></i>
                                                       <span className="wpcf7-form-control-wrap" data-name="your-email">
                                                         <input 
                                                           required 
                                                           className="wpcf7-form-control wpcf7-email wpcf7-text" 
-                                                          style={{ paddingLeft: "45px", width: "100%", height: "50px", borderRadius: "6px", border: "1px solid #ccc" }}
+                                                          style={{ paddingLeft: "50px", width: "100%", height: "55px", borderRadius: "6px", border: "1px solid #e8e8e8", backgroundColor: "#f9f9f9", fontSize: "15px", color: "#333", outline: "none", transition: "border-color 0.3s" }}
                                                           placeholder="Votre Email*" 
                                                           type="email" 
                                                           value={formData.email} 
                                                           onChange={(e) => setFormData({...formData, email: e.target.value})}
+                                                          onFocus={(e) => e.target.style.borderColor = "#ff2a70"}
+                                                          onBlur={(e) => e.target.style.borderColor = "#e8e8e8"}
                                                         />
                                                       </span>
                                                     </p>
                                                   </div>
-                                                  <div className="col-md-12" style={{ marginBottom: "20px" }}>
-                                                    <p style={{ position: "relative" }}>
-                                                      <i className="fa fa-pencil-square-o" style={{ position: "absolute", left: "15px", top: "15px", color: "#ff2a70" }}></i>
+                                                  <div className="col-md-12" style={{ marginBottom: "30px" }}>
+                                                    <p style={{ position: "relative", margin: 0 }}>
+                                                      <i className="fa fa-pencil-square-o" style={{ position: "absolute", left: "18px", top: "18px", color: "#666", fontSize: "16px" }}></i>
                                                       <span className="wpcf7-form-control-wrap" data-name="your-message">
                                                         <textarea 
                                                           required 
                                                           className="wpcf7-form-control wpcf7-textarea" 
-                                                          style={{ paddingLeft: "45px", paddingTop: "15px", width: "100%", borderRadius: "6px", border: "1px solid #ccc" }}
+                                                          style={{ paddingLeft: "50px", paddingTop: "18px", width: "100%", borderRadius: "6px", border: "1px solid #e8e8e8", backgroundColor: "#f9f9f9", fontSize: "15px", color: "#333", outline: "none", resize: "none", transition: "border-color 0.3s" }}
                                                           placeholder="Votre Message*" 
-                                                          rows="4"
+                                                          rows="5"
                                                           value={formData.message}
                                                           onChange={(e) => setFormData({...formData, message: e.target.value})}
+                                                          onFocus={(e) => e.target.style.borderColor = "#ff2a70"}
+                                                          onBlur={(e) => e.target.style.borderColor = "#e8e8e8"}
                                                         ></textarea>
                                                       </span>
                                                     </p>
                                                   </div>
                                                 </div>
-                                                <div className="form-btn tm-btn-color-skincolor tm-btn-style-flat tm-btn-shape-square elementor-widget elementor-widget-button" style={{ marginTop: "10px" }}>
+                                                <div className="form-btn" style={{ width: "100%" }}>
                                                   {error && (
                                                     <div className="alert alert-danger" style={{ padding: "15px", marginBottom: "20px", borderRadius: "6px", backgroundColor: "#f8d7da", borderColor: "#f5c6cb", color: "#721c24" }}>
                                                       {error}
                                                     </div>
                                                   )}
-                                                  <p style={{ display: "flex", alignItems: "center" }}>
-                                                    <input 
-                                                      disabled={loading}
-                                                      className="wpcf7-form-control wpcf7-submit has-spinner elementor-button-link elementor-button" 
-                                                      type="submit" 
-                                                      value={loading ? "ENVOI EN COURS..." : "CONTACTEZ-NOUS"} 
-                                                      style={{ cursor: loading ? "not-allowed" : "pointer", border: "none", padding: "12px 30px", borderRadius: "6px", backgroundColor: loading ? "#ccc" : "#ff2a70", color: "#fff", fontWeight: "bold", transition: "background-color 0.3s ease" }} 
-                                                    />
-                                                    {!loading && <i className="tm-jassio-icon-right-thin" style={{ marginLeft: "10px", color: "#fff" }}></i>}
-                                                  </p>
+                                                  <button 
+                                                    disabled={loading}
+                                                    type="submit" 
+                                                    style={{ width: "100%", cursor: loading ? "not-allowed" : "pointer", border: "none", padding: "16px", borderRadius: "6px", backgroundColor: loading ? "#ccc" : "#ff2a70", color: "#fff", fontWeight: "700", fontFamily: "Oswald, Arial, sans-serif", fontSize: "16px", letterSpacing: "0.5px", transition: "background-color 0.3s ease", display: "flex", justifyContent: "center", alignItems: "center" }}
+                                                  >
+                                                    {loading ? "ENVOI EN COURS..." : "CONTACTEZ-NOUS"}
+                                                    {!loading && <i className="fas fa-arrow-right" style={{ marginLeft: "8px", fontSize: "14px" }}></i>}
+                                                  </button>
                                                 </div>
                                               </div>
                                             </form>

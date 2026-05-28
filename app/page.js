@@ -9,10 +9,11 @@ import Footer from "./components/Footer";
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
-
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const slides = [
     {
       id: 'rs-5',
+      bg: 'https://tempsdance.fr/wp-content/uploads/2022/03/young-sportive-man-daancing-breakdance-isolared-over-black-backgrounf-in-neon-with-mixed-lights-aggrandi-scaled.jpg',
       video: 'mM7cQCMT-1E',
       subtitle1: 'Venez Découvrir Notre',
       subtitle2: 'Studio De Danse',
@@ -41,6 +42,23 @@ export default function HomePage() {
   return (
     <>
       <div id="tm-home"></div>
+      <style>{`
+        @keyframes kenburns {
+          0% { transform: scale(1); }
+          100% { transform: scale(1.15); }
+        }
+        @keyframes videoFadeIn {
+          0% { opacity: 0; }
+          100% { opacity: 1; }
+        }
+        .elementor-wrapper:hover .play-btn-overlay {
+          background-color: #ff2a70 !important;
+          transform: translate(-50%, -50%) scale(1.1) !important;
+        }
+        .elementor-wrapper:hover .hover-zoom {
+          transform: scale(1.05) !important;
+        }
+      `}</style>
       <div className="main-holder">
         <div id="page" className="hfeed site">
           <Header />
@@ -93,31 +111,29 @@ export default function HomePage() {
                           left: 0
                         }}
                       >
-                        {/* Background: video or image */}
+                        {/* Background Image (always present for Ken Burns effect) */}
                         <div style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0, overflow: "hidden" }}>
-                          {slide.video ? (
-                            <>
-                              <iframe
-                                src={`https://www.youtube-nocookie.com/embed/${slide.video}?autoplay=1&mute=1&loop=1&playlist=${slide.video}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&wmode=opaque`}
-                                allow="autoplay; encrypted-media"
-                                allowFullScreen
-                                style={{ position: "absolute", top: "50%", left: "50%", width: "100%", height: "56.25vw", minHeight: "100%", minWidth: "177.78vh", transform: "translate(-50%, -50%)", border: "none", pointerEvents: "none" }}
-                                title="video-bg"
-                              />
-                              <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.45)" }}></div>
-                            </>
-                          ) : (
-                            <>
-                              <Image
-                                src={slide.bg}
-                                alt={slide.title || slide.subtitle1}
-                                fill
-                                style={{ objectFit: "cover" }}
-                                priority={index === 0}
-                              />
-                              <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.4)" }}></div>
-                            </>
+                          <div style={{ position: "absolute", inset: 0, animation: isActive ? "kenburns 10s ease-out forwards" : "none" }}>
+                            <Image
+                              src={slide.bg}
+                              alt={slide.title || slide.subtitle1}
+                              fill
+                              style={{ objectFit: "cover" }}
+                              priority={index === 0}
+                            />
+                          </div>
+                          
+                          {/* Video Layer (fades in after 3 seconds) */}
+                          {slide.video && (
+                            <iframe
+                              src={`https://www.youtube-nocookie.com/embed/${slide.video}?autoplay=1&mute=1&loop=1&playlist=${slide.video}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&wmode=opaque`}
+                              allow="autoplay; encrypted-media"
+                              allowFullScreen
+                              style={{ position: "absolute", top: "50%", left: "50%", width: "100%", height: "56.25vw", minHeight: "100%", minWidth: "177.78vh", transform: "translate(-50%, -50%)", border: "none", pointerEvents: "none", opacity: 0, animation: isActive ? "videoFadeIn 1s ease-in 3s forwards" : "none" }}
+                              title="video-bg"
+                            />
                           )}
+                          <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.45)" }}></div>
                         </div>
 
                         {/* Slide Content Container */}
@@ -743,8 +759,21 @@ export default function HomePage() {
                             <div className="elementor-widget-wrap elementor-element-populated">
                               <div className="elementor-element elementor-element-abc54e7 elementor-widget elementor-widget-video" data-id="abc54e7" data-element_type="widget" data-widget_type="video.default">
                                 <div className="elementor-widget-container">
-                                  <div className="elementor-wrapper elementor-open-inline">
-                                    <iframe className="elementor-video" frameBorder="0" allowFullScreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="YouTube video player" width="640" height="360" src="https://www.youtube.com/embed/npbsAZgqDTM?controls=1&amp;rel=0&amp;modestbranding=1" id="widget2"></iframe>
+                                  <div className="elementor-wrapper elementor-open-inline" style={{ cursor: "pointer", position: "relative", overflow: "hidden", borderRadius: "10px" }} onClick={() => setIsVideoPlaying(true)}>
+                                    {!isVideoPlaying ? (
+                                      <div className="elementor-custom-embed-image-overlay" style={{ position: "relative", width: "100%", height: "100%" }}>
+                                        <div style={{ position: "relative", width: "100%", paddingTop: "56.25%" }}>
+                                          <img src="https://i.ytimg.com/vi/npbsAZgqDTM/maxresdefault.jpg" alt="Video" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.5s ease" }} className="hover-zoom" />
+                                        </div>
+                                        <div className="elementor-custom-embed-play play-btn-overlay" style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "80px", height: "80px", backgroundColor: "rgba(0,0,0,0.6)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.3s" }}>
+                                          <i className="fa fa-play" style={{ color: "#fff", fontSize: "30px", marginLeft: "5px" }}></i>
+                                        </div>
+                                      </div>
+                                    ) : (
+                                      <div style={{ position: "relative", width: "100%", paddingTop: "56.25%" }}>
+                                        <iframe className="elementor-video" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} frameBorder="0" allowFullScreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="YouTube video player" src="https://www.youtube.com/embed/npbsAZgqDTM?autoplay=1&amp;controls=1&amp;rel=0&amp;modestbranding=1" id="widget2"></iframe>
+                                      </div>
+                                    )}
                                   </div>
                                 </div>
                               </div>
