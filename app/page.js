@@ -6,38 +6,9 @@ import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import HeroSliderScraped from "./components/HeroSliderScraped";
 
 export default function HomePage() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-  const slides = [
-    {
-      id: 'rs-5',
-      bg: 'https://tempsdance.fr/wp-content/uploads/2022/03/young-sportive-man-daancing-breakdance-isolared-over-black-backgrounf-in-neon-with-mixed-lights-aggrandi-scaled.jpg',
-      video: 'mM7cQCMT-1E',
-      subtitle1: 'Venez Découvrir Notre',
-      subtitle2: 'Studio De Danse',
-      title: 'Temps Dance',
-      link1: '/nos-cours-2',
-      link2: '/les-professeurs'
-    },
-    {
-      id: 'rs-6',
-      bg: 'https://tempsdance.fr/wp-content/uploads/2022/03/man-and-woman-dancing-salsa-noir-scaled.jpg',
-      subtitle1: 'Dance',
-      subtitle2: 'Express Yourself',
-      title: '',
-      link1: '/nos-cours-2',
-      link2: '/les-professeurs'
-    }
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <>
@@ -64,123 +35,7 @@ export default function HomePage() {
           <Header />
           
       {/* Hero Slider Section */}
-      <div className="themetechmount-slider-wrapper">
-        <div className="themetechmount-slider-wide">
-          <div id="rev_slider_3_1_forcefullwidth" style={{ marginTop: "0px", marginBottom: "0px" }}>
-            <div id="rev_slider_3_1_wrapper" data-source="gallery" style={{ visibility: "visible", background: "transparent", padding: "0px", margin: "0px auto", display: "block", width: "100%", position: "relative", overflow: "hidden" }}>
-              <div id="rev_slider_3_1" style={{ width: "100%", height: "100%", position: "relative" }} className="revslider-initialised rev_redraw_on_blurfocus">
-                
-                {/* Left Arrow */}
-                <div 
-                  onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
-                  style={{ opacity: 0, top: "50%", left: "20px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", width: "44px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,42,112,0.85)", borderRadius: "50%", color: "#fff", transition: "opacity 0.3s" }} 
-                  className="tp-leftarrow tparrows uranus slider-arrow"
-                >
-                  <i className="tm-jassio-icon-left-open-big" style={{ fontSize: "18px" }}></i>
-                </div>
-
-                {/* Right Arrow */}
-                <div 
-                  onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-                  style={{ opacity: 0, top: "50%", right: "20px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", width: "44px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,42,112,0.85)", borderRadius: "50%", color: "#fff", transition: "opacity 0.3s" }} 
-                  className="tp-rightarrow tparrows uranus slider-arrow"
-                >
-                  <i className="tm-jassio-icon-right-open-big" style={{ fontSize: "18px" }}></i>
-                </div>
-
-                <div style={{ visibility: "hidden" }}>
-                  <div className="div-bar" style={{ background: "rgba(255, 255, 255, 0.5)", transformOrigin: "0% 50%", transform: "translate3d(0px, 0px, 0px) scale(0.1014, 1)" }}></div>
-                </div>
-
-                <div style={{ visibility: "visible", maxHeight: "none", height: "100%", width: "100%", overflow: "hidden", position: "relative", minHeight: "450px" }}>
-                  {slides.map((slide, index) => {
-                    const isActive = index === currentSlide;
-                    return (
-                      <div 
-                        key={slide.id}
-                        style={{
-                          position: "absolute",
-                          overflow: "hidden",
-                          height: "100%",
-                          width: "100%",
-                          zIndex: isActive ? 20 : 10,
-                          opacity: isActive ? 1 : 0,
-                          visibility: isActive ? "inherit" : "hidden",
-                          transition: "opacity 1s ease-in-out",
-                          top: 0,
-                          left: 0
-                        }}
-                      >
-                        {/* Background Image (always present for Ken Burns effect) */}
-                        <div style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0, overflow: "hidden" }}>
-                          <div style={{ position: "absolute", inset: 0, animation: isActive ? "kenburns 10s ease-out forwards" : "none" }}>
-                            <Image
-                              src={slide.bg}
-                              alt={slide.title || slide.subtitle1}
-                              fill
-                              style={{ objectFit: "cover" }}
-                              priority={index === 0}
-                            />
-                          </div>
-                          
-                          {/* Video Layer (fades in after 3 seconds) */}
-                          {slide.video && (
-                            <iframe
-                              src={`https://www.youtube-nocookie.com/embed/${slide.video}?autoplay=1&mute=1&loop=1&playlist=${slide.video}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&wmode=opaque`}
-                              allow="autoplay; encrypted-media"
-                              allowFullScreen
-                              style={{ position: "absolute", top: "50%", left: "50%", width: "100%", height: "56.25vw", minHeight: "100%", minWidth: "177.78vh", transform: "translate(-50%, -50%)", border: "none", pointerEvents: "none", opacity: 0, animation: isActive ? "videoFadeIn 1s ease-in 3s forwards" : "none" }}
-                              title="video-bg"
-                            />
-                          )}
-                          <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.45)" }}></div>
-                        </div>
-
-                        {/* Slide Content Container */}
-                        <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex: 25, padding: "20px", textAlign: "center" }}>
-                          <div style={{ fontFamily: "Oswald", color: "#ffffff", fontWeight: 700, fontSize: "clamp(24px, 4vw, 40px)", lineHeight: "1.2", marginBottom: "10px", textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>
-                            {slide.subtitle1}
-                          </div>
-                          
-                          <div style={{ fontFamily: "Oswald", color: "#ffffff", fontWeight: 700, fontSize: "clamp(24px, 4vw, 40px)", lineHeight: "1.2", marginBottom: slide.title ? "10px" : "30px", textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>
-                            {slide.subtitle2}
-                          </div>
-
-                          {slide.title && (
-                            <div className="tm-danceslider-text" style={{ fontFamily: "Roboto", color: "#ff2a70", fontWeight: 400, fontSize: "clamp(36px, 6vw, 65px)", lineHeight: "1.2", marginBottom: "30px", textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>
-                              {slide.title}
-                            </div>
-                          )}
-
-                          {/* Buttons */}
-                          <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", justifyContent: "center" }}>
-                            <a 
-                              className="tm-slider-button" 
-                              href={slide.link1} 
-                              style={{ backgroundColor: "#ff2a70", color: "#ffffff", fontFamily: "Oswald", fontWeight: 500, fontSize: "14px", padding: "12px 30px", borderRadius: "6px", textDecoration: "none", letterSpacing: "1px", display: "inline-flex", alignItems: "center", transition: "background-color 0.3s" }}
-                            >
-                              NOS COURS <i className="tm-jassio-icon-right-thin" style={{ marginLeft: "5px" }}></i>
-                            </a>
-                            <a 
-                              className="tm-slider-button" 
-                              href={slide.link2} 
-                              style={{ backgroundColor: "transparent", color: "#ffffff", fontFamily: "Oswald", fontWeight: 500, fontSize: "14px", padding: "12px 30px", borderRadius: "6px", textDecoration: "none", letterSpacing: "1px", border: "1px solid #ffffff", display: "inline-flex", alignItems: "center", transition: "all 0.3s" }}
-                            >
-                              NOS PROFESSEURS <i className="tm-jassio-icon-right-thin" style={{ marginLeft: "5px" }}></i>
-                            </a>
-                          </div>
-                        </div>
-
-                      </div>
-                    );
-                  })}
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <HeroSliderScraped />
 
       <div id="content-wrapper" className="site-content-wrapper">
         <div id="content" className="site-content">
