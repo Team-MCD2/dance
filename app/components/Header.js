@@ -90,13 +90,10 @@ export default function Header() {
               {/* Branding (Logo) */}
               <div className="site-branding">
                 <Link className="home-link" href="/" title="TEMPS DANCE" rel="home">
-                  <Image 
+                  <img 
                     className="standardlogo" 
                     alt="TEMPS DANCE" 
                     src="/assets/logo4.png" 
-                    width={150}
-                    height={50}
-                    priority
                   />
                 </Link>
               </div>

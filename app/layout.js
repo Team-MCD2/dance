@@ -51,6 +51,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="/assets/jassio-last-checkpoint.min.css" />
         <link rel="stylesheet" href="/assets/custom-navbar.css" />
         <script src="/assets/custom-navbar.js" defer></script>
+
         <style dangerouslySetInnerHTML={{ __html: `
           body { margin: 0; padding: 0; }
           #root { width: 100%; }
