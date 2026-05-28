@@ -64,7 +64,7 @@ export default function AlbumsPage() {
                                   Les meilleurs moments saisis
                                 </h2>
                               </div>
-                              <div className="tm-element-content-desctxt" style={{ maxWidth: '600px', margin: '0 auto' }}>
+                              <div className="tm-element-content-desctxt" style={{ maxWidth: '800px', margin: '0 auto', fontSize: '18px', lineHeight: '1.6', color: '#555' }}>
                                 Ainsi, pour satisfaire les amateurs de danse du monde entier et s'assurer que vous êtes toujours au courant des meilleurs moments de Temps Dance.
                               </div>
                             </div>
