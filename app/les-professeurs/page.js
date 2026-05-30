@@ -11,43 +11,43 @@ export default function LesProfesseursPage() {
     {
       name: 'Lola Hamousin',
       position: 'Professeur de Contemporain',
-      image: '/assets/wp-content/uploads/2025/06/Lola-Hamousin-400x500.jpg',
+      image: '/assets/content/uploads/2025/06/Lola-Hamousin-400x500.jpg',
       link: '/team-member/lola-hamousin'
     },
     {
       name: 'Sandrine Walter',
       position: 'Professeur de Street Jazz, Hip-Hop, Cabaret et Jazz Cabaret',
-      image: '/assets/wp-content/uploads/2022/03/6-400x470.png',
+      image: '/assets/content/uploads/2022/03/6-400x470.png',
       link: '/team-member/sandrine-walter'
     },
     {
       name: 'Jayen Scratchy',
       position: 'Professeur de Break Dance',
-      image: '/assets/wp-content/uploads/2022/10/jayden-400x500.jpg',
+      image: '/assets/content/uploads/2022/10/jayden-400x500.jpg',
       link: '/team-member/jayen-scratchy'
     },
     {
       name: 'Alexis Sabatier',
       position: 'Professeur éveils initiations et élémentaires',
-      image: '/assets/wp-content/uploads/2022/10/alexissabathier-400x500.jpeg',
+      image: '/assets/content/uploads/2022/10/alexissabathier-400x500.jpeg',
       link: '/team-member/alexis-sabatier'
     },
     {
       name: 'Soraya',
       position: 'Professeur de Dancehall et Hip-Hop création',
-      image: '/assets/wp-content/uploads/2021/12/WhatsApp-Image-2022-03-19-at-16.37.32-400x500.jpeg',
+      image: '/assets/content/uploads/2021/12/WhatsApp-Image-2022-03-19-at-16.37.32-400x500.jpeg',
       link: '/team-member/soraya'
     },
     {
       name: 'Laura',
       position: 'Professeur Afro Dance',
-      image: '/assets/wp-content/uploads/2021/12/17dbf99d-1ad8-459f-813e-8fa40b95e705-400x500.jpeg',
+      image: '/assets/content/uploads/2021/12/17dbf99d-1ad8-459f-813e-8fa40b95e705-400x500.jpeg',
       link: '/team-member/carla'
     },
     {
       name: 'Alexia',
       position: 'Coach Renforcement et Pilates',
-      image: '/assets/wp-content/uploads/2022/03/17121342-10211741247396983-1898119296-o-400x500.jpeg',
+      image: '/assets/content/uploads/2022/03/17121342-10211741247396983-1898119296-o-400x500.jpeg',
       link: '/team-member/alexia'
     }
   ];

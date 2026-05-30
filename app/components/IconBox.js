@@ -24,7 +24,7 @@ export default function IconBox({
                   <Image 
                     alt={title || "Icon"} 
                     className="attachment-themetechmount-img-team-member size-themetechmount-img-team-member wp-post-image" 
-                    src={image || '/assets/wp-content/uploads/2022/03/logo4.png'} 
+                    src={image || '/assets/content/uploads/2022/03/logo4.png'} 
                     width={400}
                     height={420}
                     style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center top", display: "block", transition: "transform 0.5s ease" }} 

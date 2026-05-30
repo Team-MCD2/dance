@@ -7,12 +7,12 @@ import Footer from "../components/Footer";
 export default function AlbumsPage() {
   // Album photos (original 6 only)
   const images = [
-    { src: "/assets/wp-content/uploads/2022/03/2.png", alt: "Temps Dance - Spectacle 1" },
-    { src: "/assets/wp-content/uploads/2022/03/3.png", alt: "Temps Dance - Spectacle 2" },
-    { src: "/assets/wp-content/uploads/2022/03/4.png", alt: "Temps Dance - Cours de danse" },
-    { src: "/assets/wp-content/uploads/2022/03/6.png", alt: "Temps Dance - Répétition" },
-    { src: "/assets/wp-content/uploads/2022/03/5.png", alt: "Temps Dance - Événement" },
-    { src: "/assets/wp-content/uploads/2022/03/7.png", alt: "Temps Dance - Showcase" },
+    { src: "/assets/content/uploads/2022/03/2.png", alt: "Temps Dance - Spectacle 1" },
+    { src: "/assets/content/uploads/2022/03/3.png", alt: "Temps Dance - Spectacle 2" },
+    { src: "/assets/content/uploads/2022/03/4.png", alt: "Temps Dance - Cours de danse" },
+    { src: "/assets/content/uploads/2022/03/6.png", alt: "Temps Dance - Répétition" },
+    { src: "/assets/content/uploads/2022/03/5.png", alt: "Temps Dance - Événement" },
+    { src: "/assets/content/uploads/2022/03/7.png", alt: "Temps Dance - Showcase" },
   ];
 
   const [lightboxIndex, setLightboxIndex] = useState(null);
@@ -48,7 +48,7 @@ export default function AlbumsPage() {
                             padding: '80px 0 100px', 
                             textAlign: 'center', 
                             backgroundColor: '#ededed', 
-                            backgroundImage: 'url("/assets/wp-content/themes/jassio/images/volum-bg.png")', 
+                            backgroundImage: 'url("/assets/content/themes/jassio/images/volum-bg.png")', 
                             backgroundRepeat: 'repeat', 
                             backgroundPosition: 'center center' 
                           }}>

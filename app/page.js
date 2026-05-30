@@ -215,7 +215,7 @@ export default function HomePage() {
                               <div className="elementor-element elementor-element-156a12b tm-btn-shape-rounded elementor-align-center tm-btn-color-skincolor tm-btn-style-flat elementor-widget elementor-widget-button" data-id="156a12b" data-element_type="widget" data-widget_type="button.default">
                                 <div className="elementor-widget-container">
                                   <div className="elementor-button-wrapper">
-                                    <a className="elementor-button elementor-button-link elementor-size-md" href="https://tempsdance.fr/wp-content/uploads/2022/06/stage-eěteě-2022.pdf" target="_blank" rel="noopener noreferrer">
+                                    <a className="elementor-button elementor-button-link elementor-size-md" href="https://tempsdance.fr/content/uploads/2022/06/stage-eěteě-2022.pdf" target="_blank" rel="noopener noreferrer">
                                       <span className="elementor-button-content-wrapper">
                                         <span className="elementor-button-icon"><i aria-hidden="true" className="fas fa-long-arrow-alt-right"></i></span>
                                         <span className="elementor-button-text">Planning Stage</span>

@@ -1,8 +1,8 @@
-/* FIX FOR WORDPRESS's CRAZY <p> TAG ANOMALY */
-.rs-p-wp-fix { display: none !important; margin: 0 !important; height: 0px !important; }
+/* FIX FOR SITECORE's CRAZY <p> TAG ANOMALY */
+.rs-p-sys-fix { display: none !important; margin: 0 !important; height: 0px !important; }
 
 /* NEW Z-INDEX FIX*/
-.wp-block-themepunch-revslider { position: relative }
+.sys-block-themepunch-revslider { position: relative }
 
 /* FIX FOR QUICK LOADING OF SLIDER SCRIPTS AND WP-ROCKET READDING IMG TAG INTO DOM*/
 /*rs-sbg-px rs-sbg-wrap img { display:none !important}*/

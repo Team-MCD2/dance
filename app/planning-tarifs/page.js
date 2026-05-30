@@ -11,18 +11,18 @@ export default function PlanningTarifsPage() {
   const cards = [
     {
       title: "TARIFS 2026/2027",
-      image: "/assets/wp-content/uploads/2025/05/TARIFS-2025_-2026_page-0001-723x1024.jpg",
-      link: "/assets/wp-content/uploads/2025/05/TARIFS-2025_-2026_page-0001-scaled.jpg"
+      image: "/assets/content/uploads/2025/05/TARIFS-2025_-2026_page-0001-723x1024.jpg",
+      link: "/assets/content/uploads/2025/05/TARIFS-2025_-2026_page-0001-scaled.jpg"
     },
     {
       title: "FICHE D'INSCRIPTION 2026/2027",
-      image: "/assets/wp-content/uploads/2025/05/fiche-d-insciption-2025-2026_page-0001-724x1024.jpg",
-      link: "/assets/wp-content/uploads/2025/05/fiche-d-insciption-2025-2026_page-0001.jpg"
+      image: "/assets/content/uploads/2025/05/fiche-d-insciption-2025-2026_page-0001-724x1024.jpg",
+      link: "/assets/content/uploads/2025/05/fiche-d-insciption-2025-2026_page-0001.jpg"
     },
     {
       title: "PLANNING 2026/2027",
-      image: "/assets/wp-content/uploads/2025/06/planning-2025-2026-_page-0001-723x1024.jpg",
-      link: "/assets/wp-content/uploads/2025/06/planning-2025-2026-_page-0001-scaled.jpg"
+      image: "/assets/content/uploads/2025/06/planning-2025-2026-_page-0001-723x1024.jpg",
+      link: "/assets/content/uploads/2025/06/planning-2025-2026-_page-0001-scaled.jpg"
     }
   ];
 

@@ -1,29 +1,23 @@
 const puppeteer = require('puppeteer');
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: 'new' });
-  const page = await browser.newPage();
-  
-  try {
-    await page.goto('http://localhost:3000/les-professeurs', { waitUntil: 'networkidle2' });
-    await page.setViewport({ width: 1200, height: 1000 });
-    await page.screenshot({ path: 'local-screenshot.png' });
-    const result = await page.evaluate(() => {
-      const fonts = [];
-      document.querySelectorAll('*').forEach(el => {
-          if (el.textContent && el.textContent.includes('Alexis Sabatier')) {
-              fonts.push({
-                 tag: el.tagName,
-                 fontFamily: window.getComputedStyle(el).fontFamily
-              });
-          }
-      });
-      return fonts;
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.setViewport({ width: 1920, height: 1080 });
+    
+    // Listen for console logs
+    page.on('console', msg => console.log('PAGE LOG:', msg.text()));
+    page.on('requestfailed', request => {
+        console.log(`FAILED REQUEST: ${request.url()} ${request.response()?.status()}`);
     });
-    console.log('Result:', result);
-  } catch (error) {
-    console.error('Error:', error);
-  } finally {
-    await browser.close();
-  }
+
+    try {
+        await page.goto('http://localhost:3000/', { waitUntil: 'networkidle0', timeout: 30000 });
+        await page.screenshot({ path: 'screenshot_home.png', fullPage: true });
+        console.log('Screenshot of home page saved to screenshot_home.png');
+    } catch (error) {
+        console.error('Error taking screenshot:', error);
+    } finally {
+        await browser.close();
+    }
 })();

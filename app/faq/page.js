@@ -139,7 +139,7 @@ export default function FAQPage() {
                                       <Image 
                                         alt="FAQ Image" 
                                         className="attachment-large size-large wp-image-8285" 
-                                        src="/assets/wp-content/uploads/2022/03/FAQ-2.png" 
+                                        src="/assets/content/uploads/2022/03/FAQ-2.png" 
                                         width={500}
                                         height={500}
                                         style={{ maxWidth: "100%", height: "auto", borderRadius: "10px" }}
