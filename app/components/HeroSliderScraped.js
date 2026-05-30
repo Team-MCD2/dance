@@ -14,33 +14,11 @@ export default function HeroSlider() {
     "bg": "//tempsdance.fr/wp-content/uploads/2021/12/slider-img-01.jpg",
     "video": "mM7cQCMT-1E",
     "layers": [
-      {
-        "type": "text",
-        "text": "Venez D\u00e9couvrir Notre",
-        "is_pink": false
-      },
-      {
-        "type": "text",
-        "text": "Studio De Danse",
-        "is_pink": false
-      },
-      {
-        "type": "text",
-        "text": "Temps  Dance",
-        "is_pink": true
-      },
-      {
-        "type": "button",
-        "text": "NOS COURS",
-        "href": "/nos-cours-2",
-        "is_primary": true
-      },
-      {
-        "type": "button",
-        "text": "NOS PROFESSEURS",
-        "href": "/lesprofesseurs",
-        "is_primary": true
-      }
+      { "type": "text", "text": "Venez Découvrir Notre", "is_pink": false },
+      { "type": "text", "text": "Studio De Danse", "is_pink": false },
+      { "type": "text", "text": "Temps  Dance", "is_pink": true },
+      { "type": "button", "text": "NOS COURS", "href": "/nos-cours-2", "is_primary": true },
+      { "type": "button", "text": "NOS PROFESSEURS", "href": "/lesprofesseurs", "is_primary": false }
     ]
   },
   {
@@ -48,28 +26,10 @@ export default function HeroSlider() {
     "bg": "//tempsdance.fr/wp-content/uploads/2022/03/man-and-woman-dancing-salsa-noir-scaled.jpg",
     "video": "",
     "layers": [
-      {
-        "type": "text",
-        "text": "Dance",
-        "is_pink": false
-      },
-      {
-        "type": "text",
-        "text": "Express Yourself",
-        "is_pink": true
-      },
-      {
-        "type": "button",
-        "text": "NOS COURS",
-        "href": "/nos-cours-2",
-        "is_primary": true
-      },
-      {
-        "type": "button",
-        "text": "NOS PROFESSEURS",
-        "href": "/lesprofesseurs",
-        "is_primary": true
-      }
+      { "type": "text", "text": "Dance", "is_pink": false },
+      { "type": "text", "text": "Express Yourself", "is_pink": true },
+      { "type": "button", "text": "NOS COURS", "href": "/nos-cours-2", "is_primary": true },
+      { "type": "button", "text": "NOS PROFESSEURS", "href": "/lesprofesseurs", "is_primary": false }
     ]
   }
 ];
@@ -83,7 +43,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <div className="hero-slider-wrapper" style={{ position: 'relative', width: '100%', height: 'auto', minHeight: '450px', overflow: 'hidden', backgroundColor: '#000' }}>
+    <div className="hero-slider-wrapper" style={{ position: 'relative', width: '100%', height: 'auto', minHeight: '600px', overflow: 'hidden', backgroundColor: '#000' }}>
       <style>{`
         @keyframes videoFadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
         @keyframes kenburns { 0% { transform: scale(1); } 100% { transform: scale(1.15); } }
@@ -91,6 +51,8 @@ export default function HeroSlider() {
       
       {slides.map((slide, index) => {
         const isActive = index === currentSlide;
+        const isSlide1 = slide.id === 'rs-5';
+        
         return (
           <div key={slide.id} style={{
             position: 'absolute', inset: 0,
@@ -110,45 +72,48 @@ export default function HeroSlider() {
                   src={`https://www.youtube-nocookie.com/embed/${slide.video}?autoplay=1&mute=1&loop=1&playlist=${slide.video}&controls=0&showinfo=0&rel=0&playsinline=1`}
                   allow="autoplay; fullscreen; picture-in-picture"
                   allowFullScreen
-                  style={{ position: "absolute", top: "50%", left: "50%", width: "100%", height: "56.25vw", minHeight: "100%", minWidth: "177.78vh", transform: "translate(-50%, -50%)", border: "none", opacity: 0, animation: isActive ? "videoFadeIn 1s ease-in 3s forwards" : "none" }}
+                  style={{ position: "absolute", top: "50%", left: "50%", width: "100%", height: "56.25vw", minHeight: "100%", minWidth: "177.78vh", transform: "translate(-50%, -50%)", border: "none", opacity: 0, animation: isActive ? "videoFadeIn 1s ease-in 3s forwards" : "none", pointerEvents: "none" }}
                 />
               )}
-              <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.45)' }}></div>
+              <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.35)' }}></div>
             </div>
             
-            <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', zIndex: 25, padding: '20px', textAlign: 'center' }}>
-              <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '30px' }}>
-                {slide.layers.filter(l => l.type === 'text').map((layer, i) => {
-                  const isTempsDance = layer.text.includes('Temps');
-                  if (isTempsDance) {
-                    return (
-                      <div key={i} className={greatVibes.className} style={{ 
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        transform: 'translate(-50%, -50%) rotate(-5deg)',
-                        color: '#ff2a70', 
-                        fontWeight: 400, 
-                        fontSize: 'clamp(60px, 10vw, 130px)', 
-                        whiteSpace: 'nowrap',
-                        textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
-                        pointerEvents: 'none',
-                        zIndex: 10
-                      }}>
-                        {layer.text}
-                      </div>
-                    );
-                  }
-                  
+            <div style={{ 
+              position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', 
+              alignItems: isSlide1 ? 'flex-end' : 'flex-start', 
+              justifyContent: 'center', zIndex: 25, 
+              padding: isSlide1 ? '0 10% 0 0' : '0 0 0 15%',
+            }}>
+              <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: isSlide1 ? 'center' : 'flex-start', marginBottom: '30px' }}>
+                {slide.layers.filter(l => l.type === 'text' && !l.is_pink).map((layer, i) => (
+                  <div key={i} style={{ 
+                    fontFamily: 'Oswald, sans-serif', 
+                    color: '#ffffff', 
+                    fontWeight: 700, 
+                    fontSize: isSlide1 ? 'clamp(36px, 5vw, 65px)' : 'clamp(50px, 8vw, 100px)', 
+                    lineHeight: '1.1', 
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
+                    textTransform: 'none'
+                  }}>
+                    {layer.text}
+                  </div>
+                ))}
+                
+                {slide.layers.filter(l => l.is_pink).map((layer, i) => {
+                  const absoluteStyle = isSlide1 
+                    ? { top: '50%', left: '50%', transform: 'translate(-50%, -50%) rotate(-5deg)', fontSize: 'clamp(60px, 10vw, 130px)' }
+                    : { top: '60%', left: '30%', transform: 'rotate(-5deg)', fontSize: 'clamp(50px, 8vw, 100px)' };
+                    
                   return (
-                    <div key={i} className={layer.is_pink ? greatVibes.className : ''} style={{ 
-                      fontFamily: layer.is_pink ? undefined : 'Oswald, sans-serif', 
-                      color: layer.is_pink ? '#ff2a70' : '#ffffff', 
-                      fontWeight: layer.is_pink ? 400 : 700, 
-                      fontSize: layer.is_pink ? 'clamp(50px, 8vw, 90px)' : 'clamp(36px, 5vw, 65px)', 
-                      lineHeight: '1.2', 
+                    <div key={`pink-${i}`} className={greatVibes.className} style={{ 
+                      position: 'absolute',
+                      ...absoluteStyle,
+                      color: '#ff2a70', 
+                      fontWeight: 400, 
+                      whiteSpace: 'nowrap',
                       textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
-                      marginTop: layer.is_pink ? '10px' : '0'
+                      pointerEvents: 'none',
+                      zIndex: 10
                     }}>
                       {layer.text}
                     </div>
@@ -156,11 +121,11 @@ export default function HeroSlider() {
                 })}
               </div>
               
-              <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '20px' }}>
+              <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: isSlide1 ? 'center' : 'flex-start', marginTop: '10px' }}>
                 {slide.layers.filter(l => l.type === 'button').map((layer, i) => (
                   <Link key={i} href={layer.href} style={{ 
                     backgroundColor: layer.is_primary ? '#ff2a70' : 'transparent', 
-                    color: '#ffffff', fontFamily: 'Oswald', fontWeight: 500, fontSize: '14px', 
+                    color: '#ffffff', fontFamily: 'Oswald, sans-serif', fontWeight: 500, fontSize: '14px', 
                     padding: '12px 30px', borderRadius: '6px', textDecoration: 'none', 
                     letterSpacing: '1px', border: layer.is_primary ? 'none' : '1px solid #ffffff', 
                     display: 'inline-flex', alignItems: 'center', transition: 'all 0.3s' 
@@ -177,15 +142,19 @@ export default function HeroSlider() {
       {/* Navigation Arrows */}
       <div 
         onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
-        style={{ top: "50%", left: "20px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", width: "50px", height: "50px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "#ff2a70", borderRadius: "50%", color: "#fff", transition: "background-color 0.3s", fontSize: "24px" }} 
+        style={{ top: "50%", left: "30px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", display: "flex", alignItems: "center", justifyContent: "center", color: "rgba(255,255,255,0.7)", transition: "color 0.3s", fontSize: "60px", fontWeight: "100" }} 
+        onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
+        onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.7)'}
       >
-        &laquo;
+        &#10094;
       </div>
       <div 
         onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-        style={{ top: "50%", right: "20px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", width: "50px", height: "50px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "#ff2a70", borderRadius: "50%", color: "#fff", transition: "background-color 0.3s", fontSize: "24px" }} 
+        style={{ top: "50%", right: "30px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", display: "flex", alignItems: "center", justifyContent: "center", color: "rgba(255,255,255,0.7)", transition: "color 0.3s", fontSize: "60px", fontWeight: "100" }} 
+        onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
+        onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.7)'}
       >
-        &raquo;
+        &#10095;
       </div>
     </div>
   );
