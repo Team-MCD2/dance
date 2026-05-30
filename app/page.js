@@ -51,26 +51,8 @@ export default function HomePage() {
 
                   <div className="entry-content">
                     <div data-elementor-type="wp-page" data-elementor-id="249" className="elementor elementor-249" data-elementor-post-type="page">
-                      
-                      {/* Spacer Section */}
-                      <section className="elementor-section elementor-top-section elementor-element elementor-element-7ae1ecc elementor-section-full_width elementor-section-stretched tm-column-break-ipad-yes tm-col-stretched-none elementor-section-height-default elementor-section-height-default tm-bgimage-no tm-bgcolor-yes" data-id="7ae1ecc" data-element_type="section">
-                        <div className="elementor-container elementor-column-gap-no">
-                          <div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6b1a69f tm-bgimage-no tm-bgcolor-yes" data-id="6b1a69f" data-element_type="column">
-                            <div className="elementor-widget-wrap elementor-element-populated">
-                              <div className="elementor-element elementor-element-59d9729 elementor-widget elementor-widget-spacer" data-id="59d9729" data-element_type="widget" data-widget_type="spacer.default">
-                                <div className="elementor-widget-container">
-                                  <div className="elementor-spacer">
-                                    <div className="elementor-spacer-inner"></div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </section>
-
                       {/* About Section */}
-                      <section className="elementor-section elementor-top-section elementor-element elementor-element-c19e8d7 tm-column-break-ipad-yes elementor-section-stretched tm-col-stretched-none elementor-section-boxed elementor-section-height-default elementor-section-height-default tm-bgimage-no tm-bgcolor-yes" data-id="c19e8d7" data-element_type="section" style={{ paddingTop: "70px", paddingBottom: "70px" }}>
+                      <section className="elementor-section elementor-top-section elementor-element elementor-element-c19e8d7 tm-column-break-ipad-yes elementor-section-stretched tm-col-stretched-none elementor-section-boxed elementor-section-height-default elementor-section-height-default tm-bgimage-no tm-bgcolor-yes" data-id="c19e8d7" data-element_type="section" style={{ paddingTop: "0px", paddingBottom: "70px" }}>
                         <div className="elementor-container elementor-column-gap-no">
                           <div className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4eea6a3 tm-bgimage-no tm-bgcolor-yes" data-id="4eea6a3" data-element_type="column">
                             <div className="elementor-widget-wrap elementor-element-populated">
