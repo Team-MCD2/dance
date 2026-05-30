@@ -96,19 +96,36 @@
   padding: 0;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 40px; /* Space out the items to make room for dividers */
 }
 
 .themetechmount-topbar-wrapper .top-contact li {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   color: var(--nav-gray);
+}
+
+/* Add vertical dividers between items */
+.themetechmount-topbar-wrapper .top-contact li + li::before {
+  content: '';
+  position: absolute;
+  left: -20px; /* Half of the gap */
+  top: 50%;
+  transform: translateY(-50%);
+  height: 24px; /* Height of the divider */
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 .themetechmount-topbar-wrapper .top-contact li i {
   color: var(--nav-pink);
-  font-size: 14px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px; /* Slight tweak to optically align with the text */
 }
 
 .themetechmount-topbar-wrapper .top-contact li a {
