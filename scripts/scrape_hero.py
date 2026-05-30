@@ -32,11 +32,11 @@ def scrape_tempsdance_hero():
         if key_match:
             slide_data['id'] = key_match.group(1)
             
-        img_match = re.search(r'<img.*?data-lazyload="([^"]+)".*?>', slide_html)
+        img_match = re.search(r'<img.*?data-lazyload="([^"]+)".*?>', slide_html, re.DOTALL)
         if img_match:
             slide_data['bg'] = img_match.group(1)
             
-        video_match = re.search(r'<rs-bgvideo.*?data-ytid="([^"]+)".*?>', slide_html)
+        video_match = re.search(r'<rs-bgvideo.*?data-ytid="([^"]+)".*?>', slide_html, re.DOTALL)
         if video_match:
             slide_data['video'] = video_match.group(1)
             
@@ -155,15 +155,15 @@ export default function HeroSlider() {
       {/* Navigation Arrows */}
       <div 
         onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
-        style={{ top: "50%", left: "20px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", width: "44px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,42,112,0.85)", borderRadius: "50%", color: "#fff", transition: "opacity 0.3s" }} 
+        style={{ top: "50%", left: "20px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", width: "50px", height: "50px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "#ff2a70", borderRadius: "50%", color: "#fff", transition: "background-color 0.3s", fontSize: "24px" }} 
       >
-        <i className="tm-jassio-icon-left-open-big" style={{ fontSize: "18px" }}></i>
+        &laquo;
       </div>
       <div 
         onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-        style={{ top: "50%", right: "20px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", width: "44px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,42,112,0.85)", borderRadius: "50%", color: "#fff", transition: "opacity 0.3s" }} 
+        style={{ top: "50%", right: "20px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", width: "50px", height: "50px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "#ff2a70", borderRadius: "50%", color: "#fff", transition: "background-color 0.3s", fontSize: "24px" }} 
       >
-        <i className="tm-jassio-icon-right-open-big" style={{ fontSize: "18px" }}></i>
+        &raquo;
       </div>
     </div>
   );

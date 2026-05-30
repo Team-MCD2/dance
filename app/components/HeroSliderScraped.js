@@ -9,7 +9,7 @@ export default function HeroSlider() {
   {
     "id": "rs-5",
     "bg": "//tempsdance.fr/wp-content/uploads/2021/12/slider-img-01.jpg",
-    "video": "",
+    "video": "mM7cQCMT-1E",
     "layers": [
       {
         "type": "text",
@@ -137,7 +137,7 @@ export default function HeroSlider() {
                     letterSpacing: '1px', border: layer.is_primary ? 'none' : '1px solid #ffffff', 
                     display: 'inline-flex', alignItems: 'center', transition: 'all 0.3s' 
                   }}>
-                    {layer.text} <i className="tm-jassio-icon-right-thin" style={{ marginLeft: "5px" }}></i>
+                    {layer.text} <span style={{ marginLeft: "8px", fontSize: "16px" }}>&rarr;</span>
                   </Link>
                 ))}
               </div>
@@ -149,15 +149,15 @@ export default function HeroSlider() {
       {/* Navigation Arrows */}
       <div 
         onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
-        style={{ top: "50%", left: "20px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", width: "44px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,42,112,0.85)", borderRadius: "50%", color: "#fff", transition: "opacity 0.3s" }} 
+        style={{ top: "50%", left: "20px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", width: "50px", height: "50px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "#ff2a70", borderRadius: "50%", color: "#fff", transition: "background-color 0.3s", fontSize: "24px" }} 
       >
-        <i className="tm-jassio-icon-left-open-big" style={{ fontSize: "18px" }}></i>
+        &laquo;
       </div>
       <div 
         onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-        style={{ top: "50%", right: "20px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", width: "44px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,42,112,0.85)", borderRadius: "50%", color: "#fff", transition: "opacity 0.3s" }} 
+        style={{ top: "50%", right: "20px", transform: "translateY(-50%)", zIndex: 30, cursor: "pointer", position: "absolute", width: "50px", height: "50px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "#ff2a70", borderRadius: "50%", color: "#fff", transition: "background-color 0.3s", fontSize: "24px" }} 
       >
-        <i className="tm-jassio-icon-right-open-big" style={{ fontSize: "18px" }}></i>
+        &raquo;
       </div>
     </div>
   );
