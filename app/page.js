@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import HeroSliderScraped from "./components/HeroSliderScraped";
 
 export default function HomePage() {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   return (
     <>
