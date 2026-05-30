@@ -82,6 +82,7 @@ export default function HeroSlider() {
   return (
     <div className="hero-slider-wrapper" style={{ position: 'relative', width: '100%', height: 'auto', minHeight: '450px', overflow: 'hidden', backgroundColor: '#000' }}>
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
         @keyframes videoFadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
         @keyframes kenburns { 0% { transform: scale(1); } 100% { transform: scale(1.15); } }
       `}</style>
@@ -104,8 +105,8 @@ export default function HeroSlider() {
               </div>
               {slide.video && (
                 <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${slide.video}?autoplay=1&mute=1&loop=1&playlist=${slide.video}&controls=0&showinfo=0&rel=0`}
-                  allow="autoplay; encrypted-media"
+                  src={`https://www.youtube-nocookie.com/embed/${slide.video}?autoplay=1&mute=1&loop=1&playlist=${slide.video}&controls=0&showinfo=0&rel=0&playsinline=1`}
+                  allow="autoplay; fullscreen; picture-in-picture"
                   allowFullScreen
                   style={{ position: "absolute", top: "50%", left: "50%", width: "100%", height: "56.25vw", minHeight: "100%", minWidth: "177.78vh", transform: "translate(-50%, -50%)", border: "none", pointerEvents: "none", opacity: 0, animation: isActive ? "videoFadeIn 1s ease-in 3s forwards" : "none" }}
                 />
@@ -114,19 +115,38 @@ export default function HeroSlider() {
             </div>
             
             <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', zIndex: 25, padding: '20px', textAlign: 'center' }}>
-              {slide.layers.filter(l => l.type === 'text').map((layer, i) => (
-                <div key={i} style={{ 
-                  fontFamily: layer.is_pink ? 'Roboto' : 'Oswald', 
-                  color: layer.is_pink ? '#ff2a70' : '#ffffff', 
-                  fontWeight: layer.is_pink ? 400 : 700, 
-                  fontSize: layer.is_pink ? 'clamp(36px, 6vw, 65px)' : 'clamp(24px, 4vw, 40px)', 
-                  lineHeight: '1.2', 
-                  marginBottom: '10px', 
-                  textShadow: '2px 2px 4px rgba(0,0,0,0.5)' 
-                }}>
-                  {layer.text}
-                </div>
-              ))}
+              <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '30px' }}>
+                {slide.layers.filter(l => l.type === 'text' && !l.is_pink).map((layer, i) => (
+                  <div key={i} style={{ 
+                    fontFamily: 'Oswald, sans-serif', 
+                    color: '#ffffff', 
+                    fontWeight: 700, 
+                    fontSize: 'clamp(36px, 5vw, 65px)', 
+                    lineHeight: '1.2', 
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.5)' 
+                  }}>
+                    {layer.text}
+                  </div>
+                ))}
+                
+                {slide.layers.filter(l => l.is_pink).map((layer, i) => (
+                  <div key={`pink-${i}`} style={{ 
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%) rotate(-5deg)',
+                    fontFamily: '"Great Vibes", cursive', 
+                    color: '#ff2a70', 
+                    fontWeight: 400, 
+                    fontSize: 'clamp(60px, 10vw, 130px)', 
+                    whiteSpace: 'nowrap',
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
+                    pointerEvents: 'none'
+                  }}>
+                    {layer.text}
+                  </div>
+                ))}
+              </div>
               
               <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '20px' }}>
                 {slide.layers.filter(l => l.type === 'button').map((layer, i) => (
