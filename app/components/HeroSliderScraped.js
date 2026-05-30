@@ -3,6 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Great_Vibes } from 'next/font/google';
+
+const greatVibes = Great_Vibes({ weight: '400', subsets: ['latin'], display: 'swap' });
 
 export default function HeroSlider() {
   const slides = [
@@ -82,7 +85,6 @@ export default function HeroSlider() {
   return (
     <div className="hero-slider-wrapper" style={{ position: 'relative', width: '100%', height: 'auto', minHeight: '450px', overflow: 'hidden', backgroundColor: '#000' }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
         @keyframes videoFadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
         @keyframes kenburns { 0% { transform: scale(1); } 100% { transform: scale(1.15); } }
       `}</style>
@@ -108,7 +110,7 @@ export default function HeroSlider() {
                   src={`https://www.youtube-nocookie.com/embed/${slide.video}?autoplay=1&mute=1&loop=1&playlist=${slide.video}&controls=0&showinfo=0&rel=0&playsinline=1`}
                   allow="autoplay; fullscreen; picture-in-picture"
                   allowFullScreen
-                  style={{ position: "absolute", top: "50%", left: "50%", width: "100%", height: "56.25vw", minHeight: "100%", minWidth: "177.78vh", transform: "translate(-50%, -50%)", border: "none", pointerEvents: "none", opacity: 0, animation: isActive ? "videoFadeIn 1s ease-in 3s forwards" : "none" }}
+                  style={{ position: "absolute", top: "50%", left: "50%", width: "100%", height: "56.25vw", minHeight: "100%", minWidth: "177.78vh", transform: "translate(-50%, -50%)", border: "none", opacity: 0, animation: isActive ? "videoFadeIn 1s ease-in 3s forwards" : "none" }}
                 />
               )}
               <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.45)' }}></div>
@@ -116,36 +118,42 @@ export default function HeroSlider() {
             
             <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', zIndex: 25, padding: '20px', textAlign: 'center' }}>
               <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '30px' }}>
-                {slide.layers.filter(l => l.type === 'text' && !l.is_pink).map((layer, i) => (
-                  <div key={i} style={{ 
-                    fontFamily: 'Oswald, sans-serif', 
-                    color: '#ffffff', 
-                    fontWeight: 700, 
-                    fontSize: 'clamp(36px, 5vw, 65px)', 
-                    lineHeight: '1.2', 
-                    textShadow: '2px 2px 4px rgba(0,0,0,0.5)' 
-                  }}>
-                    {layer.text}
-                  </div>
-                ))}
-                
-                {slide.layers.filter(l => l.is_pink).map((layer, i) => (
-                  <div key={`pink-${i}`} style={{ 
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%) rotate(-5deg)',
-                    fontFamily: '"Great Vibes", cursive', 
-                    color: '#ff2a70', 
-                    fontWeight: 400, 
-                    fontSize: 'clamp(60px, 10vw, 130px)', 
-                    whiteSpace: 'nowrap',
-                    textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
-                    pointerEvents: 'none'
-                  }}>
-                    {layer.text}
-                  </div>
-                ))}
+                {slide.layers.filter(l => l.type === 'text').map((layer, i) => {
+                  const isTempsDance = layer.text.includes('Temps');
+                  if (isTempsDance) {
+                    return (
+                      <div key={i} className={greatVibes.className} style={{ 
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%) rotate(-5deg)',
+                        color: '#ff2a70', 
+                        fontWeight: 400, 
+                        fontSize: 'clamp(60px, 10vw, 130px)', 
+                        whiteSpace: 'nowrap',
+                        textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
+                        pointerEvents: 'none',
+                        zIndex: 10
+                      }}>
+                        {layer.text}
+                      </div>
+                    );
+                  }
+                  
+                  return (
+                    <div key={i} className={layer.is_pink ? greatVibes.className : ''} style={{ 
+                      fontFamily: layer.is_pink ? undefined : 'Oswald, sans-serif', 
+                      color: layer.is_pink ? '#ff2a70' : '#ffffff', 
+                      fontWeight: layer.is_pink ? 400 : 700, 
+                      fontSize: layer.is_pink ? 'clamp(50px, 8vw, 90px)' : 'clamp(36px, 5vw, 65px)', 
+                      lineHeight: '1.2', 
+                      textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
+                      marginTop: layer.is_pink ? '10px' : '0'
+                    }}>
+                      {layer.text}
+                    </div>
+                  );
+                })}
               </div>
               
               <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '20px' }}>
